@@ -1,7 +1,7 @@
 package mx.unam.dgtic.dao;
 
 import mx.unam.dgtic.db.ConexionDB;
-import mx.unam.dgtic.model.Materia;
+import mx.unam.dgtic.entities.Materia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

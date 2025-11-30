@@ -13,9 +13,7 @@ public class Materia {
     @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    public Materia(){
-        
-    }
+    public Materia(){}
 
     public Materia(int id, String nombre, String descripcion) {
         this.id = id;
