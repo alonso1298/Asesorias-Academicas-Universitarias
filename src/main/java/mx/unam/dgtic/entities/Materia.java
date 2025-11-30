@@ -1,8 +1,16 @@
-package mx.unam.dgtic.model;
+package mx.unam.dgtic.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "materia")
 public class Materia {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false, unique = true, length = 100)
     private String nombre;
+    @Column(columnDefinition = "TEXT")
     private String descripcion;
 
     public Materia(){

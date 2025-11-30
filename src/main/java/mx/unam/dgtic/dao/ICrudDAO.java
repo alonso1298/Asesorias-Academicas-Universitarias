@@ -1,7 +1,5 @@
 package mx.unam.dgtic.dao;
 
-import mx.unam.dgtic.model.Materia;
-
 import java.util.List;
 
 public interface ICrudDAO<T> {
