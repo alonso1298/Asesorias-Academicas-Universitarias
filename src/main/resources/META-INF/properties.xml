@@ -10,7 +10,7 @@
             - RESOURCE_LOCAL: Uso local de recursos JDBC
             - JTA: Uso Remoto en servidor de aplicaciones
     -->
-    <persistence-unit name="cine-pu" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="auu-pu" transaction-type="RESOURCE_LOCAL">
         <!--
             Hibernate -> Framework de presistnecia JPA
             Proveedor de Presistencia -> Uso de JPA
