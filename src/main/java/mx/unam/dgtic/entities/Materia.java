@@ -26,9 +26,6 @@ public class Materia {
         this.descripcion = descripcion;
     }
 
-    // Getters y Setters
-
-
     public int getId() {
         return id;
     }
