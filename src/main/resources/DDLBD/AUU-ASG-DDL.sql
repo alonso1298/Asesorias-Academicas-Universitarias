@@ -2,20 +2,13 @@
 CREATE DATABASE IF NOT EXISTS aau_db;
 USE aau_db;
 
---  TABLA: rol
-CREATE TABLE rol (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL UNIQUE
-);
-
 --  TABLA: usuario
 CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(120) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    rol_id BIGINT NOT NULL,
-    FOREIGN KEY (rol_id) REFERENCES rol(id)
+    rol ENUM('ADMIN', 'PROFESOR', 'ALUMNO') NOT NULL
 );
 
 --  TABLA: alumno (1:1 usuario)
@@ -33,6 +26,7 @@ CREATE TABLE profesor (
     nombre VARCHAR(150) NOT NULL,
     numero_empleado VARCHAR(100),
     experiencia TEXT,
+    especialidad VARCHAR(50) NOT NULL DEFAULT 'COMPUTACION',
     FOREIGN KEY (id) REFERENCES usuario(id)
 );
 
@@ -110,7 +104,3 @@ CREATE TABLE reporte_semanal (
     generado_por BIGINT NOT NULL,
     FOREIGN KEY (generado_por) REFERENCES usuario(id)
 );
-
--- Ajuste tabla profesor
-ALTER TABLE profesor
-ADD COLUMN especialidad VARCHAR(50) NOT NULL DEFAULT 'COMPUTACION';
