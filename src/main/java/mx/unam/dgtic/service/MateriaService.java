@@ -8,6 +8,10 @@ import java.util.List;
 public class MateriaService {
     private final MateriaRepository repository = new MateriaRepository();
 
+    public Materia buscarPorId(Long id) {
+        return repository.buscarPorId(id);
+    }
+
     public List<Materia> listar() {
         return repository.listar();
     }
@@ -23,4 +27,5 @@ public class MateriaService {
     public void eliminar(Long id) {
         repository.eliminar(id);
     }
+
 }

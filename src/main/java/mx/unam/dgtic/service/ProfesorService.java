@@ -12,6 +12,10 @@ public class ProfesorService {
         return rep.listar();
     }
 
+    public Profesor buscarPorId(Long id) {
+        return rep.buscarPorId(id);
+    }
+
     public void guardar(Profesor p){
         rep.guardar(p);
     }
