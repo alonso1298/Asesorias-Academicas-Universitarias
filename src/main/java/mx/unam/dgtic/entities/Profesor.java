@@ -1,6 +1,7 @@
 package mx.unam.dgtic.entities;
 
 import jakarta.persistence.*;
+import mx.unam.dgtic.enums.Especialidad;
 
 import java.util.List;
 
@@ -19,13 +20,17 @@ public class Profesor {
     private String experiencia;
     @OneToMany(mappedBy = "profesor")
     private List<ProfesorMateria> materias;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Especialidad especialidad;
 
     public Profesor(){}
 
-    public Profesor(Long id, Usuario usuario, String nombre, String numero_empleado, String experiencia, List<ProfesorMateria> materias) {
+    public Profesor(Long id, Usuario usuario, String nombre, Especialidad especialidad, String numero_empleado, String experiencia, List<ProfesorMateria> materias) {
         this.id = id;
         this.usuario = usuario;
         this.nombre = nombre;
+        this.especialidad = especialidad;
         this.numero_empleado = numero_empleado;
         this.experiencia = experiencia;
         this.materias = materias;
@@ -53,6 +58,14 @@ public class Profesor {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
     }
 
     public String getNumero_empleado() {
@@ -85,6 +98,7 @@ public class Profesor {
                 "id=" + id +
                 ", usuario=" + usuario +
                 ", nombre='" + nombre + '\'' +
+                ", especialidad=" + especialidad +
                 ", numero_empleado='" + numero_empleado + '\'' +
                 ", experiencia='" + experiencia + '\'' +
                 ", materias=" + materias +
