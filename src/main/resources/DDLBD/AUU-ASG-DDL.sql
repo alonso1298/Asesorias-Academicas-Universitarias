@@ -2,17 +2,13 @@
 CREATE DATABASE IF NOT EXISTS aau_db;
 USE aau_db;
 
--- ==========================
 --  TABLA: rol
--- ==========================
 CREATE TABLE rol (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL UNIQUE
 );
 
--- ==========================
 --  TABLA: usuario
--- ==========================
 CREATE TABLE usuario (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -22,9 +18,7 @@ CREATE TABLE usuario (
     FOREIGN KEY (rol_id) REFERENCES rol(id)
 );
 
--- ==========================
 --  TABLA: alumno (1:1 usuario)
--- ==========================
 CREATE TABLE alumno (
     id BIGINT PRIMARY KEY,
     matricula VARCHAR(50) NOT NULL UNIQUE,
@@ -33,9 +27,7 @@ CREATE TABLE alumno (
     FOREIGN KEY (id) REFERENCES usuario(id)
 );
 
--- ==========================
 --  TABLA: profesor (1:1 usuario)
--- ==========================
 CREATE TABLE profesor (
     id BIGINT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
@@ -44,18 +36,14 @@ CREATE TABLE profesor (
     FOREIGN KEY (id) REFERENCES usuario(id)
 );
 
--- ==========================
 --  TABLA: materia
--- ==========================
 CREATE TABLE materia (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL UNIQUE,
     descripcion TEXT
 );
 
--- ==========================
 --  TABLA: profesor_materia (N:N)
--- ==========================
 CREATE TABLE profesor_materia (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     profesor_id BIGINT NOT NULL,
@@ -67,9 +55,7 @@ CREATE TABLE profesor_materia (
     FOREIGN KEY (materia_id) REFERENCES materia(id)
 );
 
--- ==========================
 --  TABLA: horario_disponible
--- ==========================
 CREATE TABLE horario_disponible (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     profesor_id BIGINT NOT NULL,
@@ -84,9 +70,7 @@ CREATE TABLE horario_disponible (
 
 CREATE INDEX idx_profesor_horario ON horario_disponible(profesor_id);
 
--- ==========================
 --  TABLA: asesoria
--- ==========================
 CREATE TABLE asesoria (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     alumno_id BIGINT NOT NULL,
@@ -106,9 +90,7 @@ CREATE INDEX idx_asesoria_fecha ON asesoria(fecha);
 CREATE INDEX idx_asesoria_profesor ON asesoria(profesor_id);
 CREATE INDEX idx_asesoria_alumno ON asesoria(alumno_id);
 
--- ==========================
 --  TABLA: notificacion
--- ==========================
 CREATE TABLE notificacion (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     usuario_id BIGINT NOT NULL,
@@ -118,9 +100,7 @@ CREATE TABLE notificacion (
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
--- ==========================
 --  TABLA: reporte_semanal
--- ==========================
 CREATE TABLE reporte_semanal (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     fecha_generacion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -130,3 +110,7 @@ CREATE TABLE reporte_semanal (
     generado_por BIGINT NOT NULL,
     FOREIGN KEY (generado_por) REFERENCES usuario(id)
 );
+
+-- Ajuste tabla profesor
+ALTER TABLE profesor
+ADD COLUMN especialidad VARCHAR(50) NOT NULL DEFAULT 'COMPUTACION';
