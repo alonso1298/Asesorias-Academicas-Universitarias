@@ -4,14 +4,17 @@ import mx.unam.dgtic.entities.Materia;
 import mx.unam.dgtic.entities.Profesor;
 import mx.unam.dgtic.entities.Usuario;
 import mx.unam.dgtic.enums.Especialidad;
+import mx.unam.dgtic.enums.Rol;
 import mx.unam.dgtic.service.MateriaService;
 import mx.unam.dgtic.service.ProfesorService;
+import mx.unam.dgtic.service.UsuarioService;
 
 public class Main {
     public static void main(String[] args) {
 
         MateriaService materiaService = new MateriaService();
         ProfesorService profesorService = new ProfesorService();
+        UsuarioService usuarioService = new UsuarioService();
 
         System.out.println("=== EJEMPLOS CRUD COMPLETOS ===\n");
 
@@ -24,7 +27,7 @@ public class Main {
 
         // 2. Agregar una materia nueva
         Materia nuevaMateria = new Materia();
-        nuevaMateria.setNombre("Bases de Datos");
+        nuevaMateria.setNombre("Microprocesadores");
 
         materiaService.guardar(nuevaMateria);
         System.out.println("\nMateria agregada.");
@@ -59,47 +62,47 @@ public class Main {
 
 
         //                       PROFESOR
-//        System.out.println("\n\n=== CRUD de Profesor ===");
-//
-//        // 1. Crear usuario para el profesor
-//        Usuario u = new Usuario();
-//        u.setNombre("Carlos Pérez");
-//        u.setEmail("carlos.perez@test.com");
-//        u.setPassword("1234");
-//        u.setRol(Rol.PROFESOR);
-//
-//        usuarioService.guardar(u);
-//
-//        // 2. Crear profesor asociado al usuario
-//        Profesor p = new Profesor();
-//        p.setNombre("Carlos Pérez");
-//        p.setNumeroEmpleado("EMP-001");
-//        p.setEspecialidad(Especialidad.COMPUTACION);
-//        p.setUsuario(u);
-//
-//        // Guardar profesor
-//        profesorService.guardar(p);
-//
-//        // 3. Listar
-//        System.out.println("\nLista de profesores:");
-//        profesorService.listar().forEach(System.out::println);
-//
-//        // 4. Editar profesor
-//        Profesor profEdit = profesorService.buscarPorId(p.getId());
-//        if (profEdit != null) {
-//            profEdit.setEspecialidad(Especialidad.INTELIGENCIA_ARTIFICIAL);
-//            profesorService.editar(profEdit);
-//        }
-//
-//        // 5. Verificar edición
-//        System.out.println("\nLista tras edición:");
-//        profesorService.listar().forEach(System.out::println);
-//
-//        // 6. Eliminar profesor
-//        profesorService.eliminar(p.getId());
-//        System.out.println("\nProfesor con ID " + p.getId() + " eliminado.");
-//
-//        System.out.println("\nLista final de profesores:");
-//        profesorService.listar().forEach(System.out::println);
+        System.out.println("\n\n=== CRUD de Profesor ===");
+
+        // 1. Crear usuario para el profesor
+        Usuario u = new Usuario();
+        u.setNombre("Carlos Pérez");
+        u.setEmail("carlos.perez@test.com");
+        u.setPassword("1234");
+        u.setRol(Rol.PROFESOR);
+
+        usuarioService.crearUsuario(u);
+
+        // 2. Crear profesor asociado al usuario
+        Profesor p = new Profesor();
+        p.setNombre("Carlos Pérez");
+        p.setNumeroEmpleado("EMP-001");
+        p.setEspecialidad(Especialidad.COMPUTACION);
+        p.setUsuario(u);
+
+        // Guardar profesor
+        profesorService.guardar(p);
+
+        // 3. Listar
+        System.out.println("\nLista de profesores:");
+        profesorService.listar().forEach(System.out::println);
+
+        // 4. Editar profesor
+        Profesor profEdit = profesorService.buscarPorId(p.getId());
+        if (profEdit != null) {
+            profEdit.setEspecialidad(Especialidad.INTELIGENCIA_ARTIFICIAL);
+            profesorService.editar(profEdit);
+        }
+
+        // 5. Verificar edición
+        System.out.println("\nLista tras edición:");
+        profesorService.listar().forEach(System.out::println);
+
+        // 6. Eliminar profesor
+        profesorService.eliminar(p.getId());
+        System.out.println("\nProfesor con ID " + p.getId() + " eliminado.");
+
+        System.out.println("\nLista final de profesores:");
+        profesorService.listar().forEach(System.out::println);
     }
 }
