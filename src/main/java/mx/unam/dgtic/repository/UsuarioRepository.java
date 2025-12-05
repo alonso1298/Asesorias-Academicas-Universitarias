@@ -29,7 +29,7 @@ public class UsuarioRepository {
         }
     }
 
-    private Usuario actualizar(Usuario usuario) {
+    public Usuario actualizar(Usuario usuario) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         try {
