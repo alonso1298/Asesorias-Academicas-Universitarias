@@ -11,23 +11,26 @@ CREATE TABLE usuario (
     rol ENUM('ADMIN', 'PROFESOR', 'ALUMNO') NOT NULL
 );
 
---  TABLA: alumno (1:1 usuario)
+--  TABLA: alumno (1:1 usuario, ID heredado)
 CREATE TABLE alumno (
     id BIGINT PRIMARY KEY,
     matricula VARCHAR(50) NOT NULL UNIQUE,
     carrera VARCHAR(100) NOT NULL,
     semestre INT NOT NULL CHECK (semestre BETWEEN 1 AND 12),
+
     FOREIGN KEY (id) REFERENCES usuario(id)
 );
 
---  TABLA: profesor (1:1 usuario)
+--  TABLA: profesor
 CREATE TABLE profesor (
-    id BIGINT PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
     numero_empleado VARCHAR(100),
     experiencia TEXT,
     especialidad VARCHAR(50) NOT NULL DEFAULT 'COMPUTACION',
-    FOREIGN KEY (id) REFERENCES usuario(id)
+
+    usuario_id BIGINT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
 --  TABLA: materia
@@ -91,6 +94,7 @@ CREATE TABLE notificacion (
     asunto VARCHAR(200) NOT NULL,
     mensaje TEXT NOT NULL,
     fecha_envio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
     FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
@@ -101,6 +105,7 @@ CREATE TABLE reporte_semanal (
     total_asesorias INT NOT NULL,
     archivo_pdf VARCHAR(255),
     archivo_excel VARCHAR(255),
+
     generado_por BIGINT NOT NULL,
     FOREIGN KEY (generado_por) REFERENCES usuario(id)
 );
