@@ -14,7 +14,7 @@ public class ProfesorRepository {
         return em.createQuery("SELECT p FROM Profesor p", Profesor.class).getResultList();
     }
 
-    public Profesor buscarPorId(Long id){
+    public Profesor buscarPorId(Integer id){
         EntityManager em = JPAUtil.getEntityManager();
         return em.find(Profesor.class, id);
     }
@@ -35,7 +35,7 @@ public class ProfesorRepository {
         em.close();
     }
 
-    public void eliminar(Long id){
+    public void eliminar(Integer id){
         EntityManager em = JPAUtil.getEntityManager();
         Profesor p = em.find(Profesor.class, id);
         if (p != null){

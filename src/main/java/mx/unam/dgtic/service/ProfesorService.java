@@ -12,7 +12,7 @@ public class ProfesorService {
         return rep.listar();
     }
 
-    public Profesor buscarPorId(Long id) {
+    public Profesor buscarPorId(Integer id) {
         return rep.buscarPorId(id);
     }
 
@@ -24,7 +24,11 @@ public class ProfesorService {
         rep.editar(p);
     }
 
-    public void eliminar(Long id){
-        rep.eliminar(id);
+    public void eliminar(Integer id) {
+        Profesor p = rep.buscarPorId(id);
+        if (p != null) {
+            p.setUsuario(null);  // previene cascadas no deseadas
+            rep.eliminar(id);
+        }
     }
 }

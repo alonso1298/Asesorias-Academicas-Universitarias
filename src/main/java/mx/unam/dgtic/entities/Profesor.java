@@ -10,13 +10,14 @@ import java.util.List;
 public class Profesor {
 
     @Id
-    private Long id;
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
     private String nombre;
-    private String numero_empleado;
+    @Column(name = "numero_empleado")
+    private String numeroEmpleado;
     private String experiencia;
     @OneToMany(mappedBy = "profesor")
     private List<ProfesorMateria> materias;
@@ -26,21 +27,21 @@ public class Profesor {
 
     public Profesor(){}
 
-    public Profesor(Long id, Usuario usuario, String nombre, Especialidad especialidad, String numero_empleado, String experiencia, List<ProfesorMateria> materias) {
+    public Profesor(Integer id, Usuario usuario, String nombre, Especialidad especialidad, String numero_empleado, String experiencia, List<ProfesorMateria> materias) {
         this.id = id;
         this.usuario = usuario;
         this.nombre = nombre;
         this.especialidad = especialidad;
-        this.numero_empleado = numero_empleado;
+        this.numeroEmpleado = numero_empleado;
         this.experiencia = experiencia;
         this.materias = materias;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -68,12 +69,12 @@ public class Profesor {
         this.especialidad = especialidad;
     }
 
-    public String getNumero_empleado() {
-        return numero_empleado;
+    public String getNumeroEmpleado() {
+        return numeroEmpleado;
     }
 
-    public void setNumero_empleado(String numero_empleado) {
-        this.numero_empleado = numero_empleado;
+    public void setNumeroEmpleado(String numeroEmpleado) {
+        this.numeroEmpleado = numeroEmpleado;
     }
 
     public String getExperiencia() {
@@ -96,12 +97,12 @@ public class Profesor {
     public String toString() {
         return "Profesor{" +
                 "id=" + id +
-                ", usuario=" + usuario +
+                ", usuario=" + (usuario != null ? usuario.getId() : null) +
                 ", nombre='" + nombre + '\'' +
-                ", especialidad=" + especialidad +
-                ", numero_empleado='" + numero_empleado + '\'' +
+                ", numeroEmpleado='" + numeroEmpleado + '\'' +
                 ", experiencia='" + experiencia + '\'' +
                 ", materias=" + materias +
+                ", especialidad=" + especialidad +
                 '}';
     }
 }

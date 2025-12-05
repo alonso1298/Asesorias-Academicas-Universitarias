@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import mx.unam.dgtic.enums.Rol;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,19 +15,15 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(name = "rol")
     private Rol rol;
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private Profesor profesor;
-
 
     public Usuario(){}
 
-    public Usuario(int id, String nombre, String email, String password, Rol rol, Profesor profesor) {
+    public Usuario(int id, String nombre, String email, String password, Rol rol) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
         this.rol = rol;
-        this.profesor = profesor;
     }
 
     public int getId() {
@@ -70,14 +66,6 @@ public class Usuario {
         this.rol = rol;
     }
 
-    public Profesor getProfesor() {
-        return profesor;
-    }
-
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
-    }
-
     @Override
     public String toString() {
         return "Usuario{" +
@@ -86,7 +74,6 @@ public class Usuario {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", rol=" + rol +
-                ", profesor=" + profesor +
                 '}';
     }
 }
