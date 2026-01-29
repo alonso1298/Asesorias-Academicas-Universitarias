@@ -20,7 +20,7 @@
     <!-- Profesor -->
     <bean id="profesor1" class="mx.unam.dgtic.modelo.Profesor">
         <property name="nombre" value="Miguel Angel"/>
-        <property name="usuario" value="usuario1"/>
+        <property name="usuario" ref="usuario1"/>
         <property name="materias">
             <list>
                 <ref bean="materia1"/>
@@ -31,7 +31,7 @@
 
     <!-- Asesoria -->
     <bean id="asesoria1" class="mx.unam.dgtic.modelo.Asesoria">
-        <property name="profesor" value="profesor1"/>
-        <property name="materia" value="materia1"/>
+        <property name="profesor" ref="profesor1"/>
+        <property name="materia" ref="materia1"/>
     </bean>
 </beans>
