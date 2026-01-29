@@ -28,4 +28,10 @@
             </list>
         </property>
     </bean>
+
+    <!-- Asesoria -->
+    <bean id="asesoria1" class="mx.unam.dgtic.modelo.Asesoria">
+        <property name="profesor" value="profesor1"/>
+        <property name="materia" value="materia1"/>
+    </bean>
 </beans>
