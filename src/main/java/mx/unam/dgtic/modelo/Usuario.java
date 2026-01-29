@@ -3,7 +3,7 @@ package mx.unam.dgtic.modelo;
 public class Usuario {
 
     private String nombre;
-    private String eail;
+    private String email;
 
     public Usuario(){}
 
@@ -15,19 +15,19 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getEail() {
-        return eail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEail(String eail) {
-        this.eail = eail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
         return "Usuario{" +
                 "nombre='" + nombre + '\'' +
-                ", eail='" + eail + '\'' +
+                ", eail='" + email + '\'' +
                 '}';
     }
 }
