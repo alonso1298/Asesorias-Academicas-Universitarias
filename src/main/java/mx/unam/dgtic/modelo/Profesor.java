@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Profesor {
 
-    private String  nombre;
+    private String nombre;
     private Usuario usuario;
     private List<Materia> materias;
 
