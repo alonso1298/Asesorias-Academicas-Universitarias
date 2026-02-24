@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Usuario -->
+    <bean id="usuario1" class="mx.unam.dgtic.modelo.Usuario">
+        <property name="nombre" value="Alonso Sagrero"/>
+        <property name="email" value="alonso@correo.com"/>
+    </bean>
+
+    <!-- Materia -->
+    <bean id="materia1" class="mx.unam.dgtic.modelo.Materia">
+        <property name="nombre" value="Programacion"/>
+    </bean>
+    <bean id="materia2" class="mx.unam.dgtic.modelo.Materia">
+        <property name="nombre" value="Algoritmos"/>
+    </bean>
+
+    <!-- Profesor -->
+    <bean id="profesor1" class="mx.unam.dgtic.modelo.Profesor">
+        <property name="nombre" value="Miguel Angel"/>
+        <property name="usuario" ref="usuario1"/>
+        <property name="materias">
+            <list>
+                <ref bean="materia1"/>
+                <ref bean="materia2"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Asesoria -->
+    <bean id="asesoria1" class="mx.unam.dgtic.modelo.Asesoria">
+        <property name="profesor" ref="profesor1"/>
+        <property name="materia" ref="materia1"/>
+    </bean>
+</beans>

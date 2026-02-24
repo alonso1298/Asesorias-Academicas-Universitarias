@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="Add DiagramaUML.png" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Modulo5" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;alonso1298&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/alonso1298/Asesorias-Academicas-Universitarias.git&quot;,
+    &quot;accountId&quot;: &quot;71f50dad-96ea-49be-b2ae-476fe7caad0b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="35d4epQXGIPcTrTgCzjknvF2Pse" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Inicio.executor": "Run",
+    "Maven.ApplicationContext [clean].executor": "Run",
+    "Maven.ApplicationContext [compile].executor": "Run",
+    "Maven.ApplicationContext [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Modulo5",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/alonsosagrero/Documents/AAU/src/main/resources",
+    "onboarding.tips.debug.path": "/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Inicio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.inicio.Inicio" />
+      <module name="AAU" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mx.unam.dgtic.inicio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Inicio" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="" />
+      <created>1763426713015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763426713015</updated>
+    </task>
+    <task id="LOCAL-00001" summary="add ConexionDB">
+      <option name="closed" value="true" />
+      <created>1763429791586</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763429791586</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add InterfazDAO">
+      <option name="closed" value="true" />
+      <created>1763429813728</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763429813728</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add model Materia">
+      <option name="closed" value="true" />
+      <created>1763429826326</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1763429826326</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add driver MySQL">
+      <option name="closed" value="true" />
+      <created>1763429849244</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1763429849244</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add getters y setters">
+      <option name="closed" value="true" />
+      <created>1763432114787</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763432114787</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add refactor">
+      <option name="closed" value="true" />
+      <created>1763432132769</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763432132769</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Rename">
+      <option name="closed" value="true" />
+      <created>1763438895945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763438895945</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1763438906112</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763438906112</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add DAO">
+      <option name="closed" value="true" />
+      <created>1763438915787</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763438915787</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add DAO">
+      <option name="closed" value="true" />
+      <created>1763438926539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763438926539</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Rename">
+      <option name="closed" value="true" />
+      <created>1763439234884</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1763439234884</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Universioned">
+      <option name="closed" value="true" />
+      <created>1763439471866</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1763439471866</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Refactor">
+      <option name="closed" value="true" />
+      <created>1769661229317</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1769661229317</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add DiagramaUML.png">
+      <option name="closed" value="true" />
+      <created>1769661247014</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1769661247014</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add ConexionDB" />
+    <MESSAGE value="add InterfazDAO" />
+    <MESSAGE value="add model Materia" />
+    <MESSAGE value="add driver MySQL" />
+    <MESSAGE value="add getters y setters" />
+    <MESSAGE value="add refactor" />
+    <MESSAGE value="Add DAO" />
+    <MESSAGE value="Rename" />
+    <MESSAGE value="Universioned" />
+    <MESSAGE value="Refactor" />
+    <MESSAGE value="Add DiagramaUML.png" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add DiagramaUML.png" />
+  </component>
+</project>
