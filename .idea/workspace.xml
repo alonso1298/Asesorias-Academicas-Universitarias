@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="Add views">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/AsesoriaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/MateriaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/ProfesorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="add controllers">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/paginas/principal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/inicio.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -280,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771987203532</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add controllers">
+      <option name="closed" value="true" />
+      <created>1771988178271</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1771988178271</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -300,6 +305,7 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="adapppter" />
     <MESSAGE value="Add views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add views" />
+    <MESSAGE value="add controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add controllers" />
   </component>
 </project>
