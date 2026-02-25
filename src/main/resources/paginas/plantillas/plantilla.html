@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Spring Thymeleaf</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/tema/miestilo.css}" rel="stylesheet">
+</head>
+<body>
+<header th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/propiedad}">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/spring/requestmapping}">@RequestMapping(Clase)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/spring/getmapping}">@Getmapping</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Parámetros
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/spring/parametros-uno/67}">Un parámetro</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/parametros-dos/29/miguel}">Dos parámetros</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Parámetros
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/spring/requestparam?dato=DGTIC-1}">Con parámetro</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/requestparam}">Sin parámetros</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/requestparam-v?dato=DGTIC-1&diplomado=Spring}">Dos parámetros</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @Formularios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/spring/ver-formulario}">@RequestParam</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/ver-usuario}">Data Binding 1</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/ver-usuario-v2}">Data Binding 2</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/ver-usuario-v3}">Data Binding 3</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/ver-usuario-v4}">Data Binding 4</a></li>
+                            <li><a class="dropdown-item" th:href="@{/spring/ver-usuario-v5}">Data Binding 5</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @Errores
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/utilerias/error_particular_uno}">Error 1</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/ver-usuario-v6}">Error 2</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @Flash
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/utilerias/redirecionar-sin-flash}">Sin Flash</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/redirecionar-con-flash}">Con Flash</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            @Utilerias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/utilerias/ver-subir-archivo}">Subir archivo</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/crear-pdf(format=pdf)}" target="_blank">Crear Pdf</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/mandar-correo}" target="_blank">Mandar Correo</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/mostrar-archivos}" target="_blank">Bajar Archivos</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/ver-drop?version=1}">Dropdown Anidado</a></li>
+                            <li><a class="dropdown-item" th:href="@{/utilerias/ver-drop?version=2}">Dropdown Anidado2</a></li>
+
+
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-success" th:if="${success !=null}" th:text=${success}></div>
+    <div class="alert alert-danger" th:if="${error !=null}" th:text=${error}></div>
+    <div class="alert alert-warning" th:if="${warning !=null}" th:text=${warning}></div>
+    <div class="alert alert-info" th:if="${info !=null}" th:text=${info}></div>
+</header>
+<footer th:fragment="footer">
+    <div class="container text-center">
+        <br/> <img th:src="@{/image/logo.jpg}" height="150" width="500"/>
+        <p>Dirección General de Cómputo y de Tecnologías de Información y Comunicación</p>
+    </div>
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/bootstrap/js/jquery-3.6.3.js}"></script>
+</footer>
+</body>
+
+</html>
