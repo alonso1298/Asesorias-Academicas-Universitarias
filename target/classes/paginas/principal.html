@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+<head th:replace="~{plantillas/plantilla :: head}"></head>
+
+<body>
+
+<header th:replace="~{plantillas/plantilla :: header}"></header>
+
+<main class="container mt-4">
+
+    <div class="text-center mb-4">
+        <h1>Sistema de Asesorías Académicas Universitarias</h1>
+        <p class="lead">
+            Plataforma para la gestión de profesores, materias y asesorías académicas.
+        </p>
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Profesores</h5>
+                    <p class="card-text">Administración de profesores registrados.</p>
+                    <a th:href="@{/profesores}" class="btn btn-primary">Ir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Materias</h5>
+                    <p class="card-text">Consulta y gestión de materias.</p>
+                    <a th:href="@{/materias}" class="btn btn-success">Ir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Asesorías</h5>
+                    <p class="card-text">Agendar y administrar asesorías.</p>
+                    <a th:href="@{/asesorias}" class="btn btn-warning">Ir</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+
+</body>
+</html>
