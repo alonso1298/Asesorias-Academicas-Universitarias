@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="Add DiagramaUML.png">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/jquery-3.6.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/iconos/bootstrap-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/iconos/fonts/bootstrap-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/iconos/fonts/bootstrap-icons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/logo_inicio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/tema/miestilo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +75,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Modulo7",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/alonsosagrero/Documents/AAU/src/main/resources",
+    "last_opened_file_path": "/Users/alonsosagrero/Documents/AAU/src/main/resources/static",
     "onboarding.tips.debug.path": "/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -75,6 +85,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/bootstrap" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
