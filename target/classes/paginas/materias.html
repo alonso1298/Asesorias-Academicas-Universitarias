@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+<head th:replace="~{plantillas/plantilla :: head}"></head>
+
 <body>
-    <main class="container text-center">
-        <h1>Catálogo de Materias</h1>
-        <p>Aquí se muestran las materias disponibles.</p>
-    </main>
+
+<header th:replace="~{plantillas/plantilla :: header}"></header>
+
+<main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <h1>Catálogo de Materias</h1>
+    <p>
+        En esta sección se consultan y administran las materias
+        disponibles dentro del sistema.
+    </p>
+</main>
+
+<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+
 </body>
 </html>
