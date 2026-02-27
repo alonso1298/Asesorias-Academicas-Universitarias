@@ -3,6 +3,7 @@ package mx.unam.dgtic.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import mx.unam.dgtic.enums.Especialidad;
 
 @Entity
 @Table(name = "profesor")
