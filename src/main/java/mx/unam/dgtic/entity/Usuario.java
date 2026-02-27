@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,12 +14,12 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nombre;
 
     private String correo;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private Perfil perfil;
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
 }
