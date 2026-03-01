@@ -2,6 +2,7 @@ package mx.unam.dgtic.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import mx.unam.dgtic.enums.Rol;
 
 @Entity
 @Table(name = "usuario")
