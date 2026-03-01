@@ -1,16 +1,16 @@
 package mx.unam.dgtic.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import mx.unam.dgtic.enums.Rol;
 
 @Entity
 @Table(name = "usuario")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Usuario {
 
     @Id
