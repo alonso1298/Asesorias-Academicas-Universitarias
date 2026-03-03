@@ -29,6 +29,8 @@ import mx.unam.dgtic.enums.Especialidad;
 @Entity
 @Table(name = "profesor")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Profesor {
 
     @Id

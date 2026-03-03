@@ -1,7 +1,9 @@
 package mx.unam.dgtic.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import mx.unam.dgtic.enums.Rol;
 
 @NamedQuery(
@@ -11,6 +13,8 @@ import mx.unam.dgtic.enums.Rol;
 @Entity
 @Table(name = "usuario")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
 
     @Id

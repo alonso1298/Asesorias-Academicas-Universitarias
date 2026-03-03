@@ -24,6 +24,8 @@ public class UsuarioProfesorDerivedTest {
     @Test
     void TestConsultasDerivadas(){
 
+        System.out.println(ALUMNO);
+
         // ---------- INSERTAR DATOS ----------
         Usuario u1 = new Usuario(null,"Carlos","carlos@gmail.com","123", Rol.ADMIN);
         Usuario u2 = new Usuario(null,"Ana","ana@gmail.com","123", Rol.ALUMNO);
@@ -41,43 +43,31 @@ public class UsuarioProfesorDerivedTest {
         profesorRepository.save(p2);
         profesorRepository.save(p3);
 
-        // ================================
-        // 1️findByNombreContaining
-        // ================================
+        // findByNombreContaining
         System.out.println("\n1️Usuarios que contienen 'a' en el nombre:");
         usuarioRepository.findByNombreContaining("a")
                 .forEach(u -> System.out.println(u.getNombre()));
 
-        // ================================
-        // 2️existsByEmail
-        // ================================
+        // existsByEmail
         System.out.println("\n2️¿Existe ana@gmail.com?");
         System.out.println(usuarioRepository.existsByEmail("ana@gmail.com"));
 
-        // ================================
-        // 3️countByRol
-        // ================================
+        // countByRol
         System.out.println("\n3️Cantidad de usuarios con rol ALUMNO:");
         System.out.println(usuarioRepository.countByRol(Rol.ALUMNO));
 
-        // ================================
-        // 4️findTop3ByOrderByNombreAsc
-        // ================================
+        // findTop3ByOrderByNombreAsc
         System.out.println("\n4️Top 3 usuarios ordenados por nombre ASC:");
         usuarioRepository.findTop3ByOrderByNombreAsc()
                 .forEach(u -> System.out.println(u.getNombre()));
-
-        // ================================
-        // 5️AND
-        // ================================
+        
+        // AND
         System.out.println("\n5️Profesor por nombre AND especialidad:");
         profesorRepository
                 .findByNombreAndEspecialidad("Mario", Especialidad.PROGRAMACION)
                 .forEach(p -> System.out.println(p.getNombre()));
 
-        // ================================
-        // 6️OR
-        // ================================
+        // OR
         System.out.println("\n6️Profesor por nombre OR experiencia:");
         profesorRepository
                 .findByNombreOrExperiencia("Maria","3 años")
