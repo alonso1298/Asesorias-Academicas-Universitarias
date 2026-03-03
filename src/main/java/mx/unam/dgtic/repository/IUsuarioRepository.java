@@ -10,9 +10,13 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     List<Usuario> findByNombre(String nombre);
 
+    List<Usuario> findByNombreContaining(String nombre);
+
     List<Usuario> findByEmailContaining(String email);
 
     List<Usuario> findByRol(Rol rol);
+
+    List<Usuario> findTop3ByOrderByNombreAsc();
 
     boolean existsByEmail(String email);
 

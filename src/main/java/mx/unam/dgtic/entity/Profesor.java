@@ -1,7 +1,9 @@
 package mx.unam.dgtic.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import mx.unam.dgtic.enums.Especialidad;
 
@@ -9,6 +11,8 @@ import mx.unam.dgtic.enums.Especialidad;
 @Table(name = "profesor")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Profesor {
 
     @Id
