@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 public class UsuarioRepositoryTest {
@@ -22,12 +23,35 @@ public class UsuarioRepositoryTest {
 
         Usuario usuario = new Usuario();
         usuario.setNombre("Juan Perez");
-        usuario.setCorreo("juan@gmail.com");
+        usuario.setEmail("juan@gmail.com");
+        usuario.setPassword("1234"); // 🔥 FALTABA ESTO
         usuario.setRol(Rol.ALUMNO);
 
         Usuario guardado = usuarioRepository.save(usuario);
 
         System.out.println("Alumno: " + ALUMNO);
         System.out.println("Usuario guardado: " + guardado);
+
+        // ---------- READ ----------
+        List<Usuario> lista = usuarioRepository.findAll();
+
+        System.out.println("\nLista de usuarios:");
+        lista.forEach(u -> System.out.println(u.getNombre()));
+
+        // ---------- UPDATE ----------
+        Optional<Usuario> encontrado = usuarioRepository.findById(usuario.getId());
+
+        if(encontrado.isPresent()){
+            Usuario u = encontrado.get();
+            u.setNombre("Juan Actualizado");
+            usuarioRepository.save(u);
+            System.out.println("\nUsuario actualizado correctamente");
+        }
+
+        // ---------- DELETE ----------
+        usuarioRepository.deleteById(usuario.getId());
+
+        System.out.println("\nUsuario eliminado correctamente");
+
     }
 }
