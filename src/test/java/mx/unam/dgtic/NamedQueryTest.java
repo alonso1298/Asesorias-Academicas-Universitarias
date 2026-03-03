@@ -22,23 +22,25 @@ public class NamedQueryTest {
     @Test
     void testNamedQueries(){
         System.out.println(ALUMNO);
-
         // JPQL
         System.out.println("\nJPQL - Buscar por Especialidad:");
         profesorRepository.buscarPorEspecialidadJPQL(Especialidad.PROGRAMACION)
                 .forEach(p -> System.out.println(p.getNombre()));
 
         // JPQL
+        System.out.println(ALUMNO);
         System.out.println("\nJPQL - Buscar por Rol:");
         usuarioRepository.buscarPorRolJPQL(Rol.ALUMNO)
                 .forEach(u -> System.out.println(u.getNombre()));
 
         // Native
+        System.out.println(ALUMNO);
         System.out.println("\nSQL Nativo - Todos los profesores:");
         profesorRepository.buscarTodosNative()
                 .forEach(p -> System.out.println(p.getNombre()));
 
         // Native
+        System.out.println(ALUMNO);
         System.out.println("\nSQL Nativo - Buscar por Nombre:");
         profesorRepository.buscarPorNombreNative("Mario")
                 .forEach(p -> System.out.println(p.getNombre()));
