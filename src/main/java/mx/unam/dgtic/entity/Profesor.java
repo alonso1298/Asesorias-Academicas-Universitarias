@@ -11,7 +11,7 @@ import mx.unam.dgtic.enums.Especialidad;
         ),
         @NamedQuery(
                 name = "Profesor.buscarPorExperienciaJPQL",
-                query = "SELECT p FROM Profesor p WHERE p.experiencia LIKE %:exp%"
+                query = "SELECT p FROM Profesor p WHERE p.experiencia LIKE CONCAT('%', :exp, '%')"
         )
 })
 @NamedNativeQueries({

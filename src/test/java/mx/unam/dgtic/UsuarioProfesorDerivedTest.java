@@ -60,7 +60,7 @@ public class UsuarioProfesorDerivedTest {
         System.out.println("\n4️Top 3 usuarios ordenados por nombre ASC:");
         usuarioRepository.findTop3ByOrderByNombreAsc()
                 .forEach(u -> System.out.println(u.getNombre()));
-        
+
         // AND
         System.out.println("\n5️Profesor por nombre AND especialidad:");
         profesorRepository
