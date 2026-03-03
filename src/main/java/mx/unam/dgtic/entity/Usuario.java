@@ -1,16 +1,16 @@
 package mx.unam.dgtic.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import mx.unam.dgtic.enums.Rol;
 
+@NamedQuery(
+        name = "Usuario.buscarPorRolJPQL",
+        query = "SELECT u FROM Usuario u WHERE u.rol = :rol"
+)
 @Entity
 @Table(name = "usuario")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Usuario {
 
     @Id
