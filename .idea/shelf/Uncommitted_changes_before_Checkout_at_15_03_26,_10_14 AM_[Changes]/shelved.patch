@@ -1,0 +1,110 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"4d623036-421b-4cb6-bfca-58d23ef9ba92\" name=\"Changes\" comment=\"add principal\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/paginas/asesorias.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/paginas/asesorias.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/paginas/materias.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/paginas/materias.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/paginas/plantillas/alumnos.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/paginas/alumnos.html\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/paginas/plantillas/alumnos.html\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"HTML File\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"Modulo5\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;alonso1298&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/alonso1298/Asesorias-Academicas-Universitarias.git&quot;,\n    &quot;accountId&quot;: &quot;71f50dad-96ea-49be-b2ae-476fe7caad0b&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 6\n}</component>\n  <component name=\"ProjectId\" id=\"35d4epQXGIPcTrTgCzjknvF2Pse\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.AauApplication.executor&quot;: &quot;Run&quot;,\n    &quot;Application.Inicio.executor&quot;: &quot;Run&quot;,\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\n    &quot;Maven.ApplicationContext [clean].executor&quot;: &quot;Run&quot;,\n    &quot;Maven.ApplicationContext [compile].executor&quot;: &quot;Run&quot;,\n    &quot;Maven.ApplicationContext [install].executor&quot;: &quot;Run&quot;,\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;Modulo7&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/alonsosagrero/Documents/AAU/src/main/resources/paginas&quot;,\n    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/Main.java&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/resources/paginas\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/static\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources/static/bootstrap\" />\n      <recent name=\"$PROJECT_DIR$/src/main/resources\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/main/resources/paginas\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.AauApplication\">\n    <configuration name=\"AauApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"mx.unam.aau.AauApplication\" />\n      <module name=\"aau\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"mx.unam.aau.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Inicio\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"mx.unam.dgtic.inicio.Inicio\" />\n      <module name=\"AAU\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"mx.unam.dgtic.inicio.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.AauApplication\" />\n        <item itemvalue=\"Application.Inicio\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"4d623036-421b-4cb6-bfca-58d23ef9ba92\" name=\"Changes\" comment=\"\" />\n      <created>1763426713015</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1763426713015</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"add ConexionDB\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763429791586</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763429791586</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add InterfazDAO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763429813728</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763429813728</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"add model Materia\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763429826326</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763429826326</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"add driver MySQL\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763429849244</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763429849244</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"add getters y setters\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763432114787</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763432114787</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"add refactor\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763432132769</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763432132769</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Rename\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763438895945</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763438895945</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Refactor\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763438906112</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763438906112</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Add DAO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763438915787</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763438915787</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Add DAO\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763438926539</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763438926539</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"Rename\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763439234884</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763439234884</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"Universioned\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1763439471866</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1763439471866</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"Refactor\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1769661229317</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1769661229317</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"Add DiagramaUML.png\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1769661247014</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1769661247014</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"ADD CONFIGURATION\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771985563663</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771985563663</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"add paginas\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771985631080</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771985631080</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"refactor\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771985645231</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771985645231</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"adapppter\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771986291944</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771986291944</updated>\n    </task>\n    <task id=\"LOCAL-00019\" summary=\"Add views\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771987203532</created>\n      <option name=\"number\" value=\"00019\" />\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771987203532</updated>\n    </task>\n    <task id=\"LOCAL-00020\" summary=\"add controllers\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771988178271</created>\n      <option name=\"number\" value=\"00020\" />\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771988178271</updated>\n    </task>\n    <task id=\"LOCAL-00021\" summary=\"add principal\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771988437799</created>\n      <option name=\"number\" value=\"00021\" />\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771988437799</updated>\n    </task>\n    <task id=\"LOCAL-00022\" summary=\"add principal\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1771988453852</created>\n      <option name=\"number\" value=\"00022\" />\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1771988453852</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"23\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"add ConexionDB\" />\n    <MESSAGE value=\"add InterfazDAO\" />\n    <MESSAGE value=\"add model Materia\" />\n    <MESSAGE value=\"add driver MySQL\" />\n    <MESSAGE value=\"add getters y setters\" />\n    <MESSAGE value=\"add refactor\" />\n    <MESSAGE value=\"Add DAO\" />\n    <MESSAGE value=\"Rename\" />\n    <MESSAGE value=\"Universioned\" />\n    <MESSAGE value=\"Refactor\" />\n    <MESSAGE value=\"Add DiagramaUML.png\" />\n    <MESSAGE value=\"ADD CONFIGURATION\" />\n    <MESSAGE value=\"add paginas\" />\n    <MESSAGE value=\"refactor\" />\n    <MESSAGE value=\"adapppter\" />\n    <MESSAGE value=\"Add views\" />\n    <MESSAGE value=\"add controllers\" />\n    <MESSAGE value=\"add principal\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"add principal\" />\n  </component>\n</project>
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 98c2df96a1969e557692fff79082bf36ee4bf89e)
++++ b/.idea/workspace.xml	(date 1773591144094)
+@@ -89,37 +89,91 @@
+       <recent name="$PROJECT_DIR$/src/main/resources/paginas" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.AauApplication">
+-    <configuration name="AauApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="mx.unam.aau.AauApplication" />
++  <component name="RunManager" selected="JUnit.PaginacionTest">
++    <configuration name="NamedQueryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="aau" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="mx.unam.dgtic.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="mx.unam.dgtic" />
++      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.NamedQueryTest" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="PaginacionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="aau" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="mx.unam.aau.*" />
++          <option name="PATTERN" value="mx.unam.dgtic.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
++      <option name="PACKAGE_NAME" value="mx.unam.dgtic" />
++      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.PaginacionTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Inicio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.inicio.Inicio" />
+-      <module name="AAU" />
++    <configuration name="UsuarioProfesorDerivedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="aau" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="mx.unam.dgtic.inicio.*" />
++          <option name="PATTERN" value="mx.unam.dgtic.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
++      <option name="PACKAGE_NAME" value="mx.unam.dgtic" />
++      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.UsuarioProfesorDerivedTest" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="UsuarioProfesorDerivedTest.TestConsultasDerivadas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="aau" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="mx.unam.dgtic.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="mx.unam.dgtic" />
++      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.UsuarioProfesorDerivedTest" />
++      <option name="METHOD_NAME" value="TestConsultasDerivadas" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="UsuarioRepositoryTest.guardarUsuarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="aau" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="mx.unam.dgtic.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="mx.unam.dgtic" />
++      <option name="MAIN_CLASS_NAME" value="mx.unam.dgtic.UsuarioRepositoryTest" />
++      <option name="METHOD_NAME" value="guardarUsuarioTest" />
++      <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.AauApplication" />
+-        <item itemvalue="Application.Inicio" />
++        <item itemvalue="JUnit.UsuarioRepositoryTest.guardarUsuarioTest" />
++        <item itemvalue="JUnit.UsuarioProfesorDerivedTest.TestConsultasDerivadas" />
++        <item itemvalue="JUnit.UsuarioProfesorDerivedTest" />
++        <item itemvalue="JUnit.PaginacionTest" />
++        <item itemvalue="JUnit.NamedQueryTest" />
+       </list>
+     </recent_temporary>
+   </component>
