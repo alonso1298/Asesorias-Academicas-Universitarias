@@ -14,7 +14,7 @@ import lombok.Setter;
 public class Alumno {
     @Id
     @Column(name = "id")
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAlumno;
     private String matricula;
     private String carrera;
