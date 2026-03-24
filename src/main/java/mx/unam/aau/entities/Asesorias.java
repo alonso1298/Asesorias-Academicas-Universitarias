@@ -20,13 +20,17 @@ public class Asesorias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
+    @JoinColumn(name = "alumno_id", nullable = false)
     private Alumno alumno;
 
     @ManyToOne
+    @JoinColumn(name = "profesor_id", nullable = false)
     private Profesor profesor;
 
     @ManyToOne
+    @JoinColumn(name = "materia_id", nullable = false)
     private Materia materia;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

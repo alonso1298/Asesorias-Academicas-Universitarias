@@ -20,6 +20,7 @@ public class Profesor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProfesor;
     private String nombre;
+    @Column(name = "numero_empleado")
     private String numeroEmpleado;
     private String experiencia;
     @NotNull
