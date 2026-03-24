@@ -1,5 +1,11 @@
-/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/inicio/Inicio.java
-/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/modelo/Asesoria.java
-/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/modelo/Usuario.java
-/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/modelo/Materia.java
-/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/modelo/Profesor.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/AauApplication.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/controller/AlumnoController.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/controller/AsesoriaController.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/controller/HomeController.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/controller/MateriaController.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/controller/ProfesorController.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/entities/Alumno.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/entities/Asesorias.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/entities/Materia.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/entities/Profesor.java
+/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/aau/entities/Usuario.java

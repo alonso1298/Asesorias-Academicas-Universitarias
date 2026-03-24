@@ -1,5 +1,11 @@
-mx/unam/dgtic/modelo/Materia.class
-mx/unam/dgtic/modelo/Asesoria.class
-mx/unam/dgtic/modelo/Usuario.class
-mx/unam/dgtic/inicio/Inicio.class
-mx/unam/dgtic/modelo/Profesor.class
+mx/unam/aau/controller/AsesoriaController.class
+mx/unam/aau/entities/Profesor.class
+mx/unam/aau/entities/Asesorias.class
+mx/unam/aau/entities/Usuario.class
+mx/unam/aau/controller/MateriaController.class
+mx/unam/aau/controller/HomeController.class
+mx/unam/aau/controller/ProfesorController.class
+mx/unam/aau/AauApplication.class
+mx/unam/aau/controller/AlumnoController.class
+mx/unam/aau/entities/Materia.class
+mx/unam/aau/entities/Alumno.class

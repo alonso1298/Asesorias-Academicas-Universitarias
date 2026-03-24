@@ -4,52 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="add principal">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SQL/diagramaDDL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" afterDir="false" />
+    <list default="true" id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SQL/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/SQL/schema.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="HTML File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Modulo5" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;alonso1298&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "alonso1298"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/alonso1298/Asesorias-Academicas-Universitarias.git&quot;,
-    &quot;accountId&quot;: &quot;71f50dad-96ea-49be-b2ae-476fe7caad0b&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/alonso1298/Asesorias-Academicas-Universitarias.git",
+    "accountId": "71f50dad-96ea-49be-b2ae-476fe7caad0b"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="35d4epQXGIPcTrTgCzjknvF2Pse" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="3BNAuQmJLG4Z6Y16BKoZ3IstMBD" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -57,39 +46,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AauApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Inicio.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven.ApplicationContext [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationContext [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ApplicationContext [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/alonsosagrero/Documents/AAU/src/main/resources/paginas&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/alonsosagrero/Documents/AAU/src/main/java/mx/unam/dgtic/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AauApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Develop",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/paginas" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/bootstrap" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/paginas" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunManager" selected="Application.AauApplication">
     <configuration name="AauApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mx.unam.aau.AauApplication" />
@@ -121,226 +89,19 @@
       <list>
         <item itemvalue="Application.AauApplication" />
         <item itemvalue="Application.Inicio" />
+        <item itemvalue="Application.AauApplication" />
+        <item itemvalue="Application.Inicio" />
       </list>
     </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4d623036-421b-4cb6-bfca-58d23ef9ba92" name="Changes" comment="" />
-      <created>1763426713015</created>
+      <changelist id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="" />
+      <created>1774319377029</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1763426713015</updated>
+      <updated>1774319377029</updated>
     </task>
-    <task id="LOCAL-00001" summary="add ConexionDB">
-      <option name="closed" value="true" />
-      <created>1763429791586</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1763429791586</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add InterfazDAO">
-      <option name="closed" value="true" />
-      <created>1763429813728</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1763429813728</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add model Materia">
-      <option name="closed" value="true" />
-      <created>1763429826326</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1763429826326</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add driver MySQL">
-      <option name="closed" value="true" />
-      <created>1763429849244</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1763429849244</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add getters y setters">
-      <option name="closed" value="true" />
-      <created>1763432114787</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1763432114787</updated>
-    </task>
-    <task id="LOCAL-00006" summary="add refactor">
-      <option name="closed" value="true" />
-      <created>1763432132769</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1763432132769</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Rename">
-      <option name="closed" value="true" />
-      <created>1763438895945</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1763438895945</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Refactor">
-      <option name="closed" value="true" />
-      <created>1763438906112</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1763438906112</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add DAO">
-      <option name="closed" value="true" />
-      <created>1763438915787</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1763438915787</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add DAO">
-      <option name="closed" value="true" />
-      <created>1763438926539</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1763438926539</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Rename">
-      <option name="closed" value="true" />
-      <created>1763439234884</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1763439234884</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Universioned">
-      <option name="closed" value="true" />
-      <created>1763439471866</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1763439471866</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Refactor">
-      <option name="closed" value="true" />
-      <created>1769661229317</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1769661229317</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add DiagramaUML.png">
-      <option name="closed" value="true" />
-      <created>1769661247014</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1769661247014</updated>
-    </task>
-    <task id="LOCAL-00015" summary="ADD CONFIGURATION">
-      <option name="closed" value="true" />
-      <created>1771985563663</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1771985563663</updated>
-    </task>
-    <task id="LOCAL-00016" summary="add paginas">
-      <option name="closed" value="true" />
-      <created>1771985631080</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1771985631080</updated>
-    </task>
-    <task id="LOCAL-00017" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1771985645231</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1771985645231</updated>
-    </task>
-    <task id="LOCAL-00018" summary="adapppter">
-      <option name="closed" value="true" />
-      <created>1771986291944</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1771986291944</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Add views">
-      <option name="closed" value="true" />
-      <created>1771987203532</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1771987203532</updated>
-    </task>
-    <task id="LOCAL-00020" summary="add controllers">
-      <option name="closed" value="true" />
-      <created>1771988178271</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1771988178271</updated>
-    </task>
-    <task id="LOCAL-00021" summary="add principal">
-      <option name="closed" value="true" />
-      <created>1771988437799</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1771988437799</updated>
-    </task>
-    <task id="LOCAL-00022" summary="add principal">
-      <option name="closed" value="true" />
-      <created>1771988453852</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1771988453852</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="add ConexionDB" />
-    <MESSAGE value="add InterfazDAO" />
-    <MESSAGE value="add model Materia" />
-    <MESSAGE value="add driver MySQL" />
-    <MESSAGE value="add getters y setters" />
-    <MESSAGE value="add refactor" />
-    <MESSAGE value="Add DAO" />
-    <MESSAGE value="Rename" />
-    <MESSAGE value="Universioned" />
-    <MESSAGE value="Refactor" />
-    <MESSAGE value="Add DiagramaUML.png" />
-    <MESSAGE value="ADD CONFIGURATION" />
-    <MESSAGE value="add paginas" />
-    <MESSAGE value="refactor" />
-    <MESSAGE value="adapppter" />
-    <MESSAGE value="Add views" />
-    <MESSAGE value="add controllers" />
-    <MESSAGE value="add principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="add principal" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mx/unam/dgtic/entities/Materia.java</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
