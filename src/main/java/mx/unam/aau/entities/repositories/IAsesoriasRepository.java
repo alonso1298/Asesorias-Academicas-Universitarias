@@ -1,23 +1,26 @@
 package mx.unam.aau.entities.repositories;
 
-import mx.unam.aau.entities.Asesorias;
+import mx.unam.aau.entities.Asesoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-public interface IAsesoriasRepository extends JpaRepository<Asesorias, Long> {
+public interface IAsesoriasRepository extends JpaRepository<Asesoria, Long> {
 
-    // Busca asesorias por alumno
-    List<Asesorias> findByAlumnoId(Long alumnoId);
+    // Busca asesorías por alumno
+    List<Asesoria> findByAlumnoId(Long alumnoId);
 
-    // Busca asesorias por profesor
-    List<Asesorias> findByProfesorId(Long profesorId);
+    // Busca asesorías por profesor
+    List<Asesoria> findByProfesorId(Long profesorId);
 
     // Busca por fecha
-    List<Asesorias> findByFecha(LocalDate fecha);
+    List<Asesoria> findByFecha(LocalDate fecha);
 
-    // Validacion para evitar duplicados
+    // Buscar por rango de fechas
+    List<Asesoria> findByFechaBetween(LocalDate inicio, LocalDate fin);
+
+    // Validación para evitar duplicados
     boolean existByProfesorIdAndFechaAndHora(Long profesorId, LocalDate fecha, LocalTime hora);
 }

@@ -15,7 +15,7 @@ import java.time.LocalTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Asesorias {
+public class Asesoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
