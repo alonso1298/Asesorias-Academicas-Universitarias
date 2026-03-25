@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/repositories/IAsesoriasRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Asesorias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Asesorias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.AauApplication">
+  <component name="RunManager" selected="Spring Boot.AauApplication">
     <configuration name="AauApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mx.unam.aau.AauApplication" />
       <module name="aau" />
@@ -94,13 +93,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AauApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="mi-proyecto-jpa" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="mx.unam.aau.AauApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mx.unam.aau.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AauApplication" />
         <item itemvalue="Application.Inicio" />
         <item itemvalue="Application.AauApplication" />
         <item itemvalue="Application.AauApplication" />
         <item itemvalue="Application.Inicio" />
-        <item itemvalue="Application.AauApplication" />
       </list>
     </recent_temporary>
   </component>
