@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/asesorias/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/AlumnoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/MateriaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/controller/ProfesorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/alumnos.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/asesorias.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/materias.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/plantillas/plantilla.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/principal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/paginas/profesores.html" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/asesorias/formulario.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
