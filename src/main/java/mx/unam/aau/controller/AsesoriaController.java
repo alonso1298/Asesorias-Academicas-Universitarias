@@ -73,4 +73,11 @@ public class AsesoriaController {
         return "asesorias/formulario";
     }
 
+    // Eliminar
+    @GetMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable Long id){
+        asesoriaService.eliminar(id);
+        return "redirect:/asesorias";
+    }
+
 }
