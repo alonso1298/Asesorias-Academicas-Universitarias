@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -43,4 +45,22 @@ public class AsesoriaController {
 
         return "asesorias/formulario";
     }
+
+    // Guardar
+    @PostMapping("/guardar")
+    public String guardar(@ModelAttribute Asesoria asesoria, Model model){
+        try {
+            asesoriaService.guardar(asesoria);
+            return "redirect:/asesorias";
+        }catch (Exception e){
+            // Se regresan datos del formulario
+            model.addAttribute("error", e.getMessage());
+            model.addAttribute("alumnos", alumnoService.listar());
+            model.addAttribute("profesores", profesorService.listar());
+            model.addAttribute("materias", materiaService.listar());
+            return "asesorias/formulario";
+        }
+    }
+
+    
 }
