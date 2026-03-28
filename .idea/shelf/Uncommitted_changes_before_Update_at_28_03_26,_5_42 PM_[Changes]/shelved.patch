@@ -1,0 +1,97 @@
+Index: src/main/java/mx/unam/aau/entities/Usuario.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mx.unam.aau.entities;\n\nimport com.fasterxml.jackson.databind.annotation.EnumNaming;\nimport jakarta.persistence.*;\nimport jakarta.validation.constraints.Email;\nimport lombok.AllArgsConstructor;\nimport lombok.Getter;\nimport lombok.NoArgsConstructor;\nimport lombok.Setter;\nimport mx.unam.aau.enums.Rol;\n\n@Entity\n@Getter\n@Setter\n@AllArgsConstructor\n@NoArgsConstructor\npublic class Usuario {\n\n    @Id\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long id;\n    private String nombre;\n    @Email\n    private String email;\n    private String password;\n    private Rol rol;\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/entities/Usuario.java b/src/main/java/mx/unam/aau/entities/Usuario.java
+--- a/src/main/java/mx/unam/aau/entities/Usuario.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/src/main/java/mx/unam/aau/entities/Usuario.java	(date 1774740832007)
+@@ -23,6 +23,7 @@
+     @Email
+     private String email;
+     private String password;
++    @Enumerated(EnumType.STRING)
+     private Rol rol;
+ 
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"35a3448f-f629-46ff-b8df-4c06602fb384\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n        <option value=\"Interface\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;alonso1298&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/alonso1298/Asesorias-Academicas-Universitarias.git&quot;,\n    &quot;accountId&quot;: &quot;71f50dad-96ea-49be-b2ae-476fe7caad0b&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"3BNAuQmJLG4Z6Y16BKoZ3IstMBD\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.AauApplication.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\n  }\n}</component>\n  <component name=\"RunManager\" selected=\"Application.AauApplication\">\n    <configuration name=\"AauApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"mx.unam.aau.AauApplication\" />\n      <module name=\"aau\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"mx.unam.aau.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Inicio\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"mx.unam.dgtic.inicio.Inicio\" />\n      <module name=\"AAU\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"mx.unam.dgtic.inicio.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.AauApplication\" />\n        <item itemvalue=\"Application.Inicio\" />\n        <item itemvalue=\"Application.AauApplication\" />\n        <item itemvalue=\"Application.Inicio\" />\n        <item itemvalue=\"Application.AauApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"35a3448f-f629-46ff-b8df-4c06602fb384\" name=\"Changes\" comment=\"\" />\n      <created>1774319377029</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1774319377029</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/.idea/workspace.xml	(date 1774741165545)
+@@ -6,9 +6,13 @@
+   <component name="ChangeListManager">
+     <list default="true" id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Alumno.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/enums/Rol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/enums/Rol.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Profesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Profesor.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Usuario.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/mx/unam/aau/enums/Rol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mx/unam/aau/enums/Rol.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: src/main/java/mx/unam/aau/entities/Alumno.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mx.unam.aau.entities;\n\nimport jakarta.persistence.*;\nimport lombok.AllArgsConstructor;\nimport lombok.Getter;\nimport lombok.NoArgsConstructor;\nimport lombok.Setter;\n\n@Entity\n@Getter\n@Setter\n@AllArgsConstructor\n@NoArgsConstructor\npublic class Alumno {\n    @Id\n    @Column(name = \"id\")\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long idAlumno;\n    private String matricula;\n    private String carrera;\n    private Integer semestre;\n    private String nombre;\n    @Column(name = \"usuario_id\")\n    private Usuario usuario;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/entities/Alumno.java b/src/main/java/mx/unam/aau/entities/Alumno.java
+--- a/src/main/java/mx/unam/aau/entities/Alumno.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/src/main/java/mx/unam/aau/entities/Alumno.java	(date 1774741165509)
+@@ -20,6 +20,7 @@
+     private String carrera;
+     private Integer semestre;
+     private String nombre;
+-    @Column(name = "usuario_id")
++    @ManyToOne
++    @JoinColumn(name = "usuario_id")
+     private Usuario usuario;
+ }
+Index: src/main/java/mx/unam/aau/entities/Profesor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mx.unam.aau.entities;\n\nimport jakarta.persistence.*;\nimport jakarta.validation.constraints.NotNull;\nimport lombok.AllArgsConstructor;\nimport lombok.Getter;\nimport lombok.NoArgsConstructor;\nimport lombok.Setter;\n\n@Entity\n@Getter\n@Setter\n@AllArgsConstructor\n@NoArgsConstructor\npublic class Profesor {\n    @Id\n    @Column(name = \"id\")\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\n    private Long idProfesor;\n    private String nombre;\n    @Column(name = \"numero_empleado\")\n    private String numeroEmpleado;\n    private String experiencia;\n    @NotNull\n    private String especialidad;\n    private Usuario usuario;\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/entities/Profesor.java b/src/main/java/mx/unam/aau/entities/Profesor.java
+--- a/src/main/java/mx/unam/aau/entities/Profesor.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/src/main/java/mx/unam/aau/entities/Profesor.java	(date 1774741131920)
+@@ -23,5 +23,7 @@
+     private String experiencia;
+     @NotNull
+     private String especialidad;
++    @ManyToOne
++    @JoinColumn(name = "usuario_id")
+     private Usuario usuario;
+ }
+Index: src/main/java/mx/unam/aau/enums/Rol.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mx.unam.aau.enums;\n\npublic enum Rol {\n    ADMIN,\n    PROFESOR,\n    ALUNO\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/enums/Rol.java b/src/main/java/mx/unam/aau/enums/Rol.java
+--- a/src/main/java/mx/unam/aau/enums/Rol.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/src/main/java/mx/unam/aau/enums/Rol.java	(date 1774740787871)
+@@ -3,5 +3,5 @@
+ public enum Rol {
+     ADMIN,
+     PROFESOR,
+-    ALUNO
++    ALUMNO
+ }

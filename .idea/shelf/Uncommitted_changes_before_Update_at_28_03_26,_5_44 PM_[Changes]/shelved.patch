@@ -1,0 +1,980 @@
+Index: src/main/java/mx/unam/aau/controller/MateriaController.java
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/controller/MateriaController.java b/src/main/java/mx/unam/aau/controller/MateriaController.java
+deleted file mode 100644
+--- a/src/main/java/mx/unam/aau/controller/MateriaController.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,14 +0,0 @@
+-package mx.unam.aau.controller;
+-
+-import org.springframework.stereotype.Controller;
+-import org.springframework.web.bind.annotation.GetMapping;
+-import org.springframework.web.bind.annotation.RequestMapping;
+-
+-@Controller
+-@RequestMapping("/materias")
+-public class MateriaController {
+-    @GetMapping
+-    public String materias(){
+-        return "materias";
+-    }
+-}
+Index: src/main/resources/paginas/materias.html
+===================================================================
+diff --git a/src/main/resources/paginas/materias.html b/src/main/resources/paginas/materias.html
+deleted file mode 100644
+--- a/src/main/resources/paginas/materias.html	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,22 +0,0 @@
+-<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org"
+-      lang="es">
+-
+-<head th:replace="~{plantillas/plantilla :: head}"></head>
+-
+-<body>
+-
+-<header th:replace="~{plantillas/plantilla :: header}"></header>
+-
+-<main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+-    <h1>Catálogo de Materias</h1>
+-    <p>
+-        En esta sección se consultan y administran las materias
+-        disponibles dentro del sistema.
+-    </p>
+-</main>
+-
+-<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+-
+-</body>
+-</html>
+\ No newline at end of file
+Index: src/main/resources/paginas/principal.html
+===================================================================
+diff --git a/src/main/resources/paginas/principal.html b/src/main/resources/paginas/principal.html
+deleted file mode 100644
+--- a/src/main/resources/paginas/principal.html	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,59 +0,0 @@
+-<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org"
+-      lang="es">
+-
+-<head th:replace="~{plantillas/plantilla :: head}"></head>
+-
+-<body>
+-
+-<header th:replace="~{plantillas/plantilla :: header}"></header>
+-
+-<main class="container mt-4">
+-
+-    <div class="text-center mb-4">
+-        <h1>Sistema de Asesorías Académicas Universitarias</h1>
+-        <p class="lead">
+-            Plataforma para la gestión de profesores, materias y asesorías académicas.
+-        </p>
+-    </div>
+-
+-    <div class="row text-center">
+-
+-        <div class="col-md-4 mb-3">
+-            <div class="card shadow">
+-                <div class="card-body">
+-                    <h5 class="card-title">Profesores</h5>
+-                    <p class="card-text">Administración de profesores registrados.</p>
+-                    <a th:href="@{/profesores}" class="btn btn-primary">Ir</a>
+-                </div>
+-            </div>
+-        </div>
+-
+-        <div class="col-md-4 mb-3">
+-            <div class="card shadow">
+-                <div class="card-body">
+-                    <h5 class="card-title">Materias</h5>
+-                    <p class="card-text">Consulta y gestión de materias.</p>
+-                    <a th:href="@{/materias}" class="btn btn-success">Ir</a>
+-                </div>
+-            </div>
+-        </div>
+-
+-        <div class="col-md-4 mb-3">
+-            <div class="card shadow">
+-                <div class="card-body">
+-                    <h5 class="card-title">Asesorías</h5>
+-                    <p class="card-text">Agendar y administrar asesorías.</p>
+-                    <a th:href="@{/asesorias}" class="btn btn-warning">Ir</a>
+-                </div>
+-            </div>
+-        </div>
+-
+-    </div>
+-
+-</main>
+-
+-<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+-
+-</body>
+-</html>
+\ No newline at end of file
+Index: src/main/java/mx/unam/aau/controller/ProfesorController.java
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/controller/ProfesorController.java b/src/main/java/mx/unam/aau/controller/ProfesorController.java
+deleted file mode 100644
+--- a/src/main/java/mx/unam/aau/controller/ProfesorController.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,14 +0,0 @@
+-package mx.unam.aau.controller;
+-
+-import org.springframework.stereotype.Controller;
+-import org.springframework.web.bind.annotation.GetMapping;
+-import org.springframework.web.bind.annotation.RequestMapping;
+-
+-@Controller
+-@RequestMapping("/profesores")
+-public class ProfesorController {
+-    @GetMapping
+-    public String profesores(){
+-        return "profesores";
+-    }
+-}
+Index: src/main/resources/paginas/alumnos.html
+===================================================================
+diff --git a/src/main/resources/paginas/alumnos.html b/src/main/resources/paginas/alumnos.html
+deleted file mode 100644
+--- a/src/main/resources/paginas/alumnos.html	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,22 +0,0 @@
+-<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org"
+-      lang="es">
+-
+-<head th:replace="~{plantillas/plantilla :: head}"></head>
+-
+-<body>
+-
+-<header th:replace="~{plantillas/plantilla :: header}"></header>
+-
+-<main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+-    <h1>Gestión de Alumnos</h1>
+-    <p>
+-        En esta sección se administran los alumnos registrados
+-        en el Sistema de Asesorías Académicas Universitarias.
+-    </p>
+-</main>
+-
+-<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+-
+-</body>
+-</html>
+\ No newline at end of file
+Index: src/main/resources/paginas/plantillas/plantilla.html
+===================================================================
+diff --git a/src/main/resources/paginas/plantillas/plantilla.html b/src/main/resources/paginas/plantillas/plantilla.html
+deleted file mode 100644
+--- a/src/main/resources/paginas/plantillas/plantilla.html	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,65 +0,0 @@
+-<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org"
+-      lang="es">
+-<head th:fragment="head">
+-    <meta charset="UTF-8">
+-    <title>Spring Thymeleaf</title>
+-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+-    <link th:href="@{/tema/miestilo.css}" rel="stylesheet">
+-</head>
+-<body>
+-<header th:fragment="header">
+-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+-        <div class="container-fluid">
+-            <a class="navbar-brand" href="#">Navbar</a>
+-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+-                <span class="navbar-toggler-icon"></span>
+-            </button>
+-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+-
+-                    <li class="nav-item">
+-                        <a class="nav-link" th:href="@{/}">Inicio</a>
+-                    </li>
+-
+-                    <li class="nav-item">
+-                        <a class="nav-link" th:href="@{/profesores}">Profesores</a>
+-                    </li>
+-
+-                    <li class="nav-item">
+-                        <a class="nav-link" th:href="@{/materias}">Materias</a>
+-                    </li>
+-
+-                    <li class="nav-item">
+-                        <a class="nav-link" th:href="@{/asesorias}">Asesorías</a>
+-                    </li>
+-
+-                    <li class="nav-item">
+-                        <a class="nav-link" th:href="@{/alumnos}">Alumnos</a>
+-                    </li>
+-                </ul>
+-                <form class="d-flex" role="search">
+-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+-                    <button class="btn btn-outline-success" type="submit">Search</button>
+-                </form>
+-            </div>
+-        </div>
+-    </nav>
+-    <div class="alert alert-success" th:if="${success !=null}" th:text=${success}></div>
+-    <div class="alert alert-danger" th:if="${error !=null}" th:text=${error}></div>
+-    <div class="alert alert-warning" th:if="${warning !=null}" th:text=${warning}></div>
+-    <div class="alert alert-info" th:if="${info !=null}" th:text=${info}></div>
+-</header>
+-<footer th:fragment="footer">
+-    <div class="container text-center">
+-        <br/> <img th:src="@{/image/logo.jpg}" height="200" width="200"/>
+-        <p>Dirección General de Cómputo y de Tecnologías de Información y Comunicación</p>
+-    </div>
+-    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+-    <script th:src="@{/bootstrap/js/jquery-3.6.3.js}"></script>
+-</footer>
+-</body>
+-
+-</html>
+\ No newline at end of file
+Index: src/main/resources/paginas/profesores.html
+===================================================================
+diff --git a/src/main/resources/paginas/profesores.html b/src/main/resources/paginas/profesores.html
+deleted file mode 100644
+--- a/src/main/resources/paginas/profesores.html	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,22 +0,0 @@
+-<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org"
+-      lang="es">
+-
+-<head th:replace="~{plantillas/plantilla :: head}"></head>
+-
+-<body>
+-
+-<header th:replace="~{plantillas/plantilla :: header}"></header>
+-
+-<main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+-    <h1>Gestión de Profesores</h1>
+-    <p>
+-        En esta sección se administran los profesores registrados
+-        en el Sistema de Asesorías Académicas Universitarias.
+-    </p>
+-</main>
+-
+-<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+-
+-</body>
+-</html>
+\ No newline at end of file
+Index: src/main/java/mx/unam/aau/controller/AlumnoController.java
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/controller/AlumnoController.java b/src/main/java/mx/unam/aau/controller/AlumnoController.java
+deleted file mode 100644
+--- a/src/main/java/mx/unam/aau/controller/AlumnoController.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,15 +0,0 @@
+-package mx.unam.aau.controller;
+-
+-import org.springframework.stereotype.Controller;
+-import org.springframework.web.bind.annotation.GetMapping;
+-import org.springframework.web.bind.annotation.RequestMapping;
+-
+-@Controller
+-@RequestMapping("/alumnos")
+-public class AlumnoController {
+-
+-    @GetMapping
+-    public String alumnos(){
+-        return "alumnos";
+-    }
+-}
+Index: src/main/java/mx/unam/aau/controller/HomeController.java
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/controller/HomeController.java b/src/main/java/mx/unam/aau/controller/HomeController.java
+deleted file mode 100644
+--- a/src/main/java/mx/unam/aau/controller/HomeController.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,14 +0,0 @@
+-package mx.unam.aau.controller;
+-
+-import org.springframework.stereotype.Controller;
+-import org.springframework.ui.Model;
+-import org.springframework.web.bind.annotation.GetMapping;
+-
+-@Controller
+-public class HomeController {
+-    @GetMapping("/")
+-    public String inicio(Model model) {
+-        model.addAttribute("contenido", "Bienvenido al Sistema AAU");
+-        return "principal";
+-    }
+-}
+Index: src/main/resources/paginas/asesorias.html
+===================================================================
+diff --git a/src/main/resources/paginas/asesorias.html b/src/main/resources/paginas/asesorias.html
+deleted file mode 100644
+--- a/src/main/resources/paginas/asesorias.html	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ /dev/null	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
+@@ -1,22 +0,0 @@
+-<!DOCTYPE html>
+-<html xmlns:th="http://www.thymeleaf.org"
+-      lang="es">
+-
+-<head th:replace="~{plantillas/plantilla :: head}"></head>
+-
+-<body>
+-
+-<header th:replace="~{plantillas/plantilla :: header}"></header>
+-
+-<main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+-    <h1>Gestión de Asesorías</h1>
+-    <p>
+-        En esta sección se pueden agendar y administrar
+-        asesorías académicas entre alumnos y profesores.
+-    </p>
+-</main>
+-
+-<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+-
+-</body>
+-</html>
+\ No newline at end of file
+Index: src/main/resources/templates/asesorias/lista.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/asesorias/lista.html b/src/main/resources/templates/asesorias/lista.html
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/resources/templates/asesorias/lista.html	(date 1774741366860)
+@@ -0,0 +1,44 @@
++<!DOCTYPE html>
++<html   xmlns:th="http://www.thymeleaf.org"
++        lang="es">
++<head>
++    <title>Lista de Asesorías</title>
++</head>
++<body>
++
++    <h1>Lista de Asesorías</h1>
++
++    <a th:href="@{/asesorias/nuevo}">Nueva asesoria</a>
++    <table border="1">
++        <thead>
++            <tr>
++                <th>ID</th>
++                <th>Alumno</th>
++                <th>Profesor</th>
++                <th>Materia</th>
++                <th>Fecha</th>
++                <th>Hora</th>
++                <th>Estado</th>
++                <th>Acciones</th>
++            </tr>
++        </thead>
++        <tbody>
++            <tr th:each="a : ${asesorias}">
++                <td th:text="${a.id}"></td>
++                <td th:text="${a.alumno.matricula}"></td>
++                <td th:text="${a.profesor.nombre}"></td>
++                <td th:text="${a.materia.nombre}"></td>
++                <td th:text="${a.fecha}"></td>
++                <td th:text="${a.hora}"></td>
++                <td th:text="${a.estado}"></td>
++                <td>
++                    <a th:href="@{'/asesorias/editar/' + ${a.id}}">Editar</a>
++                    <a th:href="@{'/asesorias/eliminar/' + ${a.id}}"
++                        onclick="return confirm('Seguro que deseas eliminar?')">Eliminar</a>
++                </td>
++            </tr>
++        </tbody>
++    </table>
++
++</body>
++</html>
+Index: src/main/resources/templates/asesorias/formulario.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/asesorias/formulario.html b/src/main/resources/templates/asesorias/formulario.html
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/resources/templates/asesorias/formulario.html	(date 1774741366860)
+@@ -0,0 +1,98 @@
++<!DOCTYPE html>
++<html xmlns:th="http://www.thymeleaf.org">
++<head>
++    <title>Formulario Asesoría</title>
++</head>
++<body>
++
++<h1>Registrar / Editar Asesoría</h1>
++
++<!-- 🔥 MENSAJE DE ERROR -->
++<div th:if="${error}" style="color:red;">
++    <p th:text="${error}"></p>
++</div>
++
++<form th:action="@{/asesorias/guardar}" th:object="${asesoria}" method="post">
++
++    <input type="hidden" th:field="*{id}"/>
++
++    <!-- ALUMNO -->
++    <label>Alumno:</label>
++    <label>
++        <select th:field="*{alumno}" required>
++            <option value="">Seleccione</option>
++            <option th:each="a : ${alumnos}"
++                    th:value="${a.id}"
++                    th:text="${a.matricula}">
++            </option>
++        </select>
++    </label>
++    <br><br>
++
++    <!-- PROFESOR -->
++    <label>Profesor:</label>
++    <label>
++        <select th:field="*{profesor}" required>
++            <option value="">Seleccione</option>
++            <option th:each="p : ${profesores}"
++                    th:value="${p.id}"
++                    th:text="${p.nombre}">
++            </option>
++        </select>
++    </label>
++    <br><br>
++
++    <!-- MATERIA -->
++    <label>Materia:</label>
++    <label>
++        <select th:field="*{materia}" required>
++            <option value="">Seleccione</option>
++            <option th:each="m : ${materias}"
++                    th:value="${m.id}"
++                    th:text="${m.nombre}">
++            </option>
++        </select>
++    </label>
++    <br><br>
++
++    <!-- FECHA -->
++    <label>Fecha:</label>
++    <label>
++        <input type="date" th:field="*{fecha}" required/>
++    </label>
++    <br><br>
++
++    <!-- HORA -->
++    <label>Hora:</label>
++    <label>
++        <input type="time" th:field="*{hora}" required/>
++    </label>
++    <br><br>
++
++    <!-- ESTADO -->
++    <label>Estado:</label>
++    <label>
++        <select th:field="*{estado}">
++            <option value="pendiente">Pendiente</option>
++            <option value="confirmada">Confirmada</option>
++            <option value="completada">Completada</option>
++            <option value="cancelada">Cancelada</option>
++        </select>
++    </label>
++    <br><br>
++
++    <!-- NOTAS -->
++    <label>Notas:</label>
++    <label>
++        <textarea th:field="*{notas}"></textarea>
++    </label>
++    <br><br>
++
++    <button type="submit">Guardar</button>
++</form>
++
++<br>
++<a th:href="@{/asesorias}">Volver</a>
++
++</body>
++</html>
+\ No newline at end of file
+Index: src/main/java/mx/unam/aau/entities/Asesorias.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/entities/Asesorias.java b/src/main/java/mx/unam/aau/entities/Asesoria.java
+rename from src/main/java/mx/unam/aau/entities/Asesorias.java
+rename to src/main/java/mx/unam/aau/entities/Asesoria.java
+--- a/src/main/java/mx/unam/aau/entities/Asesorias.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/src/main/java/mx/unam/aau/entities/Asesoria.java	(date 1774741366860)
+@@ -15,7 +15,7 @@
+ @Setter
+ @AllArgsConstructor
+ @NoArgsConstructor
+-public class Asesorias {
++public class Asesoria {
+ 
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+Index: src/main/java/mx/unam/aau/service/AsesoriaService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/service/AsesoriaService.java b/src/main/java/mx/unam/aau/service/AsesoriaService.java
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/java/mx/unam/aau/service/AsesoriaService.java	(date 1774741366860)
+@@ -0,0 +1,78 @@
++package mx.unam.aau.service;
++
++import mx.unam.aau.entities.Asesoria;
++import mx.unam.aau.entities.repositories.IAsesoriasRepository;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
++import java.time.LocalDate;
++import java.util.List;
++
++@Service
++public class AsesoriaService {
++
++    @Autowired
++    private IAsesoriasRepository asesoriasRepository;
++
++    // Listar
++    public List<Asesoria> listar(){
++        return asesoriasRepository.findAll();
++    }
++
++    // Buscar por ID
++    public Asesoria buscarPorId(Long id){
++        return asesoriasRepository.findById(id).orElse(null);
++    }
++
++    // Guardar
++    public Asesoria guardar(Asesoria asesoria){
++
++        // Valida fecha pasada
++        if (asesoria.getFecha().isBefore(LocalDate.now())){
++            throw new RuntimeException("No puedes agendar en una fecha pasada");
++        }
++
++        // Valida hora nula
++        if (asesoria.getHora() == null){
++            throw new RuntimeException("La hora es obligatoria");
++        }
++
++        // Valida alumno/profesor/materia
++        if (asesoria.getAlumno() == null){
++            throw new RuntimeException("Debe seleccionar un alumno");
++        }
++
++        if (asesoria.getProfesor() == null){
++            throw new RuntimeException("Debe seleccionar un profesor");
++        }
++
++        if (asesoria.getMateria() == null){
++            throw new RuntimeException("Debe seleccionar una materia");
++        }
++
++        // Valida duplicidad
++        boolean existe = asesoriasRepository.existByProfesorIdAndFechaAndHora(
++                asesoria.getProfesor().getIdProfesor(),
++                asesoria.getFecha(),
++                asesoria.getHora()
++        );
++
++        if (existe){
++            throw new RuntimeException("El profesor ya tiene una asesoria en ese horario");
++        }
++
++        // Estado por defecto
++        if (asesoria.getEstado() == null){
++            asesoria.setEstado("pendiente");
++        }
++
++        return asesoriasRepository.save(asesoria);
++
++    }
++
++    // Eliminar
++    public void eliminar(Long id){
++        asesoriasRepository.deleteById(id);
++    }
++
++}
+Index: src/main/java/mx/unam/aau/service/MateriaService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/service/MateriaService.java b/src/main/java/mx/unam/aau/service/MateriaService.java
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/java/mx/unam/aau/service/MateriaService.java	(date 1774741366860)
+@@ -0,0 +1,19 @@
++package mx.unam.aau.service;
++
++import mx.unam.aau.entities.Materia;
++import mx.unam.aau.entities.repositories.IMateriaRepository;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
++import java.util.List;
++
++@Service
++public class MateriaService {
++
++    @Autowired
++    private IMateriaRepository materiaRepository;
++
++    public List<Materia> listar(){
++        return materiaRepository.findAll();
++    }
++}
+Index: src/main/java/mx/unam/aau/entities/repositories/IAsesoriasRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/entities/repositories/IAsesoriasRepository.java b/src/main/java/mx/unam/aau/entities/repositories/IAsesoriasRepository.java
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/java/mx/unam/aau/entities/repositories/IAsesoriasRepository.java	(date 1774741366860)
+@@ -0,0 +1,26 @@
++package mx.unam.aau.entities.repositories;
++
++import mx.unam.aau.entities.Asesoria;
++import org.springframework.data.jpa.repository.JpaRepository;
++
++import java.time.LocalDate;
++import java.time.LocalTime;
++import java.util.List;
++
++public interface IAsesoriasRepository extends JpaRepository<Asesoria, Long> {
++
++    // Busca asesorías por alumno
++    List<Asesoria> findByAlumnoId(Long alumnoId);
++
++    // Busca asesorías por profesor
++    List<Asesoria> findByProfesorId(Long profesorId);
++
++    // Busca por fecha
++    List<Asesoria> findByFecha(LocalDate fecha);
++
++    // Buscar por rango de fechas
++    List<Asesoria> findByFechaBetween(LocalDate inicio, LocalDate fin);
++
++    // Validación para evitar duplicados
++    boolean existByProfesorIdAndFechaAndHora(Long profesorId, LocalDate fecha, LocalTime hora);
++}
+Index: src/main/java/mx/unam/aau/service/ProfesorService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/service/ProfesorService.java b/src/main/java/mx/unam/aau/service/ProfesorService.java
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/java/mx/unam/aau/service/ProfesorService.java	(date 1774741366860)
+@@ -0,0 +1,19 @@
++package mx.unam.aau.service;
++
++import mx.unam.aau.entities.Profesor;
++import mx.unam.aau.entities.repositories.IProfesorRepository;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
++import java.util.List;
++
++@Service
++public class ProfesorService {
++
++    @Autowired
++    private IProfesorRepository profesorRepository;
++
++    public List<Profesor> listar(){
++        return profesorRepository.findAll();
++    }
++}
+Index: src/main/java/mx/unam/aau/controller/AsesoriaController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package mx.unam.aau.controller;\n\nimport org.springframework.stereotype.Controller;\nimport org.springframework.web.bind.annotation.GetMapping;\nimport org.springframework.web.bind.annotation.RequestMapping;\n\n@Controller\n@RequestMapping(\"/asesorias\")\npublic class AsesoriaController {\n    @GetMapping\n    public String asesorias(){\n        return \"asesorias\";\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/controller/AsesoriaController.java b/src/main/java/mx/unam/aau/controller/AsesoriaController.java
+--- a/src/main/java/mx/unam/aau/controller/AsesoriaController.java	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/src/main/java/mx/unam/aau/controller/AsesoriaController.java	(date 1774741366860)
+@@ -1,14 +1,83 @@
+ package mx.unam.aau.controller;
+ 
++import mx.unam.aau.entities.Asesoria;
++import mx.unam.aau.entities.repositories.IAlumnoRepository;
++import mx.unam.aau.entities.repositories.IAsesoriasRepository;
++import mx.unam.aau.entities.repositories.IMateriaRepository;
++import mx.unam.aau.entities.repositories.IProfesorRepository;
++import mx.unam.aau.service.AlumnoService;
++import mx.unam.aau.service.AsesoriaService;
++import mx.unam.aau.service.MateriaService;
++import mx.unam.aau.service.ProfesorService;
++import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Controller;
+-import org.springframework.web.bind.annotation.GetMapping;
+-import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.*;
+ 
+ @Controller
+ @RequestMapping("/asesorias")
+ public class AsesoriaController {
++
++    @Autowired
++    private AsesoriaService asesoriaService;
++
++    @Autowired
++    private AlumnoService alumnoService;
++
++    @Autowired
++    private ProfesorService profesorService;
++
++    @Autowired
++    private MateriaService materiaService;
++
++    // Lista
+     @GetMapping
+-    public String asesorias(){
+-        return "asesorias";
++    public String listar(Model model){
++        model.addAttribute("asesorias", new Asesoria());
++
++        // selects
++        model.addAttribute("alumnos", alumnoService.listar());
++        model.addAttribute("profesores", profesorService.listar());
++        model.addAttribute("materias", materiaService.listar());
++
++        return "asesorias/formulario";
++    }
++
++    // Guardar
++    @PostMapping("/guardar")
++    public String guardar(@ModelAttribute Asesoria asesoria, Model model){
++        try {
++            asesoriaService.guardar(asesoria);
++            return "redirect:/asesorias";
++        }catch (Exception e){
++            // Se regresan datos del formulario
++            model.addAttribute("error", e.getMessage());
++            model.addAttribute("alumnos", alumnoService.listar());
++            model.addAttribute("profesores", profesorService.listar());
++            model.addAttribute("materias", materiaService.listar());
++            return "asesorias/formulario";
++        }
++    }
++
++    // Editar
++    @GetMapping("/editar/{id}")
++    public String editar(@PathVariable Long id, Model model){
++
++        Asesoria asesoria = asesoriaService.buscarPorId(id);
++
++        model.addAttribute("asesoria", asesoria);
++        model.addAttribute("alumnos", alumnoService.listar());
++        model.addAttribute("profesores", profesorService.listar());
++        model.addAttribute("materias", materiaService.listar());
++
++        return "asesorias/formulario";
+     }
++
++    // Eliminar
++    @GetMapping("/eliminar/{id}")
++    public String eliminar(@PathVariable Long id){
++        asesoriaService.eliminar(id);
++        return "redirect:/asesorias";
++    }
++
+ }
+Index: src/main/java/mx/unam/aau/service/AlumnoService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/mx/unam/aau/service/AlumnoService.java b/src/main/java/mx/unam/aau/service/AlumnoService.java
+new file mode 100644
+--- /dev/null	(date 1774741366860)
++++ b/src/main/java/mx/unam/aau/service/AlumnoService.java	(date 1774741366860)
+@@ -0,0 +1,19 @@
++package mx.unam.aau.service;
++
++import mx.unam.aau.entities.Alumno;
++import mx.unam.aau.entities.repositories.IAlumnoRepository;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++
++import java.util.List;
++
++@Service
++public class AlumnoService {
++
++    @Autowired
++    private IAlumnoRepository alumnoRepository;
++
++    public List<Alumno> listar(){
++        return alumnoRepository.findAll();
++    }
++}
+Index: .vscode/settings.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.vscode/settings.json b/.vscode/settings.json
+new file mode 100644
+--- /dev/null	(date 1774741366859)
++++ b/.vscode/settings.json	(date 1774741366859)
+@@ -0,0 +1,3 @@
++{
++    "java.dependency.packagePresentation": "hierarchical"
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"35a3448f-f629-46ff-b8df-4c06602fb384\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n        <option value=\"Interface\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;alonso1298&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/alonso1298/Asesorias-Academicas-Universitarias.git&quot;,\n    &quot;accountId&quot;: &quot;71f50dad-96ea-49be-b2ae-476fe7caad0b&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 2\n}</component>\n  <component name=\"ProjectId\" id=\"3BNAuQmJLG4Z6Y16BKoZ3IstMBD\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.AauApplication.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\n  }\n}</component>\n  <component name=\"RunManager\" selected=\"Application.AauApplication\">\n    <configuration name=\"AauApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"mx.unam.aau.AauApplication\" />\n      <module name=\"aau\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"mx.unam.aau.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Inicio\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"mx.unam.dgtic.inicio.Inicio\" />\n      <module name=\"AAU\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"mx.unam.dgtic.inicio.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.AauApplication\" />\n        <item itemvalue=\"Application.Inicio\" />\n        <item itemvalue=\"Application.AauApplication\" />\n        <item itemvalue=\"Application.Inicio\" />\n        <item itemvalue=\"Application.AauApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"35a3448f-f629-46ff-b8df-4c06602fb384\" name=\"Changes\" comment=\"\" />\n      <created>1774319377029</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1774319377029</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/.idea/workspace.xml	(date 1774741461079)
+@@ -5,10 +5,7 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/asesorias/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/asesorias/formulario.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -19,8 +16,9 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Enum" />
+-        <option value="Class" />
+         <option value="Interface" />
++        <option value="Class" />
++        <option value="HTML File" />
+       </list>
+     </option>
+   </component>
+@@ -58,8 +56,10 @@
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+     &quot;Application.AauApplication.executor&quot;: &quot;Run&quot;,
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;Spring Boot.AauApplication.executor&quot;: &quot;Run&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+@@ -87,6 +87,20 @@
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="mx.unam.dgtic.inicio.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="AauApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
++      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
++      <module name="mi-proyecto-jpa" />
++      <option name="SPRING_BOOT_MAIN_CLASS" value="mx.unam.aau.AauApplication" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="mx.unam.aau.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -96,13 +110,19 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.AauApplication" />
+         <item itemvalue="Application.Inicio" />
+         <item itemvalue="Application.AauApplication" />
+-        <item itemvalue="Application.Inicio" />
+         <item itemvalue="Application.AauApplication" />
++        <item itemvalue="Application.Inicio" />
+       </list>
+     </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
++      </set>
++    </attachedChunks>
+   </component>
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile default=\"true\" name=\"Default\" enabled=\"true\" />\n      <profile name=\"Annotation profile for aau\" enabled=\"true\">\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\n        <outputRelativeToContentRoot value=\"true\" />\n        <processorPath useClasspath=\"false\">\n          <entry name=\"$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar\" />\n        </processorPath>\n        <module name=\"aau\" />\n      </profile>\n    </annotationProcessing>\n  </component>\n  <component name=\"JavacSettings\">\n    <option name=\"ADDITIONAL_OPTIONS_OVERRIDE\">\n      <module name=\"aau\" options=\"-parameters\" />\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 1a2d5ad5266a549af81ffe932161a98c70e22b87)
++++ b/.idea/compiler.xml	(date 1774741366859)
+@@ -11,12 +11,14 @@
+           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+         </processorPath>
+         <module name="aau" />
++        <module name="mi-proyecto-jpa" />
+       </profile>
+     </annotationProcessing>
+   </component>
+   <component name="JavacSettings">
+     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+       <module name="aau" options="-parameters" />
++      <module name="mi-proyecto-jpa" options="-parameters" />
+     </option>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1774741366859)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1774741366859)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
++  </profile>
++</component>
+\ No newline at end of file
