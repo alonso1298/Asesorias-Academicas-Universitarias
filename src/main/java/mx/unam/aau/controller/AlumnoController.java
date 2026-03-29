@@ -10,6 +10,6 @@ public class AlumnoController {
 
     @GetMapping
     public String alumnos(){
-        return "alumnos";
+        return "paginas/alumnos";
     }
 }

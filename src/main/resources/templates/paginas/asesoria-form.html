@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html   xmlns:th="http://www.thymeleaf.org"
         lang="es">
-<head th:replace="~{plantillas/plantilla :: head}"></head>
+<head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
 <body>
 <form th:action="@{/asesorias/guardar}" th:object="${asesoria}" method="post">
 
@@ -17,7 +17,7 @@
             <option value="">Seleccione</option>
             <option th:each="a : ${alumnos}"
                     th:value="${a.id}"
-                    th:text="${a.nombre}">
+                    th:text="${a.usuario.nombre}">
             </option>
         </select>
     </div>
