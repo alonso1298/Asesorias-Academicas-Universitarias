@@ -1,8 +1,6 @@
 package mx.unam.aau.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +14,9 @@ import mx.unam.aau.enums.Rol;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Usuario {
-
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     @Email

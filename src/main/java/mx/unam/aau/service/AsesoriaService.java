@@ -51,7 +51,7 @@ public class AsesoriaService {
         }
 
         // Valida duplicidad
-        boolean existe = asesoriasRepository.existByProfesorIdAndFechaAndHora(
+        boolean existe = asesoriasRepository.existsByProfesorIdProfesorAndFechaAndHora(
                 asesoria.getProfesor().getIdProfesor(),
                 asesoria.getFecha(),
                 asesoria.getHora()

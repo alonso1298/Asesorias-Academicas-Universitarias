@@ -10,10 +10,10 @@ import java.util.List;
 public interface IAsesoriasRepository extends JpaRepository<Asesoria, Long> {
 
     // Busca asesorías por alumno
-    List<Asesoria> findByAlumnoId(Long alumnoId);
+    List<Asesoria> findByAlumnoIdAlumno(Long alumnoId);
 
     // Busca asesorías por profesor
-    List<Asesoria> findByProfesorId(Long profesorId);
+    List<Asesoria> findByProfesorIdProfesor(Long profesorId);
 
     // Busca por fecha
     List<Asesoria> findByFecha(LocalDate fecha);
@@ -22,5 +22,5 @@ public interface IAsesoriasRepository extends JpaRepository<Asesoria, Long> {
     List<Asesoria> findByFechaBetween(LocalDate inicio, LocalDate fin);
 
     // Validación para evitar duplicados
-    boolean existByProfesorIdAndFechaAndHora(Long profesorId, LocalDate fecha, LocalTime hora);
+    boolean existsByProfesorIdProfesorAndFechaAndHora(Long profesorId, LocalDate fecha, LocalTime hora);
 }
