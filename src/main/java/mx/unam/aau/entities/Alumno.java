@@ -19,8 +19,8 @@ public class Alumno {
     private String matricula;
     private String carrera;
     private Integer semestre;
-    private String nombre;
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @OneToOne
+    @MapsId // Comparte el mismo ID
+    @JoinColumn(name = "id")
     private Usuario usuario;
 }

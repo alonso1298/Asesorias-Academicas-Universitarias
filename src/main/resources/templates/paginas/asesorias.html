@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+<head th:replace="~{plantillas/plantilla :: head}"></head>
+
+<body>
+
+<header th:replace="~{plantillas/plantilla :: header}"></header>
+
+<main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de Asesorías</h2>
+        <a th:href="@{/asesorias/nuevo}" class="btn btn-primary">Nueva Asesoría</a>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>Alumno</th>
+            <th>Profesor</th>
+            <th>Materia</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="a : ${asesorias}">
+            <td th:text="${a.alumno.nombre}"></td>
+            <td th:text="${a.profesor.nombre}"></td>
+            <td th:text="${a.materia.nombre}"></td>
+            <td th:text="${a.fecha}"></td>
+            <td th:text="${a.hora}"></td>
+
+            <td>
+                <a th:href="@{/asesorias/editar/{id}(id=${a.id})}" class="btn btn-warning btn-sm">Editar</a>
+                <a th:href="@{/asesorias/eliminar/{id}(id=${a.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer th:replace="~{plantillas/plantilla :: footer}"></footer>
+
+</body>
+</html>

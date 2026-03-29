@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org"
+        lang="es">
+<head th:replace="~{plantillas/plantilla :: head}"></head>
+<body>
+<form th:action="@{/asesorias/guardar}" th:object="${asesoria}" method="post">
+
+    <!-- ERROR -->
+    <div th:if="${error}" class="alert alert-danger">
+        <span th:text="${error}"></span>
+    </div>
+
+    <!-- ALUMNO -->
+    <div class="mb-3">
+        <label>Alumno</label>
+        <select th:field="*{alumno}" class="form-control">
+            <option value="">Seleccione</option>
+            <option th:each="a : ${alumnos}"
+                    th:value="${a.id}"
+                    th:text="${a.nombre}">
+            </option>
+        </select>
+    </div>
+
+    <!-- PROFESOR -->
+    <div class="mb-3">
+        <label>Profesor</label>
+        <select th:field="*{profesor}" class="form-control">
+            <option value="">Seleccione</option>
+            <option th:each="p : ${profesores}"
+                    th:value="${p.id}"
+                    th:text="${p.nombre}">
+            </option>
+        </select>
+    </div>
+
+    <!-- MATERIA -->
+    <div class="mb-3">
+        <label>Materia</label>
+        <select th:field="*{materia}" class="form-control">
+            <option value="">Seleccione</option>
+            <option th:each="m : ${materias}"
+                    th:value="${m.id}"
+                    th:text="${m.nombre}">
+            </option>
+        </select>
+    </div>
+
+    <!-- FECHA -->
+    <div class="mb-3">
+        <label>Fecha</label>
+        <input type="date" th:field="*{fecha}" class="form-control">
+    </div>
+
+    <!-- HORA -->
+    <div class="mb-3">
+        <label>Hora</label>
+        <input type="time" th:field="*{hora}" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a th:href="@{/asesorias}" class="btn btn-secondary">Cancelar</a>
+
+</form>
+</body>
+</html>

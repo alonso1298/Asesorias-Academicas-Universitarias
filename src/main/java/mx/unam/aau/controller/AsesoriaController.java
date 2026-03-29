@@ -29,14 +29,8 @@ public class AsesoriaController {
     // Lista
     @GetMapping
     public String listar(Model model) {
-        model.addAttribute("asesorias", new Asesoria());
-
-        // selects
-        model.addAttribute("alumnos", alumnoService.listar());
-        model.addAttribute("profesores", profesorService.listar());
-        model.addAttribute("materias", materiaService.listar());
-
-        return "asesorias/formulario";
+        model.addAttribute("asesorias", asesoriaService.listar());
+        return "/paginas/asesorias";
     }
 
     // Guardar
@@ -51,7 +45,7 @@ public class AsesoriaController {
             model.addAttribute("alumnos", alumnoService.listar());
             model.addAttribute("profesores", profesorService.listar());
             model.addAttribute("materias", materiaService.listar());
-            return "asesorias/formulario";
+            return "/paginas/asesorias";
         }
     }
 
@@ -65,14 +59,13 @@ public class AsesoriaController {
         model.addAttribute("alumnos", alumnoService.listar());
         model.addAttribute("profesores", profesorService.listar());
         model.addAttribute("materias", materiaService.listar());
-
-        return "asesorias/formulario";
+        return "/paginas/asesorias";
     }
 
     // Eliminar
     @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable Long id) {
         asesoriaService.eliminar(id);
-        return "redirect:/asesorias";
+        return "/paginas/asesorias";
     }
 }
