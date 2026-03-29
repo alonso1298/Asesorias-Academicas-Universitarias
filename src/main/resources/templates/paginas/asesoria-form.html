@@ -13,12 +13,12 @@
 
         <h2 th:text="${asesoria.id != null ? 'Editar Asesoría' : 'Nueva Asesoría'}"></h2>
 
-        <!-- ERROR -->
+        <!-- Error -->
         <div th:if="${error}" class="alert alert-danger">
             <span th:text="${error}"></span>
         </div>
 
-        <!-- ALUMNO -->
+        <!-- Alumno -->
         <div class="mb-3">
             <label>Alumno</label>
             <select th:field="*{alumno}" class="form-control">
@@ -30,7 +30,7 @@
             </select>
         </div>
 
-        <!-- PROFESOR -->
+        <!-- Profesor -->
         <div class="mb-3">
             <label>Profesor</label>
             <select th:field="*{profesor}" class="form-control">
@@ -42,7 +42,7 @@
             </select>
         </div>
 
-        <!-- MATERIA -->
+        <!-- Materia -->
         <div class="mb-3">
             <label>Materia</label>
             <select th:field="*{materia}" class="form-control">
@@ -54,13 +54,13 @@
             </select>
         </div>
 
-        <!-- FECHA -->
+        <!-- Fecha -->
         <div class="mb-3">
             <label>Fecha</label>
             <input type="date" th:field="*{fecha}" class="form-control">
         </div>
 
-        <!-- HORA -->
+        <!-- Hora -->
         <div class="mb-3">
             <label>Hora</label>
             <input type="time" th:field="*{hora}" class="form-control">
