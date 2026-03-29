@@ -36,7 +36,7 @@ public class ProfesorController {
     // Guardar
     @PostMapping("/guardar")
     public String guardarProfesor(@ModelAttribute Profesor profesor){
-        Usuario usuario = usuarioService.obtenerUsuarioDefault(); // ejemplo
+        Usuario usuario = usuarioService.obtenerUsuarioDefault();
         profesor.setUsuario(usuario);
         profesorService.guardar(profesor);
         return "redirect:/profesores";
