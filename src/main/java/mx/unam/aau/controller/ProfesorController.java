@@ -1,0 +1,14 @@
+package mx.unam.aau.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/profesores")
+public class ProfesorController {
+    @GetMapping
+    public String profesores(){
+        return "paginas/profesores";
+    }
+}
