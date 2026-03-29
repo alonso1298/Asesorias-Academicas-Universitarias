@@ -30,10 +30,15 @@ public class AsesoriaController {
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("asesorias", asesoriaService.listar());
-        model.addAttribute("alumnos", alumnoService.listar());
-        model.addAttribute("profesores", profesorService.listar());
-        model.addAttribute("materias", materiaService.listar());
         return "paginas/asesorias";
+    }
+
+    // Nuevo
+    @GetMapping("/nuevo")
+    public String nuevo(Model model) {
+        model.addAttribute("asesoria", new Asesoria());
+        cargarCatalogos(model);
+        return "paginas/asesoria-form";
     }
 
     // Guardar
@@ -43,26 +48,18 @@ public class AsesoriaController {
             asesoriaService.guardar(asesoria);
             return "redirect:/asesorias";
         } catch (Exception e) {
-            // Se regresan datos del formulario
             model.addAttribute("error", e.getMessage());
-            model.addAttribute("alumnos", alumnoService.listar());
-            model.addAttribute("profesores", profesorService.listar());
-            model.addAttribute("materias", materiaService.listar());
-            return "paginas/asesorias";
+            cargarCatalogos(model);
+            return "paginas/asesoria-form";
         }
     }
 
     // Editar
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Long id, Model model) {
-
-        Asesoria asesoria = asesoriaService.buscarPorId(id);
-
-        model.addAttribute("asesoria", asesoria);
-        model.addAttribute("alumnos", alumnoService.listar());
-        model.addAttribute("profesores", profesorService.listar());
-        model.addAttribute("materias", materiaService.listar());
-        return "paginas/asesorias";
+        model.addAttribute("asesoria", asesoriaService.buscarPorId(id));
+        cargarCatalogos(model);
+        return "paginas/asesoria-form";
     }
 
     // Eliminar
@@ -70,5 +67,12 @@ public class AsesoriaController {
     public String eliminar(@PathVariable Long id) {
         asesoriaService.eliminar(id);
         return "redirect:/asesorias";
+    }
+
+    // Metodo auxiliar
+    private void cargarCatalogos(Model model) {
+        model.addAttribute("alumnos", alumnoService.listar());
+        model.addAttribute("profesores", profesorService.listar());
+        model.addAttribute("materias", materiaService.listar());
     }
 }

@@ -1,66 +1,79 @@
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
+
 <body>
-<form th:action="@{/asesorias/guardar}" th:object="${asesoria}" method="post">
 
-    <!-- ERROR -->
-    <div th:if="${error}" class="alert alert-danger">
-        <span th:text="${error}"></span>
-    </div>
+<header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
 
-    <!-- ALUMNO -->
-    <div class="mb-3">
-        <label>Alumno</label>
-        <select th:field="*{alumno}" class="form-control">
-            <option value="">Seleccione</option>
-            <option th:each="a : ${alumnos}"
-                    th:value="${a.id}"
-                    th:text="${a.usuario.nombre}">
-            </option>
-        </select>
-    </div>
+<main class="container mt-5">
 
-    <!-- PROFESOR -->
-    <div class="mb-3">
-        <label>Profesor</label>
-        <select th:field="*{profesor}" class="form-control">
-            <option value="">Seleccione</option>
-            <option th:each="p : ${profesores}"
-                    th:value="${p.id}"
-                    th:text="${p.nombre}">
-            </option>
-        </select>
-    </div>
+    <form th:action="@{/asesorias/guardar}" th:object="${asesoria}" method="post">
 
-    <!-- MATERIA -->
-    <div class="mb-3">
-        <label>Materia</label>
-        <select th:field="*{materia}" class="form-control">
-            <option value="">Seleccione</option>
-            <option th:each="m : ${materias}"
-                    th:value="${m.id}"
-                    th:text="${m.nombre}">
-            </option>
-        </select>
-    </div>
+        <h2 th:text="${asesoria.id != null ? 'Editar Asesoría' : 'Nueva Asesoría'}"></h2>
 
-    <!-- FECHA -->
-    <div class="mb-3">
-        <label>Fecha</label>
-        <input type="date" th:field="*{fecha}" class="form-control">
-    </div>
+        <!-- ERROR -->
+        <div th:if="${error}" class="alert alert-danger">
+            <span th:text="${error}"></span>
+        </div>
 
-    <!-- HORA -->
-    <div class="mb-3">
-        <label>Hora</label>
-        <input type="time" th:field="*{hora}" class="form-control">
-    </div>
+        <!-- ALUMNO -->
+        <div class="mb-3">
+            <label>Alumno</label>
+            <select th:field="*{alumno}" class="form-control">
+                <option value="">Seleccione</option>
+                <option th:each="a : ${alumnos}"
+                        th:value="${a.idAlumno}"
+                        th:text="${a.usuario.nombre}">
+                </option>
+            </select>
+        </div>
 
-    <button type="submit" class="btn btn-success">Guardar</button>
-    <a th:href="@{/asesorias}" class="btn btn-secondary">Cancelar</a>
+        <!-- PROFESOR -->
+        <div class="mb-3">
+            <label>Profesor</label>
+            <select th:field="*{profesor}" class="form-control">
+                <option value="">Seleccione</option>
+                <option th:each="p : ${profesores}"
+                        th:value="${p.idProfesor}"
+                        th:text="${p.nombre}">
+                </option>
+            </select>
+        </div>
 
-</form>
+        <!-- MATERIA -->
+        <div class="mb-3">
+            <label>Materia</label>
+            <select th:field="*{materia}" class="form-control">
+                <option value="">Seleccione</option>
+                <option th:each="m : ${materias}"
+                        th:value="${m.idMateria}"
+                        th:text="${m.nombre}">
+                </option>
+            </select>
+        </div>
+
+        <!-- FECHA -->
+        <div class="mb-3">
+            <label>Fecha</label>
+            <input type="date" th:field="*{fecha}" class="form-control">
+        </div>
+
+        <!-- HORA -->
+        <div class="mb-3">
+            <label>Hora</label>
+            <input type="time" th:field="*{hora}" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a th:href="@{/asesorias}" class="btn btn-secondary">Cancelar</a>
+
+    </form>
+
+</main>
+
+<footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+
 </body>
 </html>
