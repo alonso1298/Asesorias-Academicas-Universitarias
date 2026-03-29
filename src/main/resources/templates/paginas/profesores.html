@@ -10,10 +10,32 @@
 
 <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
     <h1>Gestión de Profesores</h1>
-    <p>
-        En esta sección se administran los profesores registrados
-        en el Sistema de Asesorías Académicas Universitarias.
-    </p>
+
+    <a th:href="@{/profesores/nuevo}" class="btn btn-primary">Nuevo</a>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>No. Empleado</th>
+            <th>Especialidad</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="p : ${profesores}">
+            <td th:text="${p.nombre}"></td>
+            <td th:text="${p.numeroEmpleado}"></td>
+            <td th:text="${p.especialidad}"></td>
+
+            <td>
+                <a th:href="@{/profesores/editar/{id}(id=${p.idProfesor})}" class="btn btn-warning">Editar</a>
+                <a th:href="@{/profesores/eliminar/{id}(id=${p.idProfesor})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </main>
 
 <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>

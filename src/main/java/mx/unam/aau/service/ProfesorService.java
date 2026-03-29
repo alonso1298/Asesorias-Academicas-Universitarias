@@ -16,4 +16,16 @@ public class ProfesorService {
     public List<Profesor> listar(){
         return profesorRepository.findAll();
     }
+
+    public Profesor guardar(Profesor profesor){
+        return profesorRepository.save(profesor);
+    }
+
+    public Profesor buscarPorId(Long id){
+        return profesorRepository.findById(id).orElse(null);
+    }
+
+    public void eliminar(Long id){
+        profesorRepository.deleteById(id);
+    }
 }
