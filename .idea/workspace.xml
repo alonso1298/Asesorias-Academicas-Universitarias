@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="35a3448f-f629-46ff-b8df-4c06602fb384" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Materia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Alumno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Profesor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/unam/aau/entities/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Alumno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Alumno.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Profesor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Profesor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mx/unam/aau/entities/Usuario.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

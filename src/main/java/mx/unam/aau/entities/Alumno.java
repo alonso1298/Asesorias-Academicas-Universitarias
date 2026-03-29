@@ -20,6 +20,7 @@ public class Alumno {
     private String carrera;
     private Integer semestre;
     private String nombre;
-    @Column(name = "usuario_id")
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 }

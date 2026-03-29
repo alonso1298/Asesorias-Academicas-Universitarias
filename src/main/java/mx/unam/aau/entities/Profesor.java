@@ -23,5 +23,7 @@ public class Profesor {
     private String experiencia;
     @NotNull
     private String especialidad;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 }
