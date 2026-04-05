@@ -32,13 +32,18 @@ public class AsesoriaService {
     private IMateriaRepository materiaRepository;
 
     // Listar
-    public List<Asesoria> listar(){
-        return asesoriasRepository.findAll();
+    public List<AsesoriaResponseDto> listar(){
+        return asesoriasRepository.findAll()
+                .stream()
+                .map(this::convertirADTO)
+                .toList();
     }
 
     // Buscar por ID
-    public Asesoria buscarPorId(Long id){
-        return asesoriasRepository.findById(id).orElse(null);
+    public AsesoriaResponseDto buscarPorId(Long id){
+        Asesoria asesoria = asesoriasRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
+        return convertirADTO(asesoria);
     }
 
     // Guardar
