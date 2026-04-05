@@ -1,28 +1,26 @@
-package mx.unam.aau.entities;
+package mx.unam.aau.dao.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import mx.unam.aau.enums.Rol;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuario {
+public class Alumno {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nombre;
-    @Email
-    private String email;
-    private String password;
-    @Enumerated(EnumType.STRING)
-    private Rol rol;
-
+    private Long idAlumno;
+    private String matricula;
+    private String carrera;
+    private Integer semestre;
+    @OneToOne
+    @MapsId // Comparte el mismo ID
+    @JoinColumn(name = "id")
+    private Usuario usuario;
 }

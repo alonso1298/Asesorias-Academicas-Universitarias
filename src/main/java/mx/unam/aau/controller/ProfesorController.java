@@ -1,7 +1,7 @@
 package mx.unam.aau.controller;
 
-import mx.unam.aau.entities.Profesor;
-import mx.unam.aau.entities.Usuario;
+import mx.unam.aau.dao.entities.Profesor;
+import mx.unam.aau.dao.entities.Usuario;
 import mx.unam.aau.service.ProfesorService;
 import mx.unam.aau.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;

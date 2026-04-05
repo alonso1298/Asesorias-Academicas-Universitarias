@@ -1,4 +1,4 @@
-package mx.unam.aau.entities;
+package mx.unam.aau.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

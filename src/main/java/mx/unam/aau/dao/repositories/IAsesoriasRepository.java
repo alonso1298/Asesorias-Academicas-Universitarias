@@ -1,6 +1,6 @@
-package mx.unam.aau.entities.repositories;
+package mx.unam.aau.dao.repositories;
 
-import mx.unam.aau.entities.Asesoria;
+import mx.unam.aau.dao.entities.Asesoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

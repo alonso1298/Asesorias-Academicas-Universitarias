@@ -1,17 +1,16 @@
 package mx.unam.aau.controller;
 
-import mx.unam.aau.entities.Asesoria;
+import mx.unam.aau.dao.entities.Asesoria;
 import mx.unam.aau.service.AlumnoService;
 import mx.unam.aau.service.AsesoriaService;
 import mx.unam.aau.service.MateriaService;
 import mx.unam.aau.service.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/asesorias")
+@RestController
+@RequestMapping("/api/v1/asesoria")
 public class AsesoriaController {
 
     @Autowired

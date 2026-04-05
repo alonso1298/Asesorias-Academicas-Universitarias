@@ -1,6 +1,6 @@
-package mx.unam.aau.entities.repositories;
+package mx.unam.aau.dao.repositories;
 
-import mx.unam.aau.entities.Alumno;
+import mx.unam.aau.dao.entities.Alumno;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IAlumnoRepository extends JpaRepository<Alumno, Long> {

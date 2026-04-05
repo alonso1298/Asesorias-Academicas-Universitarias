@@ -1,7 +1,7 @@
 package mx.unam.aau.service;
 
-import mx.unam.aau.entities.Alumno;
-import mx.unam.aau.entities.repositories.IAlumnoRepository;
+import mx.unam.aau.dao.entities.Alumno;
+import mx.unam.aau.dao.repositories.IAlumnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
