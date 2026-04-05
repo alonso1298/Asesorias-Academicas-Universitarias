@@ -1,6 +1,6 @@
 package mx.unam.aau.service;
 
-import mx.unam.aau.dao.dto.AseroriaRequestDto;
+import mx.unam.aau.dao.dto.AsesoriaRequestDto;
 import mx.unam.aau.dao.dto.AsesoriaResponseDto;
 import mx.unam.aau.dao.entities.Alumno;
 import mx.unam.aau.dao.entities.Asesoria;
@@ -42,7 +42,9 @@ public class AsesoriaService {
     }
 
     // Guardar
-    public void guardar(Asesoria asesoria){
+    public void guardar(AsesoriaRequestDto asesoriaRequestDto){
+
+        Asesoria asesoria = convertirAEntidad(asesoriaRequestDto);
 
         // Valida fecha pasada
         if (asesoria.getFecha().isBefore(LocalDate.now())){
@@ -92,8 +94,8 @@ public class AsesoriaService {
         asesoriasRepository.deleteById(id);
     }
 
-    // Metodo DTO -> Entitie
-    private Asesoria convertirAEntidad(AseroriaRequestDto aseroriaRequestDto) {
+    // Metodo DTO -> Entity
+    private Asesoria convertirAEntidad(AsesoriaRequestDto aseroriaRequestDto) {
 
         Alumno alumno = alumnoRepository.findById(aseroriaRequestDto.getAlumnoId())
                 .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
@@ -116,21 +118,21 @@ public class AsesoriaService {
         return asesoria;
     }
 
-    // Metodo DTO -> Entitie
+    // Metodo Entity -> DTO
     private AsesoriaResponseDto convertirADTO(Asesoria asesoria) {
 
-        AsesoriaResponseDto responseDto = new AsesoriaResponseDto();
+        AsesoriaResponseDto asesoriaResponseDto = new AsesoriaResponseDto();
 
-        responseDto.setId(asesoria.getId());
-        responseDto.setAlumnoNombre(asesoria.getAlumno().getUsuario().getNombre());
-        responseDto.setProfesorNombre(asesoria.getProfesor().getNombre());
-        responseDto.setMateriaNombre(asesoria.getMateria().getNombre());
-        responseDto.setFecha(asesoria.getFecha());
-        responseDto.setHora(asesoria.getHora());
-        responseDto.setEstado(asesoria.getEstado());
-        responseDto.setNotas(asesoria.getNotas());
+        asesoriaResponseDto.setId(asesoria.getId());
+        asesoriaResponseDto.setAlumnoNombre(asesoria.getAlumno().getUsuario().getNombre());
+        asesoriaResponseDto.setProfesorNombre(asesoria.getProfesor().getNombre());
+        asesoriaResponseDto.setMateriaNombre(asesoria.getMateria().getNombre());
+        asesoriaResponseDto.setFecha(asesoria.getFecha());
+        asesoriaResponseDto.setHora(asesoria.getHora());
+        asesoriaResponseDto.setEstado(asesoria.getEstado());
+        asesoriaResponseDto.setNotas(asesoria.getNotas());
 
-        return responseDto;
+        return asesoriaResponseDto;
     }
 
 }

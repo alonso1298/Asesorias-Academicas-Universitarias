@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Data
-public class AseroriaRequestDto {
+public class AsesoriaRequestDto {
     private Long alumnoId;
     private Long profesorId;
     private Long materiaId;
