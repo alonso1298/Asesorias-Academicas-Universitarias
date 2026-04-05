@@ -1,7 +1,15 @@
 package mx.unam.aau.service;
 
+import mx.unam.aau.dao.dto.AseroriaRequestDto;
+import mx.unam.aau.dao.dto.AsesoriaResponseDto;
+import mx.unam.aau.dao.entities.Alumno;
 import mx.unam.aau.dao.entities.Asesoria;
+import mx.unam.aau.dao.entities.Materia;
+import mx.unam.aau.dao.entities.Profesor;
+import mx.unam.aau.dao.repositories.IAlumnoRepository;
 import mx.unam.aau.dao.repositories.IAsesoriasRepository;
+import mx.unam.aau.dao.repositories.IMateriaRepository;
+import mx.unam.aau.dao.repositories.IProfesorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +22,15 @@ public class AsesoriaService {
     @Autowired
     private IAsesoriasRepository asesoriasRepository;
 
+    @Autowired
+    private IProfesorRepository profesorRepository;
+
+    @Autowired
+    private IAlumnoRepository alumnoRepository;
+
+    @Autowired
+    private IMateriaRepository materiaRepository;
+
     // Listar
     public List<Asesoria> listar(){
         return asesoriasRepository.findAll();
@@ -25,7 +42,7 @@ public class AsesoriaService {
     }
 
     // Guardar
-    public Asesoria guardar(Asesoria asesoria){
+    public void guardar(Asesoria asesoria){
 
         // Valida fecha pasada
         if (asesoria.getFecha().isBefore(LocalDate.now())){
@@ -66,13 +83,54 @@ public class AsesoriaService {
             asesoria.setEstado("pendiente");
         }
 
-        return asesoriasRepository.save(asesoria);
+        asesoriasRepository.save(asesoria);
 
     }
 
     // Eliminar
     public void eliminar(Long id){
         asesoriasRepository.deleteById(id);
+    }
+
+    // Metodo DTO -> Entitie
+    private Asesoria convertirAEntidad(AseroriaRequestDto aseroriaRequestDto) {
+
+        Alumno alumno = alumnoRepository.findById(aseroriaRequestDto.getAlumnoId())
+                .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
+
+        Profesor profesor = profesorRepository.findById(aseroriaRequestDto.getProfesorId())
+                .orElseThrow(() -> new RuntimeException("Profesor no encontrado"));
+
+        Materia materia = materiaRepository.findById(aseroriaRequestDto.getMateriaId())
+                .orElseThrow(() -> new RuntimeException("Materia no encontrada"));
+
+        Asesoria asesoria = new Asesoria();
+        asesoria.setAlumno(alumno);
+        asesoria.setProfesor(profesor);
+        asesoria.setMateria(materia);
+        asesoria.setFecha(aseroriaRequestDto.getFecha());
+        asesoria.setHora(aseroriaRequestDto.getHora());
+        asesoria.setEstado(aseroriaRequestDto.getEstado());
+        asesoria.setNotas(aseroriaRequestDto.getNotas());
+
+        return asesoria;
+    }
+
+    // Metodo DTO -> Entitie
+    private AsesoriaResponseDto convertirADTO(Asesoria asesoria) {
+
+        AsesoriaResponseDto responseDto = new AsesoriaResponseDto();
+
+        responseDto.setId(asesoria.getId());
+        responseDto.setAlumnoNombre(asesoria.getAlumno().getUsuario().getNombre());
+        responseDto.setProfesorNombre(asesoria.getProfesor().getNombre());
+        responseDto.setMateriaNombre(asesoria.getMateria().getNombre());
+        responseDto.setFecha(asesoria.getFecha());
+        responseDto.setHora(asesoria.getHora());
+        responseDto.setEstado(asesoria.getEstado());
+        responseDto.setNotas(asesoria.getNotas());
+
+        return responseDto;
     }
 
 }
