@@ -47,7 +47,7 @@ public class AsesoriaService {
     }
 
     // Guardar
-    public void guardar(AsesoriaRequestDto asesoriaRequestDto){
+    public AsesoriaResponseDto guardar(AsesoriaRequestDto asesoriaRequestDto){
 
         Asesoria asesoria = convertirAEntidad(asesoriaRequestDto);
 
@@ -90,8 +90,22 @@ public class AsesoriaService {
             asesoria.setEstado("pendiente");
         }
 
-        asesoriasRepository.save(asesoria);
+        Asesoria guardada = asesoriasRepository.save(asesoria);
 
+        return convertirADTO(guardada);
+
+    }
+
+    // Actualizar
+    public AsesoriaResponseDto actualizar(Long id, AsesoriaRequestDto asesoriaRequestDto){
+        Asesoria existente = asesoriasRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
+
+        Asesoria nueva = convertirAEntidad(asesoriaRequestDto);
+
+        Asesoria guardada = asesoriasRepository.save(nueva);
+
+        return convertirADTO(guardada);
     }
 
     // Eliminar
