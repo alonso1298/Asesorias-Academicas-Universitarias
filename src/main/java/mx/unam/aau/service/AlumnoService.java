@@ -28,13 +28,53 @@ public class AlumnoService {
                 .toList();
     }
 
+    // Buscar
+    public AlumnoResponseDto buscar(Long id){
+        Alumno alumno = alumnoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
+        return convertirADTO(alumno);
+    }
+
     // Crear
     public AlumnoResponseDto crear(AlumnoRequestDto alumnoRequestDto){
-        
-        Alumno alumno = convertirAEntidad(alumnoRequestDto);
+
+        Usuario usuario = usuarioRepository.findById(alumnoRequestDto.getUsuarioId())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        Alumno alumno = new Alumno();
+        alumno.setMatricula(alumnoRequestDto.getMatricula());
+        alumno.setCarrera(alumnoRequestDto.getCarrera());
+        alumno.setSemestre(alumnoRequestDto.getSemestre());
+        alumno.setUsuario(usuario);
+
         Alumno guardado = alumnoRepository.save(alumno);
 
         return convertirADTO(guardado);
+    }
+
+    // Actualizar
+    public AlumnoResponseDto actualizar(Long id, AlumnoRequestDto alumnoRequestDto){
+        Alumno alumno = alumnoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
+
+        alumno.setMatricula(alumnoRequestDto.getMatricula());
+        alumno.setCarrera(alumnoRequestDto.getCarrera());
+        alumno.setSemestre(alumnoRequestDto.getSemestre());
+
+        if(alumnoRequestDto.getUsuarioId() != null){
+            Usuario usuario = usuarioRepository.findById(alumnoRequestDto.getUsuarioId())
+                    .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+            alumno.setUsuario(usuario);
+        }
+
+        Alumno guardado = alumnoRepository.save(alumno);
+
+        return convertirADTO(guardado);
+    }
+
+    // Eliminar
+    public void eliminar(Long id){
+        alumnoRepository.deleteById(id);
     }
 
     // Entity -> DTO
