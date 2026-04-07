@@ -97,13 +97,37 @@ public class AsesoriaService {
     }
 
     // Actualizar
-    public AsesoriaResponseDto actualizar(Long id, AsesoriaRequestDto asesoriaRequestDto){
+    public AsesoriaResponseDto actualizar(Long id, AsesoriaRequestDto dto){
+
         Asesoria existente = asesoriasRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
 
-        Asesoria nueva = convertirAEntidad(asesoriaRequestDto);
+        // Reutiliza la entidad existente
+        existente.setFecha(dto.getFecha());
+        existente.setHora(dto.getHora());
+        existente.setEstado(dto.getEstado());
+        existente.setNotas(dto.getNotas());
 
-        Asesoria guardada = asesoriasRepository.save(nueva);
+        // Actualiza relaciones si vienen
+        if (dto.getAlumnoId() != null) {
+            Alumno alumno = alumnoRepository.findById(dto.getAlumnoId())
+                    .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
+            existente.setAlumno(alumno);
+        }
+
+        if (dto.getProfesorId() != null) {
+            Profesor profesor = profesorRepository.findById(dto.getProfesorId())
+                    .orElseThrow(() -> new RuntimeException("Profesor no encontrado"));
+            existente.setProfesor(profesor);
+        }
+
+        if (dto.getMateriaId() != null) {
+            Materia materia = materiaRepository.findById(dto.getMateriaId())
+                    .orElseThrow(() -> new RuntimeException("Materia no encontrada"));
+            existente.setMateria(materia);
+        }
+
+        Asesoria guardada = asesoriasRepository.save(existente);
 
         return convertirADTO(guardada);
     }
