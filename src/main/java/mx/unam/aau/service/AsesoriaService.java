@@ -51,12 +51,12 @@ public class AsesoriaService {
 
         Asesoria asesoria = convertirAEntidad(asesoriaRequestDto);
 
-        // Valida fecha pasada
+        // Válida fecha pasada
         if (asesoria.getFecha().isBefore(LocalDate.now())){
             throw new RuntimeException("No puedes agendar en una fecha pasada");
         }
 
-        // Valida hora nula
+        // Válida hora nula
         if (asesoria.getHora() == null){
             throw new RuntimeException("La hora es obligatoria");
         }
@@ -74,7 +74,7 @@ public class AsesoriaService {
             throw new RuntimeException("Debe seleccionar una materia");
         }
 
-        // Valida duplicidad
+        // Válida duplicidad
         boolean existe = asesoriasRepository.existsByProfesorIdProfesorAndFechaAndHora(
                 asesoria.getProfesor().getIdProfesor(),
                 asesoria.getFecha(),
