@@ -67,7 +67,7 @@ public class ProfesorService {
                     .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
             profesor.setUsuario(usuario);
         }
-        
+
         Profesor guardado = profesorRepository.save(profesor);
         return convertirADTO(guardado);
     }
