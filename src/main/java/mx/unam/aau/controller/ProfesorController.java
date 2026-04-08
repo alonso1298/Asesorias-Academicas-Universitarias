@@ -1,5 +1,7 @@
 package mx.unam.aau.controller;
 
+import mx.unam.aau.dao.dto.ProfesorRequestDto;
+import mx.unam.aau.dao.dto.ProfesorResponseDto;
 import mx.unam.aau.dao.entities.Profesor;
 import mx.unam.aau.dao.entities.Usuario;
 import mx.unam.aau.service.ProfesorService;
@@ -9,50 +11,45 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/profesores")
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/profesores")
 public class ProfesorController {
 
     @Autowired
     private ProfesorService profesorService;
 
-    @Autowired
-    private UsuarioService usuarioService;
-
-    // Listar
+    //Get
     @GetMapping
-    public String profesores(Model model){
-        model.addAttribute("profesores", profesorService.listar());
-        return "paginas/profesores";
+    public List<ProfesorResponseDto> listar(){
+        return profesorService.listar();
     }
 
-    // Nuevo
-    @GetMapping("/nuevo")
-    public String nuevo(Model model){
-        model.addAttribute("profesor", new Profesor());
-        return "paginas/profesor-form";
+    // GET por Id
+    @GetMapping("/{id}")
+    public ProfesorResponseDto obtener(@PathVariable Long id){
+        return profesorService.buscarPorId(id);
     }
 
-    // Guardar
-    @PostMapping("/guardar")
-    public String guardarProfesor(@ModelAttribute Profesor profesor){
-        Usuario usuario = usuarioService.obtenerUsuarioDefault();
-        profesor.setUsuario(usuario);
-        profesorService.guardar(profesor);
-        return "redirect:/profesores";
+    // POST
+
+    @PostMapping
+    public ProfesorResponseDto crear(@PathVariable Long id,
+                                          @RequestBody ProfesorRequestDto profesorRequestDto){
+        return profesorService.guardar(profesorRequestDto);
     }
 
-    // Editar
-    @GetMapping("/editar/{id}")
-    public String editar(@PathVariable Long id, Model model){
-        model.addAttribute("profesor", profesorService.buscarPorId(id));
-        return "paginas/profesor-form";
+    // PUT
+    @PutMapping("/{id}")
+    public ProfesorResponseDto actualizar(@PathVariable Long id,
+                                          @RequestBody ProfesorRequestDto profesorRequestDto){
+        return profesorService.actualizar(id, profesorRequestDto);
     }
 
-    // Eliminar
-    @GetMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable Long id){
+    // DELETE
+    public void eliminar(@PathVariable Long id){
         profesorService.eliminar(id);
-        return "redirect:/profesores";
     }
+
 }
