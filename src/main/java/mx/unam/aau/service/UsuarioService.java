@@ -3,10 +3,17 @@ package mx.unam.aau.service;
 import mx.unam.aau.entities.Usuario;
 import mx.unam.aau.entities.repositories.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class UsuarioService{
+public class UsuarioService implements UserDetailsService {
 
     @Autowired
     private IUsuarioRepository usuarioRepository;
@@ -23,5 +30,18 @@ public class UsuarioService{
                 .stream()
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("No hay usuarios disponibles"));
+    }
+
+    // Convertir UsuarioService en seguridad
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Usuario usuario = usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+        return new User(
+                usuario.getEmail(),
+                usuario.getPassword(),
+                // Se utiliza List.of para inmutabilidad
+                List.of(new SimpleGrantedAuthority("ROLE_" + usuario.getRol().name()))
+        );
     }
 }
