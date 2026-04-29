@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,9 @@ public class UsuarioService implements UserDetailsService {
 
     @Autowired
     private IUsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     // Retorna un usuario por ID
     public Usuario obtenerUsuarioPorId(Long id) {
@@ -43,5 +47,11 @@ public class UsuarioService implements UserDetailsService {
                 // Se utiliza List.of para inmutabilidad
                 List.of(new SimpleGrantedAuthority("ROLE_" + usuario.getRol().name()))
         );
+    }
+
+    // Guarda Usuario
+    public Usuario guardarUsuario(Usuario usuario) {
+        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+        return usuarioRepository.save(usuario);
     }
 }
