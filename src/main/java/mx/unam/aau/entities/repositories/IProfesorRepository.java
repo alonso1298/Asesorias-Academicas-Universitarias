@@ -4,4 +4,5 @@ import mx.unam.aau.entities.Profesor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IProfesorRepository extends JpaRepository<Profesor, Long> {
+    Profesor findByUsuarioId(Long usuarioId);
 }

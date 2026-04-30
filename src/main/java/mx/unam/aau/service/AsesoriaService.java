@@ -64,7 +64,7 @@ public class AsesoriaService {
 
         // Estado por defecto
         if (asesoria.getEstado() == null){
-            asesoria.setEstado(EstadoAsesorias.PENDIENTE);
+            asesoria.setEstado(EstadoAsesorias.pendiente);
         }
 
         return asesoriasRepository.save(asesoria);
