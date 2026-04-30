@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.unam.aau.enums.EstadoAsesorias;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -39,7 +40,8 @@ public class Asesoria {
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime hora;
 
-    private String estado;
+    @Enumerated(EnumType.STRING)
+    private EstadoAsesorias estado;
 
     private String notas;
 }
