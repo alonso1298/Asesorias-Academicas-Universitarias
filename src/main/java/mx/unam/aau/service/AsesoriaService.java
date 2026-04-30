@@ -2,6 +2,7 @@ package mx.unam.aau.service;
 
 import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.repositories.IAsesoriasRepository;
+import mx.unam.aau.enums.EstadoAsesorias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -63,7 +64,7 @@ public class AsesoriaService {
 
         // Estado por defecto
         if (asesoria.getEstado() == null){
-            asesoria.setEstado("pendiente");
+            asesoria.setEstado(EstadoAsesorias.PENDIENTE);
         }
 
         return asesoriasRepository.save(asesoria);
@@ -73,6 +74,16 @@ public class AsesoriaService {
     // Eliminar
     public void eliminar(Long id){
         asesoriasRepository.deleteById(id);
+    }
+
+    // Obtener asesoria de alumno
+    public List<Asesoria> obtenerPorAlumno(Long alumnoId){
+        return asesoriasRepository.findByAlumnoIdAlumno(alumnoId);
+    }
+
+    // Obtener por asesoria por profesor
+    public  List<Asesoria> obtenerPorProfesor(Long profesorId){
+        return asesoriasRepository.findByProfesorIdProfesor(profesorId);
     }
 
 }
