@@ -54,4 +54,10 @@ public class UsuarioService implements UserDetailsService {
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         return usuarioRepository.save(usuario);
     }
+
+    // Busca usuario por email
+    public Usuario buscarPorEmail(String email) {
+        return usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+    }
 }
