@@ -1,13 +1,18 @@
 package mx.unam.aau.controller;
 
+import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.Profesor;
 import mx.unam.aau.entities.Usuario;
+import mx.unam.aau.service.AsesoriaService;
 import mx.unam.aau.service.ProfesorService;
 import mx.unam.aau.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/profesores")
@@ -18,6 +23,9 @@ public class ProfesorController {
 
     @Autowired
     private UsuarioService usuarioService;
+
+    @Autowired
+    private AsesoriaService asesoriaService;
 
     // Listar
     @GetMapping
@@ -54,5 +62,18 @@ public class ProfesorController {
     public String eliminar(@PathVariable Long id){
         profesorService.eliminar(id);
         return "redirect:/profesores";
+    }
+
+    // Muestra las asesorias profesor
+    @GetMapping("/profesor/asesorias")
+    public String verAsesoriasProfesor(Model model, Authentication auth) {
+
+        Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
+        Profesor profesor = profesorService.buscarPorId(usuario.getId());
+        List<Asesoria> asesorias = asesoriaService.obtenerPorProfesor(profesor.getIdProfesor());
+        model.addAttribute("asesorias", asesorias);
+
+        return "paginas/asesorias";
+
     }
 }

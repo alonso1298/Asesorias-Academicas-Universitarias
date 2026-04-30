@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/alumnos")
+@RequestMapping("/alumno")
 public class AlumnoController {
 
     @Autowired
@@ -52,8 +52,8 @@ public class AlumnoController {
     @PostMapping("/asesorias")
     public String guardarAsesoria(@ModelAttribute Asesoria asesoria, Authentication auth) {
         String email = auth.getName();
-        Usuario usuario = usuarioService.buscarPorEmail(email);
-        asesoria.setAlumno(usuario);
+        Alumno alumno = alumnoService.
+        asesoria.setAlumno(alumno);
         asesoria.setEstado(EstadoAsesorias.pendiente);
         asesoriaService.guardar(asesoria);
         return "redirect:/alumno/asesorias";
