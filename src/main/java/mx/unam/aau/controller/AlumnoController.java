@@ -51,11 +51,13 @@ public class AlumnoController {
     // Guarda la asesoria
     @PostMapping("/asesorias")
     public String guardarAsesoria(@ModelAttribute Asesoria asesoria, Authentication auth) {
-        String email = auth.getName();
-        Alumno alumno = alumnoService.
+
+        Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
+        Alumno alumno = alumnoService.obtenerUsuarioPorId(usuario.getId());
         asesoria.setAlumno(alumno);
-        asesoria.setEstado(EstadoAsesorias.pendiente);
+        asesoria.setEstado(EstadoAsesoria.pendiente);
         asesoriaService.guardar(asesoria);
+
         return "redirect:/alumno/asesorias";
 
     }
