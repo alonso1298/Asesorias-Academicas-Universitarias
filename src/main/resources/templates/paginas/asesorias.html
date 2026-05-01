@@ -39,6 +39,25 @@
             </td>
         </tr>
         </tbody>
+        <tr th:each="asesoria : ${asesorias}">
+            <td th:text="${asesoria.fecha}"></td>
+            <td th:text="${asesoria.hora}"></td>
+            <td th:text="${asesoria.estado}"></td>
+
+            <td>
+                <form th:action="@{/profesor/asesorias/{id}/estado(id=${asesoria.id})}" method="post">
+
+                    <select name="estado">
+                        <option value="pendiente" th:selected="${asesoria.estado == 'pendiente'}">Pendiente</option>
+                        <option value="confirmada" th:selected="${asesoria.estado == 'confirmada'}">Confirmada</option>
+                        <option value="completada" th:selected="${asesoria.estado == 'completada'}">Completada</option>
+                        <option value="cancelada" th:selected="${asesoria.estado == 'cancelada'}">Cancelada</option>
+                    </select>
+
+                    <button type="submit">Actualizar</button>
+                </form>
+            </td>
+        </tr>
     </table>
 </main>
 
