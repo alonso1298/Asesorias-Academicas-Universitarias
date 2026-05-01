@@ -81,10 +81,7 @@ public class ProfesorController {
     // Cambia el estado
     @PostMapping("/asesorias/{id}/estado")
     public String cambiarEstado(@PathVariable Long id, @RequestParam String estado){
-        Asesoria asesoria = asesoriaService.buscarPorId(id);
-        asesoria.setEstado(EstadoAsesorias.valueOf(estado));
-
-        asesoriaService.guardar(asesoria);
+        asesoriaService.actualizarEstado(id, estado);
         return "redirect:/profesores/asesorias";
     }
 }
