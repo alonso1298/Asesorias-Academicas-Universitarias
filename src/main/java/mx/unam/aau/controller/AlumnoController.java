@@ -55,7 +55,7 @@ public class AlumnoController {
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
         Alumno alumno = alumnoService.obtenerUsuarioPorId(usuario.getId());
         asesoria.setAlumno(alumno);
-        asesoria.setEstado(EstadoAsesoria.pendiente);
+        asesoria.setEstado(EstadoAsesorias.pendiente);
         asesoriaService.guardar(asesoria);
 
         return "redirect:/alumno/asesorias";

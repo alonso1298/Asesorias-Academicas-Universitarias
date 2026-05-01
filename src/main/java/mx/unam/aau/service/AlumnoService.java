@@ -16,4 +16,9 @@ public class AlumnoService {
     public List<Alumno> listar(){
         return alumnoRepository.findAll();
     }
+
+    public Alumno obtenerUsuarioPorId(Long id){
+        return alumnoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
+    }
 }
