@@ -87,9 +87,12 @@ public class AsesoriaService {
     }
 
     // Actualizar estado
-    public  void actualizarEstado(Long id, String estado){
+    public  void actualizarEstado(Long id, String estado, Long profesorId){
         Asesoria asesoria = asesoriasRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
+        if (!asesoria.getProfesor().getIdProfesor().equals(profesorId)){
+            throw new RuntimeException("No autorizado");
+        }
         asesoria.setEstado(EstadoAsesorias.valueOf(estado));
         asesoriasRepository.save(asesoria);
     }

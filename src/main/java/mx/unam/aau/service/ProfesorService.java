@@ -1,5 +1,6 @@
 package mx.unam.aau.service;
 
+import mx.unam.aau.entities.Alumno;
 import mx.unam.aau.entities.Profesor;
 import mx.unam.aau.entities.repositories.IProfesorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,10 @@ public class ProfesorService {
 
     public void eliminar(Long id){
         profesorRepository.deleteById(id);
+    }
+
+    public Profesor buscarPorUsuarioId(Long id){
+        return profesorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Profesor no encontrado"));
     }
 }
