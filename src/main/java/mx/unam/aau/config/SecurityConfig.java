@@ -14,14 +14,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Autowired
-    UsuarioService usuarioService;
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/css/**", "/js/**", "/image/**").permitAll()
+                        .requestMatchers( "/login", "/bootstrap/**", "/js/**", "/image/**").permitAll()
                         .requestMatchers("/profesor/**").hasRole("PROFESOR")
                         .requestMatchers("/alumno/**").hasRole("ALUMNO")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
@@ -30,7 +27,6 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/login")
                         .usernameParameter("email")
-                        .passwordParameter("password")
                         .defaultSuccessUrl("/home", true)
                         .permitAll()
                 )
