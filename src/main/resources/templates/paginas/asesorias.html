@@ -37,6 +37,12 @@
                 <a th:href="@{/asesorias/editar/{id}(id=${a.id})}" class="btn btn-warning btn-sm">Editar</a>
                 <a th:href="@{/asesorias/eliminar/{id}(id=${a.id})}" class="btn btn-danger btn-sm">Eliminar</a>
             </td>
+            <!--Si no esta cancelada  o complestada no muestra el boton -->
+            <td th:if="${asesoria.estado != 'cancelada' and asesoria.estado != 'completada'}">
+                <form th:action="@{/alumno/asesorias/{id}/cancelar(id=${asesoria.id})}" method="post">
+                    <button type="submit">Cancelar</button>
+                </form>
+            </td>
         </tr>
         </tbody>
         <tr th:each="asesoria : ${asesorias}">
