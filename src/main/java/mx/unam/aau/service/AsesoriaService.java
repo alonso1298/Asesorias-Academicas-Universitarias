@@ -97,4 +97,22 @@ public class AsesoriaService {
         asesoriasRepository.save(asesoria);
     }
 
+    // Cancelar asesoria
+    public void cancelarAsesoria(Long id, Long alumnoId){
+        Asesoria asesoria  = asesoriasRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
+
+        // Va valida seguridad
+        if (!asesoria.getAlumno().getIdAlumno().equals(alumnoId)){
+            throw new RuntimeException("No autorizado");
+        }
+        // Impide cambiar una sesoria completada
+        if (asesoria.getEstado() == EstadoAsesorias.completada){
+            throw new RuntimeException("No se puedes cambiar una asesoria completada");
+        }
+
+        asesoria.setEstado(EstadoAsesorias.cancelada);
+        asesoriasRepository.save(asesoria);
+    }
+
 }
