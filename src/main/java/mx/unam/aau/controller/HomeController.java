@@ -18,9 +18,9 @@ public class HomeController {
         if (rol.equals("ROLE_ADMIN")) {
             return "redirect:/admin";
         } else if (rol.equals("ROLE_PROFESOR")){
-            return "redirect:/profesor";
+            return "redirect:/profesores";
         } else if (rol.equals("ROLE_ALUMNO")) {
-            return "redirect:/alumno";
+            return "redirect:/alumnos";
         }
         return "redirect:/login";
     }

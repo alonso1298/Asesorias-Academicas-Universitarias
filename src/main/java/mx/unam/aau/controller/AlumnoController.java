@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/alumno")
+@RequestMapping("/alumnos")
 public class AlumnoController {
 
     @Autowired
@@ -59,7 +59,7 @@ public class AlumnoController {
 
     }
 
-    @PostMapping("/asesorias/{id}/cancelar}")
+    @PostMapping("/asesorias/{id}/cancelar")
     public String cancelarAsesoria(@PathVariable Long id, Authentication auth){
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
         Alumno alumno = alumnoService.obtenerUsuarioPorId(id);
