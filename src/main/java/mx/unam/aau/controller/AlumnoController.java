@@ -55,7 +55,7 @@ public class AlumnoController {
         asesoria.setEstado(EstadoAsesorias.pendiente);
         asesoriaService.guardar(asesoria);
 
-        return "redirect:/alumno/asesorias";
+        return "redirect:/alumnos/asesorias";
 
     }
 
@@ -67,6 +67,6 @@ public class AlumnoController {
 
         asesoriaService.cancelarAsesoria(id, alumno.getIdAlumno());
 
-        return "redirect:/alumno/asesorias";
+        return "redirect:/alumnos/asesorias";
     }
 }
