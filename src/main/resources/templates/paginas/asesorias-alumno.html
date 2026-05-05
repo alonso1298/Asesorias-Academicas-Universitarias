@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr th:each="asesoria : ${asesorias}">
+            <td th:text="${asesoria.fecha}"></td>
+            <td th:text="${asesoria.hora}"></td>
+            <td th:text="${asesoria.estado}"></td>
+        </tr>
+    </table>
+</body>
+</html>

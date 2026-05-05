@@ -40,6 +40,7 @@ public class Asesoria {
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime hora;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private EstadoAsesorias estado;
 

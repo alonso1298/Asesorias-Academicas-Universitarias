@@ -17,7 +17,12 @@ public class AdminController {
     @Autowired
     private AsesoriaService asesoriaService;
 
-    @GetMapping("/admin/asesorias")
+    @GetMapping("")
+    public String adminHome() {
+        return "redirect:/admin/asesorias";
+    }
+
+    @GetMapping("/asesorias")
     public String verTodas(Model model) {
         List<Asesoria> asesorias = asesoriaService.listar();
         model.addAttribute("asesorias", asesorias);
