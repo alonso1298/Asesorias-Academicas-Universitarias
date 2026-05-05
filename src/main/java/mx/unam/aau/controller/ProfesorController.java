@@ -66,11 +66,11 @@ public class ProfesorController {
     }
 
     // Muestra las asesorias profesor
-    @GetMapping("/profesor/asesorias")
+    @GetMapping("/asesorias")
     public String verAsesoriasProfesor(Model model, Authentication auth) {
 
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
-        Profesor profesor = profesorService.buscarPorId(usuario.getId());
+        Profesor profesor = profesorService.buscarPorUsuarioId(usuario.getId());
         List<Asesoria> asesorias = asesoriaService.obtenerPorProfesor(profesor.getIdProfesor());
         model.addAttribute("asesorias", asesorias);
 
@@ -89,6 +89,6 @@ public class ProfesorController {
 
         asesoriaService.actualizarEstado(id, estado, profesor.getIdProfesor());
 
-        return "redirect:/profesor/asesorias";
+        return "redirect:/profesores/asesorias";
     }
 }
