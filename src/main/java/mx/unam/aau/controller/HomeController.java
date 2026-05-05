@@ -16,11 +16,11 @@ public class HomeController {
     public String home(Authentication auth){
         String rol = auth.getAuthorities().iterator().next().getAuthority();
         if (rol.equals("ROLE_ADMIN")) {
-            return "redirect:/admin";
+            return "redirect:/admin/asesorias";
         } else if (rol.equals("ROLE_PROFESOR")){
-            return "redirect:/profesores";
+            return "redirect:/profesores/asesorias";
         } else if (rol.equals("ROLE_ALUMNO")) {
-            return "redirect:/alumnos";
+            return "redirect:/alumnos/asesorias";
         }
         return "redirect:/login";
     }

@@ -63,7 +63,7 @@ public class AlumnoController {
     @PostMapping("/asesorias/{id}/cancelar")
     public String cancelarAsesoria(@PathVariable Long id, Authentication auth){
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
-        Alumno alumno = alumnoService.obtenerUsuarioPorId(id);
+        Alumno alumno = alumnoService.obtenerUsuarioPorId(usuario.getId());
 
         asesoriaService.cancelarAsesoria(id, alumno.getIdAlumno());
 
