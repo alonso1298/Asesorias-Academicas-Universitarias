@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/materias/guardar}" th:object="${materia}" method="post">
+    <div class="mb-3">
+        <label>Nombre</label>
+        <input type="text" th:field="*{nombre}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Descripción</label>
+        <input type="text" th:field="*{descripcion}" class="form-control">
+    </div>
+    <button class="btn btn-success">Guardar</button>
+</form>
+</body>
+</html>
