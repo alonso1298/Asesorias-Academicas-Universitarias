@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
       lang="es">
 
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
@@ -9,11 +9,40 @@
 <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
 
 <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-    <h1>Catálogo de Materias</h1>
-    <p>
-        En esta sección se consultan y administran las materias
-        disponibles dentro del sistema.
-    </p>
+    <div class="container mt-5">
+        <h2>Listado de Materias</h2>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+
+                <!-- Solo admin -->
+                <th sec:authorize="hasRole('ADMIN')">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="m : ${materias}">
+                <td th:text="${m.idMateria}"></td>
+                <td th:text="${m.nombre}"></td>
+                <td th:text="${m.descripcion}"></td>
+
+                <!-- Acciones ADMIN -->
+                <td sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{/materias/editar/{id}(id=${m.idMateria})}" class="btn btn-warning btn-sm">Editar</a>
+                    <a th:href="@{/materias/eliminar/{id}(id=${m.idMateria})}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- Botón solo admin -->
+        <div sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/materias/nueva}" class="btn btn-success">Nueva Materia</a>
+        </div>
+    </div>
 </main>
 
 <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
