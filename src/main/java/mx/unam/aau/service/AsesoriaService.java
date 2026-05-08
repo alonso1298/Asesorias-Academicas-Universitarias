@@ -6,8 +6,12 @@ import mx.unam.aau.enums.EstadoAsesorias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 public class AsesoriaService {
@@ -113,6 +117,37 @@ public class AsesoriaService {
 
         asesoria.setEstado(EstadoAsesorias.cancelada);
         asesoriasRepository.save(asesoria);
+    }
+
+    // Metodos para obtener las inicio/fin de semana
+    public LocalDate getInicioSemana() {
+        return LocalDate.now().with(DayOfWeek.MONDAY);
+    }
+
+    public LocalDate getFinSemana() {
+        return LocalDate.now().with(DayOfWeek.FRIDAY);
+    }
+
+    // Realiza el conteo de las asesorias completadas, canceladas y pendientes.
+    public Map<String, Object> generarReporteSemanal(List<Asesoria> asesorias){
+        long total = asesorias.size();
+        long completadas = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.completada)
+                .count();
+        long canceladas = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.cancelada)
+                .count();
+        long pendientes = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.pendiente)
+                .count();
+
+        Map<String, Object> reporte = new HashMap<>();
+        reporte.put("Total: ", total);
+        reporte.put("Completadas", completadas);
+        reporte.put("Canceladas", canceladas);
+        reporte.put("Pendientes", pendientes);
+
+        return reporte;
     }
 
 }
