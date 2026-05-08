@@ -2,14 +2,21 @@ package mx.unam.aau.controller;
 
 import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.Materia;
+import mx.unam.aau.entities.Profesor;
+import mx.unam.aau.entities.Usuario;
 import mx.unam.aau.service.AsesoriaService;
 import mx.unam.aau.service.MateriaService;
+import mx.unam.aau.service.ProfesorService;
+import mx.unam.aau.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin")
@@ -19,6 +26,10 @@ public class AdminController {
     private AsesoriaService asesoriaService;
     @Autowired
     private MateriaService materiaService;
+    @Autowired
+    private UsuarioService usuarioService;
+    @Autowired
+    private ProfesorService profesorService;
 
     @GetMapping("")
     public String adminHome() {
@@ -31,5 +42,23 @@ public class AdminController {
         model.addAttribute("asesorias", asesorias);
         return "paginas/asesorias";
 
+    }
+
+    // Endpoint de reportes
+    @GetMapping("/reportes")
+    public String reporteAdmin(Model model, Authentication auth){
+        Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
+        Profesor profesor = profesorService.buscarPorUsuarioId(usuario.getId());
+
+        LocalDate inicio = asesoriaService.getInicioSemana();
+        LocalDate fin = asesoriaService.getFinSemana();
+
+        List<Asesoria> asesorias = asesoriaService.obtenerPorProfesorYRango(profesor.getIdProfesor(), inicio, fin);
+        Map<String, Object> reporte = asesoriaService.generarReporteSemanal(asesorias);
+
+        model.addAttribute("reportes", reporte);
+        model.addAttribute("asesorias", asesorias);
+
+        return "paginas/reporte-profesor";
     }
 }

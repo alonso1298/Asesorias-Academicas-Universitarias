@@ -29,6 +29,18 @@ public class AsesoriaService {
         return asesoriasRepository.findById(id).orElse(null);
     }
 
+    // Buscar por semana
+    public List<Asesoria> obtenerPorSemana(LocalDate inicio, LocalDate fin){
+        List<Asesoria> asesorias = asesoriasRepository.findByFechaBetween(inicio, fin);
+        return asesorias;
+    }
+
+    // Busca asesorias de profesor por semana
+    public List<Asesoria> obtenerPorProfesorYRango(Long id, LocalDate inicio, LocalDate fin){
+        List<Asesoria> asesorias = asesoriasRepository.findByProfesorAndFechaBetween(id, inicio, fin);
+        return asesorias;
+    }
+
     // Guardar
     public Asesoria guardar(Asesoria asesoria){
 
