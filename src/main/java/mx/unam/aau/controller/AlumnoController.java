@@ -6,6 +6,7 @@ import mx.unam.aau.entities.Usuario;
 import mx.unam.aau.enums.EstadoAsesorias;
 import mx.unam.aau.service.AlumnoService;
 import mx.unam.aau.service.AsesoriaService;
+import mx.unam.aau.service.ProfesorService;
 import mx.unam.aau.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -27,6 +28,9 @@ public class AlumnoController {
 
     @Autowired
     private AlumnoService alumnoService;
+
+    @Autowired
+    private ProfesorService profesorService;
 
     // Ver la asesoria
     @GetMapping("/asesorias")
@@ -68,5 +72,11 @@ public class AlumnoController {
         asesoriaService.cancelarAsesoria(id, alumno.getIdAlumno());
 
         return "redirect:/alumnos/asesorias";
+    }
+
+    @GetMapping("/profesores")
+    public String verProfesoresAlumno(Model model){
+        model.addAttribute("profesores", profesorService.listar());
+        return "paginas/profesores-alumno";
     }
 }

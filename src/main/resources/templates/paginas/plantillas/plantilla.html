@@ -38,6 +38,10 @@
                     <li class="nav-item" sec:authorize="hasRole('ALUMNO')">
                         <a class="nav-link" th:href="@{/alumnos/asesorias}">Mis asesorías</a>
                     </li>
+                    <!--Seccion para ver profesores-->
+                    <li class="nav-item" sec:authorize="hasRole('ALUMNO')">
+                        <a class="nav-link" th:href="@{/alumnos/profesores}">Profesores</a>
+                    </li>
                 </ul>
 
                 <div class="d-flex align-items-center">
