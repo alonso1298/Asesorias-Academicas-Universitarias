@@ -30,9 +30,15 @@
                     <li class="nav-item" sec:authorize="hasRole('ADMIN')">
                         <a class="nav-link" th:href="@{/materias}">Materias</a>
                     </li>
-                    <!--ADMIN-->
+                    <li sec:authorize="hasRole('ADMIN')">
+                        <a th:href="@{/admin/reportes}">Reportes</a>
+                    </li>
+                    <!--PROFESOR-->
                     <li class="nav-item" sec:authorize="hasRole('PROFESOR')">
                         <a class="nav-link" th:href="@{/profesores/asesorias}">Mis asesorías</a>
+                    </li>
+                    <li sec:authorize="hasRole('PROFESOR')">
+                        <a th:href="@{/profesores/reportes}">Mis reportes</a>
                     </li>
                     <!--ALUMNO-->
                     <li class="nav-item" sec:authorize="hasRole('ALUMNO')">
