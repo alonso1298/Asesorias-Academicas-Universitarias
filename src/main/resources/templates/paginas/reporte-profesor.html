@@ -16,25 +16,25 @@
             <div class="col-md-3">
                 <div class="card bg-primary text-white p-3">
                     <h5>Total</h5>
-                    <h3 th:text="${reporte.total}"></h3>
+                    <h3 th:text="${reporte['total']}"></h3>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card bg-success text-white p-3">
                     <h5>Completadas</h5>
-                    <h3 th:text="${reporte.completadas}"></h3>
+                    <h3 th:text="${reporte['completadas']}"></h3>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card bg-danger text-white p-3">
                     <h5>Canceladas</h5>
-                    <h3 th:text="${reporte.canceladas}"></h3>
+                    <h3 th:text="${reporte['canceladas']}"></h3>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card bg-warning text-dark p-3">
                     <h5>Pendientes</h5>
-                    <h3 th:text="${reporte.pendientes}"></h3>
+                    <h3 th:text="${reporte['pendientes']}"></h3>
                 </div>
             </div>
         </div>
