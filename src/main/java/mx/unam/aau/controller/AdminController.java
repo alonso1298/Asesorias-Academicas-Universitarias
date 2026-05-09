@@ -59,6 +59,6 @@ public class AdminController {
         model.addAttribute("reportes", reporte);
         model.addAttribute("asesorias", asesorias);
 
-        return "paginas/reporte-profesor";
+        return "paginas/reporte-admin";
     }
 }
