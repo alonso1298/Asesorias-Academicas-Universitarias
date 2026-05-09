@@ -51,10 +51,10 @@ public class AdminController {
         LocalDate inicio = asesoriaService.getInicioSemana();
         LocalDate fin = asesoriaService.getFinSemana();
 
-        List<Asesoria> asesorias = asesoriaService.obtenerPorRango(inicio, fin)
+        List<Asesoria> asesorias = asesoriaService.obtenerPorRango(inicio, fin);
         Map<String, Object> reporte = asesoriaService.generarReporteSemanal(asesorias);
 
-        model.addAttribute("reportes", reporte);
+        model.addAttribute("reporte", reporte);
         model.addAttribute("asesorias", asesorias);
 
         return "paginas/reporte-admin";

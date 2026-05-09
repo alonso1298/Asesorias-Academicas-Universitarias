@@ -103,8 +103,8 @@ public class AsesoriaService {
     }
 
     // Obtener todas las asesorias por un rango de fechas
-    public List<Asesoria> obtenerPorRango(){
-        return asesoriasRepository.
+    public List<Asesoria> obtenerPorRango(LocalDate inicio, LocalDate fin){
+        return asesoriasRepository.findByFechaBetween(inicio, fin);
     }
 
     // Actualizar estado
