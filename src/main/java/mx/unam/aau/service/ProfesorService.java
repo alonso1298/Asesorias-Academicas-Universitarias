@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProfesorService {
@@ -30,8 +31,8 @@ public class ProfesorService {
         profesorRepository.deleteById(id);
     }
 
-    public Profesor buscarPorUsuarioId(Long id){
-        return profesorRepository.findById(id)
+    public Profesor buscarPorUsuarioId(Long usuarioId){
+        return profesorRepository.findByUsuarioId(usuarioId)
                 .orElseThrow(() -> new RuntimeException("Profesor no encontrado"));
     }
 }
