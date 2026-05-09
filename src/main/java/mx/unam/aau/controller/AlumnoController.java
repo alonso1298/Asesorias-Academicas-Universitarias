@@ -54,7 +54,7 @@ public class AlumnoController {
     public String guardarAsesoria(@ModelAttribute Asesoria asesoria, Authentication auth) {
 
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
-        Alumno alumno = alumnoService.obtenerUsuarioPorId(usuario.getId());
+        Alumno alumno = alumnoService.buscarUsuarioPorId(usuario.getId());
         asesoria.setAlumno(alumno);
         asesoria.setEstado(EstadoAsesorias.pendiente);
         asesoriaService.guardar(asesoria);
@@ -67,7 +67,7 @@ public class AlumnoController {
     @PostMapping("/asesorias/{id}/cancelar")
     public String cancelarAsesoria(@PathVariable Long id, Authentication auth){
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
-        Alumno alumno = alumnoService.obtenerUsuarioPorId(usuario.getId());
+        Alumno alumno = alumnoService.buscarUsuarioPorId(usuario.getId());
 
         asesoriaService.cancelarAsesoria(id, alumno.getIdAlumno());
 
