@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+    <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
+
+    <body>
+
+    <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+
+    <main class="container mt-5">
+
+        <h2 class="mb-4">Mi reporte semanal</h2>
+
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="card bg-primary text-white p-3">
+                    <h5>Total</h5>
+                    <h3 th:text="${reporte.total}"></h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white p-3">
+                    <h5>Completadas</h5>
+                    <h3 th:text="${reporte.completadas}"></h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger text-white p-3">
+                    <h5>Canceladas</h5>
+                    <h3 th:text="${reporte.canceladas}"></h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning text-dark p-3">
+                    <h5>Pendientes</h5>
+                    <h3 th:text="${reporte.pendientes}"></h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+
+</body>
+</html>

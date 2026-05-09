@@ -102,6 +102,11 @@ public class AsesoriaService {
         return asesoriasRepository.findByProfesorIdProfesor(profesorId);
     }
 
+    // Obtener todas las asesorias por un rango de fechas
+    public List<Asesoria> obtenerPorRango(){
+        return asesoriasRepository.
+    }
+
     // Actualizar estado
     public  void actualizarEstado(Long id, String estado, Long profesorId){
         Asesoria asesoria = asesoriasRepository.findById(id)
@@ -161,5 +166,8 @@ public class AsesoriaService {
 
         return reporte;
     }
+
+    // Obtiene reportes por rango de fechas
+
 
 }

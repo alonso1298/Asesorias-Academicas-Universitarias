@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/profesores")
@@ -90,5 +92,23 @@ public class ProfesorController {
         asesoriaService.actualizarEstado(id, estado, profesor.getIdProfesor());
 
         return "redirect:/profesores/asesorias";
+    }
+
+    // Otiene los reportes del profesor
+    @GetMapping("/reportes")
+    public String reporteProfesor(Model model, Authentication auth){
+        Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
+        Profesor profesor = profesorService.buscarPorUsuarioId(usuario.getId());
+
+        LocalDate inicio = asesoriaService.getInicioSemana();
+        LocalDate fin = asesoriaService.getFinSemana();
+
+        List<Asesoria> asesorias = asesoriaService.obtenerPorProfesorYRango(profesor.getIdProfesor(), inicio, fin);
+        Map<String, Object> reporte = asesoriaService.generarReporteSemanal(asesorias);
+
+        model.addAttribute("reporte", reporte);
+        model.addAttribute("asesorias", asesorias);
+
+        return "paginas/reporte-profesor";
     }
 }
