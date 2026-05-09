@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="es">
 
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
 
@@ -10,7 +13,9 @@
 <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
     <div class="d-flex justify-content-between mb-3">
         <h1>Lista de Asesorías</h1>
-        <a th:href="@{/asesorias/nuevo}" class="btn btn-primary">Nueva Asesoría</a>
+        <div sec:authorize="hasRole('ALUMNO')">
+            <a th:href="@{/alumnos/asesorias/nuevo}" class="btn btn-primary">Nueva Asesoría</a>
+        </div>
     </div>
 
     <table class="table table-bordered table-hover">
