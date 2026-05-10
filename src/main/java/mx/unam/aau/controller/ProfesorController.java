@@ -128,7 +128,14 @@ public class ProfesorController {
         Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
         Profesor profesor = profesorService.buscarPorUsuarioId(usuario.getId());
 
-        List<Asesoria> asesorias = asesoriaService.obtenerPorProfesor(profesor.getIdProfesor());
+        LocalDate inicio = asesoriaService.getInicioSemana();
+        LocalDate fin = asesoriaService.getFinSemana();
+
+        // Genera el reporte a partir del rango (resporte semanal)
+        List<Asesoria> asesorias = asesoriaService.obtenerPorProfesorYRango(
+                        profesor.getIdProfesor(),
+                        inicio,
+                        fin);
 
         AsesoriaPDFExporter exporter = new AsesoriaPDFExporter(asesorias);
         exporter.export(response);

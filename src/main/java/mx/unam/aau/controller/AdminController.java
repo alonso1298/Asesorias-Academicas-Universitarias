@@ -71,7 +71,10 @@ public class AdminController {
         String headerValue = "attachment; filename=reporte_asesorias.pdf";
 
         response.setHeader(headerKey, headerValue);
-        List<Asesoria> asesorias = asesoriaService.listar();
+
+        LocalDate inicio = asesoriaService.getInicioSemana();
+        LocalDate fin = asesoriaService.getFinSemana();
+        List<Asesoria> asesorias = asesoriaService.obtenerPorRango(inicio, fin);
 
         AsesoriaPDFExporter exporter = new AsesoriaPDFExporter(asesorias);
         exporter.export(response);
