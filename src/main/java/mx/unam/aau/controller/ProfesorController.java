@@ -8,12 +8,14 @@ import mx.unam.aau.enums.EstadoAsesorias;
 import mx.unam.aau.service.AsesoriaService;
 import mx.unam.aau.service.ProfesorService;
 import mx.unam.aau.service.UsuarioService;
+import mx.unam.aau.utils.AsesoriaPDFExporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -115,7 +117,20 @@ public class ProfesorController {
 
     // Genera el reporte PDF
     @GetMapping("reportes/pdf")
-    public void exportarPDF(HttpServletResponse response, Authentication auth){
+    public void exportarPDFProfesor(HttpServletResponse response, Authentication auth) throws IOException {
+        response.setContentType("application/pdf");
 
+        response.setHeader(
+                "Content-Disposition",
+                "attachment; filename=mis_asesorias.pdf"
+        );
+
+        Usuario usuario = usuarioService.buscarPorEmail(auth.getName());
+        Profesor profesor = profesorService.buscarPorUsuarioId(usuario.getId());
+
+        List<Asesoria> asesorias = asesoriaService.obtenerPorProfesor(profesor.getIdProfesor());
+
+        AsesoriaPDFExporter exporter = new AsesoriaPDFExporter(asesorias);
+        exporter.export(response);
     }
 }
