@@ -1,5 +1,6 @@
 package mx.unam.aau.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.Profesor;
 import mx.unam.aau.entities.Usuario;
@@ -110,5 +111,11 @@ public class ProfesorController {
         model.addAttribute("asesorias", asesorias);
 
         return "paginas/reporte-profesor";
+    }
+
+    // Genera el reporte PDF
+    @GetMapping("reportes/pdf")
+    public void exportarPDF(HttpServletResponse response, Authentication auth){
+
     }
 }
