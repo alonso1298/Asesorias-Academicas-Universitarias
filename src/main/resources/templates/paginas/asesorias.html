@@ -60,17 +60,17 @@
                     </form>
 
                     <!-- PROFESOR: actualizar -->
-                    <form th:action="@{/profesores/asesorias/{id}/estado(id=${a.id})}" method="post" class="mt-1">
-
-                        <select name="estado" class="form-select form-select-sm">
-                            <option value="pendiente" th:selected="${a.estado.name() == 'pendiente'}">Pendiente</option>
-                            <option value="confirmada" th:selected="${a.estado.name() == 'confirmada'}">Confirmada</option>
-                            <option value="completada" th:selected="${a.estado.name() == 'completada'}">Completada</option>
-                            <option value="cancelada" th:selected="${a.estado.name() == 'cancelada'}">Cancelada</option>
-                        </select>
-
-                        <button type="submit" class="btn btn-primary btn-sm mt-1">Actualizar</button>
-                    </form>
+                    <div sec:authorize="hasRole('PROFESOR')">
+                        <form th:action="@{/profesores/asesorias/{id}/estado(id=${a.id})}" method="post" class="mt-1">
+                            <select name="estado" class="form-select form-select-sm">
+                                <option value="pendiente" th:selected="${a.estado.name() == 'pendiente'}">Pendiente</option>
+                                <option value="confirmada" th:selected="${a.estado.name() == 'confirmada'}">Confirmada</option>
+                                <option value="completada" th:selected="${a.estado.name() == 'completada'}">Completada</option>
+                                <option value="cancelada" th:selected="${a.estado.name() == 'cancelada'}">Cancelada</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary btn-sm mt-1">Actualizar</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         </tbody>

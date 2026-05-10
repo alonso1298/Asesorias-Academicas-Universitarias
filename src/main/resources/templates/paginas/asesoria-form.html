@@ -60,21 +60,8 @@
                                            class="form-control">
                                 </div>
                             </div>
-                            <!-- Botones -->
-                            <div class="d-flex justify-content-between mt-4">
-                                <a th:href="@{/alumnos/asesorias}"
-                                   class="btn btn-outline-secondary px-4">
-                                    Cancelar
-                                </a>
-                                <button type="submit"
-                                        class="btn btn-success px-4">
-                                    Guardar
-                                </button>
-                            </div>
                             <!-- Notas -->
-                            <div class="mb-3" th:if="${#fields.hasErrors('notas')}"
-                                 th:errors="*{notas}"
-                                 class="text-danger">
+                            <div class="mb-3 text-danger">
                                 <label for="notas" class="form-label">
                                     Describe el tema de la asesoría
                                 </label>
@@ -85,6 +72,21 @@
                                         rows="4"
                                         placeholder="Ejemplo: Necesito ayuda para el examen de computacion">
                                 </textarea>
+                                <div th:if="${#fields.hasErrors('notas')}"
+                                     th:errors="*{notas}"
+                                     class="text-danger mt-1">
+                                </div>
+                            </div>
+                            <!-- Botones -->
+                            <div class="d-flex justify-content-between mt-4">
+                                <a th:href="@{/alumnos/asesorias}"
+                                   class="btn btn-outline-secondary px-4">
+                                    Cancelar
+                                </a>
+                                <button type="submit"
+                                        class="btn btn-success px-4">
+                                    Guardar
+                                </button>
                             </div>
                         </form>
                     </div>
