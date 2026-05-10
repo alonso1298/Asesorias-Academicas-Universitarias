@@ -34,6 +34,13 @@
                             Entrar
                         </button>
 
+                        <p>
+                            ¿No tienes cuenta?
+                            <a th:href="@{/registro}">
+                                Regístrate aquí
+                            </a>
+                        </p>
+
                         <!-- ERROR -->
                         <div class="alert alert-danger mt-3"
                              th:if="${param.error}">

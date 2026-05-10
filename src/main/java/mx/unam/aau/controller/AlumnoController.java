@@ -1,9 +1,11 @@
 package mx.unam.aau.controller;
 
+import mx.unam.aau.config.PasswordConfig;
 import mx.unam.aau.entities.Alumno;
 import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.Usuario;
 import mx.unam.aau.enums.EstadoAsesorias;
+import mx.unam.aau.enums.Rol;
 import mx.unam.aau.service.AlumnoService;
 import mx.unam.aau.service.AsesoriaService;
 import mx.unam.aau.service.ProfesorService;
@@ -78,5 +80,29 @@ public class AlumnoController {
     public String verProfesoresAlumno(Model model){
         model.addAttribute("profesores", profesorService.listar());
         return "paginas/profesores-alumno";
+    }
+
+    // Endpoint para registro
+    @GetMapping("/registro")
+    public String mostrarRegistro(Model model){
+        model.addAttribute("alumno", new Alumno());
+        return "paginas/registro";
+    }
+
+    @PostMapping("/registro")
+    public String registrarAlumno(@ModelAttribute Alumno alumno){
+
+        PasswordConfig passwordConfig = new PasswordConfig();
+
+        Usuario usuario = alumno.getUsuario();
+        usuario.setRol(Rol.ALUMNO);
+        usuario.setPassword(
+                passwordConfig.passwordEncoder().encode(usuario.getPassword())
+        );
+        usuarioService.guardarUsuario(usuario);
+        alumno.setUsuario(usuario);
+        alumnoService.guardar(alumno);
+
+        return "redirect:/login";
     }
 }
