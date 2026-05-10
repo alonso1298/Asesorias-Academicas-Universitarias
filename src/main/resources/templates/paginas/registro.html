@@ -4,37 +4,89 @@
 
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
 
-    <body>
+<body class="bg-light">
 
-        <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+<header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
 
-        <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-            <h1>Registro</h1>
-            <!DOCTYPE html>
-            <html xmlns:th="http://www.thymeleaf.org"
-                  lang="es">
+<main class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
 
-            <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
+                        <h2 class="fw-bold">
+                            Registro de Alumno
+                        </h2>
 
-            <body>
+                        <p class="text-muted">
+                            Crea una cuenta para agendar asesorías académicas
+                        </p>
 
-            <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+                    </div>
 
-            <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                <h1>Gestión de Alumnos</h1>
-                <p>
-                    En esta sección se administran los alumnos registrados
-                    en el Sistema de Asesorías Académicas Universitarias.
-                </p>
-            </main>
+                    <form th:action="@{/registro/guardar}"
+                          th:object="${usuario}"
+                          method="post">
 
-            <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Nombre completo
+                            </label>
 
-            </body>
-            </html>
-        </main>
+                            <input type="text"
+                                   th:field="*{nombre}"
+                                   class="form-control"
+                                   required>
+                        </div>
 
-        <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Correo electrónico
+                            </label>
 
-    </body>
+                            <input type="email"
+                                   th:field="*{email}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Contraseña
+                            </label>
+
+                            <input type="password"
+                                   th:field="*{password}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success w-100 py-2">
+                            Registrarse
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4">
+
+                        <p class="text-muted mb-2">
+                            ¿Ya tienes cuenta?
+                        </p>
+
+                        <a th:href="@{/login}"
+                           class="btn btn-outline-primary w-100">
+                            Volver al login
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+
+</body>
 </html>
