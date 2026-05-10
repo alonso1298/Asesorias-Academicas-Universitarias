@@ -67,6 +67,11 @@ public class AsesoriaService {
             throw new RuntimeException("Debe seleccionar una materia");
         }
 
+        // Valida que se agrego descripcion de la asesoria
+        if (asesoria.getNotas() == null || asesoria.getNotas().trim().isEmpty()){
+            throw new RuntimeException("Debe escribir el tema de la asesoría");
+        }
+
         // Valida duplicidad
         boolean existe = asesoriasRepository.existsByProfesorIdProfesorAndFechaAndHora(
                 asesoria.getProfesor().getIdProfesor(),
@@ -159,15 +164,19 @@ public class AsesoriaService {
                 .count();
 
         Map<String, Object> reporte = new HashMap<>();
-        reporte.put("Total: ", total);
-        reporte.put("Completadas", completadas);
-        reporte.put("Canceladas", canceladas);
-        reporte.put("Pendientes", pendientes);
+        reporte.put("total", total);
+        System.out.println("Total asesorias: " + asesorias.size());
+
+        asesorias.forEach(a ->
+
+                System.out.println(a.getEstado())
+
+        );
+        reporte.put("completadas", completadas);
+        reporte.put("canceladas", canceladas);
+        reporte.put("pendientes", pendientes);
 
         return reporte;
     }
-
-    // Obtiene reportes por rango de fechas
-
 
 }

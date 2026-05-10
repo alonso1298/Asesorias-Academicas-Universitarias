@@ -1,6 +1,7 @@
 package mx.unam.aau.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,5 +45,7 @@ public class Asesoria {
     @Enumerated(EnumType.STRING)
     private EstadoAsesorias estado;
 
+    @NotBlank(message = "Debe describir el tema de la asesoría")
+    @Column(columnDefinition = "TEXT")
     private String notas;
 }

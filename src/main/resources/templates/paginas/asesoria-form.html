@@ -71,6 +71,21 @@
                                     Guardar
                                 </button>
                             </div>
+                            <!-- Notas -->
+                            <div class="mb-3" th:if="${#fields.hasErrors('notas')}"
+                                 th:errors="*{notas}"
+                                 class="text-danger">
+                                <label for="notas" class="form-label">
+                                    Describe el tema de la asesoría
+                                </label>
+                                <textarea
+                                        th:field="*{notas}"
+                                        id="notas"
+                                        class="form-control"
+                                        rows="4"
+                                        placeholder="Ejemplo: Necesito ayuda para el examen de computacion">
+                                </textarea>
+                            </div>
                         </form>
                     </div>
                 </div>

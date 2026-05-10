@@ -20,11 +20,14 @@
     <table class="table table-bordered table-hover">
         <thead class="table-dark">
         <tr>
+        <tr>
             <th>Alumno</th>
             <th>Profesor</th>
             <th>Materia</th>
             <th>Fecha</th>
             <th>Hora</th>
+            <th>Notas</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -36,6 +39,7 @@
                 <td th:text="${a.materia.nombre}"></td>
                 <td th:text="${a.fecha}"></td>
                 <td th:text="${a.hora}"></td>
+                <td th:text="${a.notas}"></td>
 
                 <!-- Acciones normales -->
                 <td>
