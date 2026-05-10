@@ -116,7 +116,7 @@ public class ProfesorController {
     }
 
     // Genera el reporte PDF
-    @GetMapping("reportes/pdf")
+    @GetMapping("/reportes/pdf")
     public void exportarPDFProfesor(HttpServletResponse response, Authentication auth) throws IOException {
         response.setContentType("application/pdf");
 

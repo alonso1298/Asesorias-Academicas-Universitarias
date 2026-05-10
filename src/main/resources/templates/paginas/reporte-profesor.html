@@ -37,6 +37,13 @@
                     <h3 th:text="${reporte['pendientes']}"></h3>
                 </div>
             </div>
+            <div class="mt-4 text-center">
+                <a th:href="@{/profesores/reportes/pdf}"
+                   class="btn btn-danger btn-lg shadow-sm">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Descargar Mis Asesorías PDF
+                </a>
+            </div>
         </div>
     </main>
 
