@@ -1,5 +1,6 @@
 package mx.unam.aau.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.Materia;
 import mx.unam.aau.entities.Profesor;
@@ -8,12 +9,14 @@ import mx.unam.aau.service.AsesoriaService;
 import mx.unam.aau.service.MateriaService;
 import mx.unam.aau.service.ProfesorService;
 import mx.unam.aau.service.UsuarioService;
+import mx.unam.aau.utils.AsesoriaPDFExporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -58,5 +61,19 @@ public class AdminController {
         model.addAttribute("asesorias", asesorias);
 
         return "paginas/reporte-admin";
+    }
+
+    @GetMapping("/reportes/pdf")
+    public void exportarPDF(HttpServletResponse response) throws IOException {
+        response.setContentType("application/pdf");
+
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=reporte_asesorias.pdf";
+
+        response.setHeader(headerKey, headerValue);
+        List<Asesoria> asesorias = asesoriaService.listar();
+
+        AsesoriaPDFExporter exporter = new AsesoriaPDFExporter(asesorias);
+        exporter.export(response);
     }
 }
