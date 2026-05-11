@@ -32,18 +32,18 @@ El objetivo del sistema es facilitar la organización y administración de aseso
 
 # Tecnologías Utilizadas
 
-| Tecnología | Descripción |
-|---|---|
-| Java 21 | Lenguaje principal |
-| Spring Boot | Framework backend |
+| Tecnología      | Descripción |
+|-----------------|---|
+| Java 17         | Lenguaje principal |
+| Spring Boot     | Framework backend |
 | Spring Security | Autenticación y autorización |
 | Spring Data JPA | Persistencia de datos |
-| Hibernate | ORM |
-| Thymeleaf | Motor de plantillas |
-| Bootstrap 5 | Diseño frontend |
-| MySQL | Base de datos |
-| Maven | Gestión de dependencias |
-| iTextPDF | Generación de reportes PDF |
+| Hibernate       | ORM |
+| Thymeleaf       | Motor de plantillas |
+| Bootstrap 5     | Diseño frontend |
+| MySQL           | Base de datos |
+| Maven           | Gestión de dependencias |
+| iTextPDF        | Generación de reportes PDF |
 
 ---
 
