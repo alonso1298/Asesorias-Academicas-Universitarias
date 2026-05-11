@@ -82,27 +82,4 @@ public class AlumnoController {
         return "paginas/profesores-alumno";
     }
 
-    // Endpoint para registro
-    @GetMapping("/registro")
-    public String mostrarRegistro(Model model){
-        model.addAttribute("alumno", new Alumno());
-        return "paginas/registro";
-    }
-
-    @PostMapping("/registro")
-    public String registrarAlumno(@ModelAttribute Alumno alumno){
-
-        PasswordConfig passwordConfig = new PasswordConfig();
-
-        Usuario usuario = alumno.getUsuario();
-        usuario.setRol(Rol.ALUMNO);
-        usuario.setPassword(
-                passwordConfig.passwordEncoder().encode(usuario.getPassword())
-        );
-        usuarioService.guardarUsuario(usuario);
-        alumno.setUsuario(usuario);
-        alumnoService.guardar(alumno);
-
-        return "redirect:/login";
-    }
 }
