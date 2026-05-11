@@ -25,8 +25,8 @@
 
                     </div>
 
-                    <form th:action="@{/registro/guardar}"
-                          th:object="${usuario}"
+                    <form th:action="@{/registro}"
+                          th:object="${alumno}"
                           method="post">
 
                         <div class="mb-3">
@@ -36,6 +36,16 @@
 
                             <input type="text"
                                    th:field="*{usuario.nombre}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Carrera
+                            </label>
+                            <input type="text"
+                                   th:field="*{usuario.carrera}"
                                    class="form-control"
                                    required>
                         </div>

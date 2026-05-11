@@ -41,12 +41,11 @@ public class UsuarioService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
-        return new User(
-                usuario.getEmail(),
-                usuario.getPassword(),
-                // Se utiliza List.of para inmutabilidad
-                List.of(new SimpleGrantedAuthority("ROLE_" + usuario.getRol().name()))
-        );
+        return User.builder()
+                .username(usuario.getEmail())
+                .password(usuario.getPassword())
+                .roles(usuario.getRol().name())
+                .build();
     }
 
     // Guarda Usuario

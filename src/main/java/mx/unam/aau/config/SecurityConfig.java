@@ -15,15 +15,15 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers( "/login", "/registro", "/bootstrap/**", "/js/**", "/image/**").permitAll()
-                        .requestMatchers("/profesor/**").hasRole("PROFESOR")
-                        .requestMatchers("/alumno/**").hasRole("ALUMNO")
+                        .requestMatchers("/profesores/**").hasRole("PROFESOR")
+                        .requestMatchers("/alumnos/**").hasRole("ALUMNO")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
                         .usernameParameter("email")
-                        .defaultSuccessUrl("/home", true)
+                        .defaultSuccessUrl("/", true)
                         .permitAll()
                 )
                 .logout(logout -> logout.permitAll());
