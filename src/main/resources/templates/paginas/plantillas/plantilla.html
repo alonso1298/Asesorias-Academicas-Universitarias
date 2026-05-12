@@ -12,55 +12,105 @@
 </head>
 <body>
 <header th:fragment="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+
+            <!-- LOGO / NOMBRE -->
+            <a class="navbar-brand fw-bold" th:href="@{/}">
+                AAU | Sistema de Asesorías
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContenido">
+
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="collapse navbar-collapse" id="navbarContenido">
+
+                <!-- MENÚ -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!--ADMIN-->
+
+                    <!-- ADMIN -->
                     <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                        <a class="nav-link" th:href="@{/admin/asesorias}">Asesorías (Admin)</a>
+                        <a class="nav-link" th:href="@{/admin/asesorias}">
+                            Asesorías
+                        </a>
                     </li>
+
                     <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                        <a class="nav-link" th:href="@{/profesores}">Profesores</a>
+                        <a class="nav-link" th:href="@{/profesores}">
+                            Profesores
+                        </a>
                     </li>
+
                     <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                        <a class="nav-link" th:href="@{/materias}">Materias</a>
+                        <a class="nav-link" th:href="@{/materias}">
+                            Materias
+                        </a>
                     </li>
+
                     <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                        <a class="nav-link" th:href="@{/admin/reportes}">Reportes</a>
+                        <a class="nav-link" th:href="@{/admin/reportes}">
+                            Reportes
+                        </a>
                     </li>
-                    <!--PROFESOR-->
+
+                    <!-- PROFESOR -->
                     <li class="nav-item" sec:authorize="hasRole('PROFESOR')">
-                        <a class="nav-link" th:href="@{/profesores/asesorias}">Mis asesorías</a>
+                        <a class="nav-link" th:href="@{/profesores/asesorias}">
+                            Mis asesorías
+                        </a>
                     </li>
+
                     <li class="nav-item" sec:authorize="hasRole('PROFESOR')">
-                        <a class="nav-link" th:href="@{/profesores/reportes}">Mis reportes</a>
+                        <a class="nav-link" th:href="@{/profesores/reportes}">
+                            Mis reportes
+                        </a>
                     </li>
-                    <!--ALUMNO-->
+
+                    <!-- ALUMNO -->
                     <li class="nav-item" sec:authorize="hasRole('ALUMNO')">
-                        <a class="nav-link" th:href="@{/alumnos/asesorias}">Mis asesorías</a>
+                        <a class="nav-link" th:href="@{/alumnos/asesorias}">
+                            Mis asesorías
+                        </a>
                     </li>
-                    <!--Seccion para ver profesores-->
+
                     <li class="nav-item" sec:authorize="hasRole('ALUMNO')">
-                        <a class="nav-link" th:href="@{/alumnos/profesores}">Profesores</a>
+                        <a class="nav-link" th:href="@{/alumnos/profesores}">
+                            Profesores
+                        </a>
                     </li>
+
                 </ul>
 
+                <!-- USUARIO -->
                 <div class="d-flex align-items-center">
-                    <span class="text-white me-2">Bienvenido:</span>
-                    <span class="text-warning me-3" sec:authentication="name"></span>
+
+                    <div class="text-end me-3">
+                        <small class="text-light d-block">
+                            Sesión iniciada
+                        </small>
+
+                        <span class="fw-bold text-warning"
+                              sec:authentication="name">
+                    </span>
+                    </div>
 
                     <form th:action="@{/logout}" method="post">
-                        <button class="btn btn-outline-light btn-sm" type="submit">
+
+                        <input type="hidden"
+                               th:name="${_csrf.parameterName}"
+                               th:value="${_csrf.token}" />
+
+                        <button class="btn btn-outline-light btn-sm">
                             Cerrar sesión
                         </button>
-                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                     </form>
                 </div>
+
             </div>
         </div>
     </nav>
@@ -69,13 +119,34 @@
     <div class="alert alert-warning" th:if="${warning != null}" th:text="${warning}"></div>
     <div class="alert alert-info" th:if="${info != null}" th:text="${info}"></div>
 </header>
-<footer th:fragment="footer">
+<footer th:fragment="footer"
+        class="bg-dark text-light mt-5 py-4">
+
     <div class="container text-center">
-        <br/> <img th:src="@{/image/logo.jpg}" height="200" width="200"/>
-        <p>Dirección General de Cómputo y de Tecnologías de Información y Comunicación</p>
+
+        <h5 class="fw-bold">
+            AAU - Asesorías Académicas Universitarias
+        </h5>
+
+        <p class="mb-1">
+            Plataforma para la gestión de asesorías entre alumnos y profesores.
+        </p>
+
+        <small class="text-secondary">
+            DGTIC | Diplomado desarrollo de sistemas con tecnología Java
+        </small>
+
+        <hr class="border-secondary">
+
+        <small>
+            © 2026 Sistema AAU - Todos los derechos reservados
+        </small>
+
     </div>
+
     <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
     <script th:src="@{/bootstrap/js/jquery-3.6.3.js}"></script>
+
 </footer>
 </body>
 
