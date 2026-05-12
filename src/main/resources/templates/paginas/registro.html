@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+<head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
+
+<body class="bg-light">
+
+<main class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+
+                        <h2 class="fw-bold">
+                            Registro de Alumno
+                        </h2>
+
+                        <p class="text-muted">
+                            Crea una cuenta para agendar asesorías académicas
+                        </p>
+
+                    </div>
+
+                    <form th:action="@{/registro}"
+                          th:object="${alumno}"
+                          method="post">
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Nombre completo
+                            </label>
+
+                            <input type="text"
+                                   th:field="*{usuario.nombre}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Matrícula
+                            </label>
+                            <input type="text"
+                                   th:field="*{matricula}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Semestre
+                            </label>
+                            <input type="number"
+                                   th:field="*{semestre}"
+                                   class="form-control"
+                                   min="1"
+                                   max="12"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Carrera
+                            </label>
+                            <input type="text"
+                                   th:field="*{carrera}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Correo electrónico
+                            </label>
+
+                            <input type="email"
+                                   th:field="*{usuario.email}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Contraseña
+                            </label>
+
+                            <input type="password"
+                                   th:field="*{usuario.password}"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success w-100 py-2">
+                            Registrarse
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4">
+
+                        <p class="text-muted mb-2">
+                            ¿Ya tienes cuenta?
+                        </p>
+
+                        <a th:href="@{/login}"
+                           class="btn btn-outline-primary w-100">
+                            Volver al login
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
+<head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
+
+  <body>
+    <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+    <main class="container py-5">
+      <div class="bg-body-tertiary shadow-lg rounded-4 p-4 p-md-5">
+
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">
+            Reporte semanal de asesorías
+          </h2>
+
+          <p class="text-muted">
+            Resumen general de asesorías registradas en la semana
+          </p>
+        </div>
+
+        <div class="row g-4 text-center">
+
+          <!-- TOTAL -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-primary text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['total']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMPLETADAS -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-success text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Completadas</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['completadas']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- CANCELADAS -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-danger text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Canceladas</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['canceladas']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- PENDIENTES -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-warning text-dark border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Pendientes</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['pendientes']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONFIRMADAS -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-info text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Confirmadas</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['confirmadas']}"></h2>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BOTÓN PDF -->
+        <div class="mt-5 text-center">
+          <a th:href="@{/admin/reportes/pdf}"
+             class="btn btn-danger btn-lg px-4 py-2 shadow-sm rounded-3">
+            Descargar Reporte PDF
+          </a>
+        </div>
+
+      </div>
+    </main>
+    <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+  </body>
+</html>

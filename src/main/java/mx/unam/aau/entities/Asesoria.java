@@ -1,10 +1,12 @@
 package mx.unam.aau.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import mx.unam.aau.enums.EstadoAsesorias;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
@@ -39,7 +41,11 @@ public class Asesoria {
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime hora;
 
-    private String estado;
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EstadoAsesorias estado;
 
+    @NotBlank(message = "Debe describir el tema de la asesoría")
+    @Column(columnDefinition = "TEXT")
     private String notas;
 }

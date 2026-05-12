@@ -2,11 +2,16 @@ package mx.unam.aau.service;
 
 import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.repositories.IAsesoriasRepository;
+import mx.unam.aau.enums.EstadoAsesorias;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 public class AsesoriaService {
@@ -22,6 +27,18 @@ public class AsesoriaService {
     // Buscar por ID
     public Asesoria buscarPorId(Long id){
         return asesoriasRepository.findById(id).orElse(null);
+    }
+
+    // Buscar por semana
+    public List<Asesoria> obtenerPorSemana(LocalDate inicio, LocalDate fin){
+        List<Asesoria> asesorias = asesoriasRepository.findByFechaBetween(inicio, fin);
+        return asesorias;
+    }
+
+    // Busca asesorias de profesor por semana
+    public List<Asesoria> obtenerPorProfesorYRango(Long id, LocalDate inicio, LocalDate fin){
+        List<Asesoria> asesorias = asesoriasRepository.findByProfesorAndFechaBetween(id, inicio, fin);
+        return asesorias;
     }
 
     // Guardar
@@ -50,6 +67,11 @@ public class AsesoriaService {
             throw new RuntimeException("Debe seleccionar una materia");
         }
 
+        // Valida que se agrego descripcion de la asesoria
+        if (asesoria.getNotas() == null || asesoria.getNotas().trim().isEmpty()){
+            throw new RuntimeException("Debe escribir el tema de la asesoría");
+        }
+
         // Valida duplicidad
         boolean existe = asesoriasRepository.existsByProfesorIdProfesorAndFechaAndHora(
                 asesoria.getProfesor().getIdProfesor(),
@@ -63,7 +85,7 @@ public class AsesoriaService {
 
         // Estado por defecto
         if (asesoria.getEstado() == null){
-            asesoria.setEstado("pendiente");
+            asesoria.setEstado(EstadoAsesorias.pendiente);
         }
 
         return asesoriasRepository.save(asesoria);
@@ -73,6 +95,92 @@ public class AsesoriaService {
     // Eliminar
     public void eliminar(Long id){
         asesoriasRepository.deleteById(id);
+    }
+
+    // Obtener asesoria de alumno
+    public List<Asesoria> obtenerPorAlumno(Long alumnoId){
+        return asesoriasRepository.findByAlumnoIdAlumno(alumnoId);
+    }
+
+    // Obtener por asesoria por profesor
+    public  List<Asesoria> obtenerPorProfesor(Long profesorId){
+        return asesoriasRepository.findByProfesorIdProfesor(profesorId);
+    }
+
+    // Obtener todas las asesorias por un rango de fechas
+    public List<Asesoria> obtenerPorRango(LocalDate inicio, LocalDate fin){
+        return asesoriasRepository.findByFechaBetween(inicio, fin);
+    }
+
+    // Actualizar estado
+    public  void actualizarEstado(Long id, String estado, Long profesorId){
+        Asesoria asesoria = asesoriasRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
+        if (!asesoria.getProfesor().getIdProfesor().equals(profesorId)){
+            throw new RuntimeException("No autorizado");
+        }
+        asesoria.setEstado(EstadoAsesorias.valueOf(estado));
+        asesoriasRepository.save(asesoria);
+    }
+
+    // Cancelar asesoria
+    public void cancelarAsesoria(Long id, Long alumnoId){
+        Asesoria asesoria  = asesoriasRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Asesoria no encontrada"));
+
+        // Va valida seguridad
+        if (!asesoria.getAlumno().getIdAlumno().equals(alumnoId)){
+            throw new RuntimeException("No autorizado");
+        }
+        // Impide cambiar una sesoria completada
+        if (asesoria.getEstado() == EstadoAsesorias.completada){
+            throw new RuntimeException("No se puedes cambiar una asesoria completada");
+        }
+
+        asesoria.setEstado(EstadoAsesorias.cancelada);
+        asesoriasRepository.save(asesoria);
+    }
+
+    // Metodos para obtener las inicio/fin de semana
+    public LocalDate getInicioSemana() {
+        return LocalDate.now().with(DayOfWeek.MONDAY);
+    }
+
+    public LocalDate getFinSemana() {
+        return LocalDate.now().with(DayOfWeek.FRIDAY);
+    }
+
+    // Realiza el conteo de las asesorias completadas, canceladas y pendientes.
+    public Map<String, Object> generarReporteSemanal(List<Asesoria> asesorias){
+        long total = asesorias.size();
+        long completadas = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.completada)
+                .count();
+        long canceladas = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.cancelada)
+                .count();
+        long pendientes = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.pendiente)
+                .count();
+        long confirmadas = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.confirmada)
+                .count();
+
+        Map<String, Object> reporte = new HashMap<>();
+        reporte.put("total", total);
+        System.out.println("Total asesorias: " + asesorias.size());
+
+        asesorias.forEach(a ->
+
+                System.out.println(a.getEstado())
+
+        );
+        reporte.put("completadas", completadas);
+        reporte.put("canceladas", canceladas);
+        reporte.put("pendientes", pendientes);
+        reporte.put("confirmadas", confirmadas);
+
+        return reporte;
     }
 
 }

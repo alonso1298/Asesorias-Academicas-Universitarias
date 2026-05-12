@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="es">
 
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
 
@@ -10,34 +12,67 @@
 <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
     <div class="d-flex justify-content-between mb-3">
         <h1>Lista de Asesorías</h1>
-        <a th:href="@{/asesorias/nuevo}" class="btn btn-primary">Nueva Asesoría</a>
+        <div sec:authorize="hasRole('ALUMNO')">
+            <a th:href="@{/asesorias/nuevo}" class="btn btn-primary">Nueva Asesoría</a>
+        </div>
     </div>
 
     <table class="table table-bordered table-hover">
         <thead class="table-dark">
+        <tr>
         <tr>
             <th>Alumno</th>
             <th>Profesor</th>
             <th>Materia</th>
             <th>Fecha</th>
             <th>Hora</th>
+            <th>Notas</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each="a : ${asesorias}">
-            <td th:text="${a.alumno.usuario != null ? a.alumno.usuario.nombre : 'Sin nombre'}"></td>
-            <td th:text="${a.profesor.nombre}"></td>
-            <td th:text="${a.materia.nombre}"></td>
-            <td th:text="${a.fecha}"></td>
-            <td th:text="${a.hora}"></td>
+            <tr th:each="a : ${asesorias}">
+                <td th:text="${a.alumno.usuario != null ? a.alumno.usuario.nombre : 'Sin nombre'}"></td>
+                <td th:text="${a.profesor.nombre}"></td>
+                <td th:text="${a.materia.nombre}"></td>
+                <td th:text="${a.fecha}"></td>
+                <td th:text="${a.hora}"></td>
+                <td th:text="${a.notas}"></td>
 
-            <td>
-                <a th:href="@{/asesorias/editar/{id}(id=${a.id})}" class="btn btn-warning btn-sm">Editar</a>
-                <a th:href="@{/asesorias/eliminar/{id}(id=${a.id})}" class="btn btn-danger btn-sm">Eliminar</a>
-            </td>
-        </tr>
+                <!-- Acciones normales -->
+                <td>
+                    <a th:href="@{/asesorias/editar/{id}(id=${a.id})}" class="btn btn-warning btn-sm">Editar</a>
+                    <a th:href="@{/asesorias/eliminar/{id}(id=${a.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+                <!-- Estado + acciones -->
+                <td>
+                    <p class="mb-1" th:text="${a.estado}"></p>
+
+                    <!--ALUMNO Si no esta cancelada  o completada no muestra el botón -->
+                    <form th:if="${a.estado != T(mx.unam.aau.enums.EstadoAsesorias).cancelada
+                         and a.estado != T(mx.unam.aau.enums.EstadoAsesorias).completada}"
+                          th:action="@{/alumno/asesorias/{id}/cancelar(id=${a.id})}" method="post">
+
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                        <button class="btn btn-danger btn-sm">Cancelar</button>
+                    </form>
+
+                    <!-- PROFESOR: actualizar -->
+                    <div sec:authorize="hasRole('PROFESOR')">
+                        <form th:action="@{/profesores/asesorias/{id}/estado(id=${a.id})}" method="post" class="mt-1">
+                            <select name="estado" class="form-select form-select-sm">
+                                <option value="pendiente" th:selected="${a.estado.name() == 'pendiente'}">Pendiente</option>
+                                <option value="confirmada" th:selected="${a.estado.name() == 'confirmada'}">Confirmada</option>
+                                <option value="completada" th:selected="${a.estado.name() == 'completada'}">Completada</option>
+                                <option value="cancelada" th:selected="${a.estado.name() == 'cancelada'}">Cancelada</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary btn-sm mt-1">Actualizar</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </main>

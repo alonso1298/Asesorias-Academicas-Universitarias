@@ -1,41 +1,128 @@
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        lang="es">
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
-<body>
-    <form th:action="@{/profesores/guardar}" th:object="${profesor}" method="post">
 
-        <div th:if="${error}" class="alert alert-danger">
-            <span th:text="${error}"></span>
+<body class="bg-light">
+
+<header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+
+<main class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-9">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+
+                    <!-- TÍTULO -->
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold text-primary">
+                            Registro de Profesor
+                        </h2>
+                        <p class="text-muted">
+                            Completa la información del profesor
+                        </p>
+                    </div>
+
+                    <!-- ALERTA -->
+                    <div th:if="${error}"
+                         class="alert alert-danger rounded-3">
+                        <span th:text="${error}"></span>
+                    </div>
+
+                    <!-- FORMULARIO -->
+                    <form th:action="@{/profesores/guardar}"
+                          th:object="${profesor}"
+                          method="post">
+
+                        <!-- NOMBRE -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Nombre completo
+                            </label>
+                            <input type="text"
+                                   th:field="*{nombre}"
+                                   class="form-control form-control-lg"
+                                   placeholder="Ej. Carlos Ramírez"
+                                   required>
+                        </div>
+
+                        <!-- NÚMERO EMPLEADO -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Número de empleado
+                            </label>
+                            <input type="text"
+                                   th:field="*{numeroEmpleado}"
+                                   class="form-control form-control-lg"
+                                   placeholder="Ej. EMP001"
+                                   required>
+                        </div>
+
+                        <!-- EXPERIENCIA -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Experiencia
+                            </label>
+                            <textarea th:field="*{experiencia}"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Describe la experiencia profesional del profesor"
+                                      required>
+                            </textarea>
+                        </div>
+
+                        <!-- ESPECIALIDAD -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Especialidad
+                            </label>
+                            <select th:field="*{especialidad}"
+                                    class="form-select form-select-lg">
+                                <option value="">
+                                    Selecciona una especialidad
+                                </option>
+                                <option value="COMPUTACION">
+                                    Computación
+                                </option>
+                                <option value="BASES_DE_DATOS">
+                                    Bases de Datos
+                                </option>
+                                <option value="INTELIGENCIA_ARTIFICIAL">
+                                    Inteligencia Artificial
+                                </option>
+                                <option value="PROGRAMACION">
+                                    Programación
+                                </option>
+                                <option value="REDES">
+                                    Redes
+                                </option>
+                            </select>
+                        </div>
+
+                        <!-- BOTONES -->
+                        <div class="d-flex justify-content-between mt-5">
+                            <a th:href="@{/profesores}"
+                               class="btn btn-outline-secondary px-4">
+
+                                Cancelar
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-success px-5">
+
+                                Guardar Profesor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+    </div>
+</main>
 
-        <!-- Nombre -->
-        <div>
-            <label>Nombre</label>
-            <input type="text" th:field="*{nombre}" class="form-control">
-        </div>
+<footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
 
-        <!-- Número empleado -->
-        <div>
-            <label>Número de empleado</label>
-            <input type="text" th:field="*{numeroEmpleado}" class="form-control">
-        </div>
-
-        <!-- Experiencia -->
-        <div>
-            <label>Experiencia</label>
-            <input type="text" th:field="*{experiencia}" class="form-control">
-        </div>
-
-        <!-- Especialidad -->
-        <div>
-            <label>Especialidad</label>
-            <input type="text" th:field="*{especialidad}" class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a th:href="@{/profesores}" class="btn btn-secondary">Cancelar</a>
-
-    </form>
 </body>
 </html>

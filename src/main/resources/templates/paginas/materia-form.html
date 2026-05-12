@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
+
+<body>
+
+<header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+
+<main class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+
+            <div class="card shadow-lg">
+                <div class="card-body">
+
+                    <h3 class="text-center mb-4">Nueva Materia</h3>
+
+                    <form th:action="@{/materias/guardar}" th:object="${materia}" method="post">
+
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" th:field="*{nombre}" class="form-control" placeholder="Ej. Matemáticas">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea th:field="*{descripcion}" class="form-control" rows="3" placeholder="Descripción de la materia"></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-success">Guardar</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+
+</body>
+</html>
