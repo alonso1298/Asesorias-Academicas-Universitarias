@@ -162,6 +162,9 @@ public class AsesoriaService {
         long pendientes = asesorias.stream()
                 .filter(a -> a.getEstado() == EstadoAsesorias.pendiente)
                 .count();
+        long confirmadas = asesorias.stream()
+                .filter(a -> a.getEstado() == EstadoAsesorias.confirmada)
+                .count();
 
         Map<String, Object> reporte = new HashMap<>();
         reporte.put("total", total);
@@ -175,6 +178,7 @@ public class AsesoriaService {
         reporte.put("completadas", completadas);
         reporte.put("canceladas", canceladas);
         reporte.put("pendientes", pendientes);
+        reporte.put("confirmadas", confirmadas);
 
         return reporte;
     }

@@ -8,42 +8,55 @@
 
     <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
 
-    <main class="container mt-5">
+    <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
 
-        <h2 class="mb-4">Mi reporte semanal</h2>
+        <h2 class="mb-4 text-center fw-bold">
+            Mi reporte semanal
+        </h2>
 
-        <div class="row text-center">
-            <div class="col-md-3">
-                <div class="card bg-primary text-white p-3">
+        <div class="row g-4 text-center">
+
+            <div class="col-md col-sm-6">
+                <div class="card bg-primary text-white p-3 shadow-sm rounded-4 h-100">
                     <h5>Total</h5>
                     <h3 th:text="${reporte['total']}"></h3>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card bg-success text-white p-3">
+
+            <div class="col-md col-sm-6">
+                <div class="card bg-success text-white p-3 shadow-sm rounded-4 h-100">
                     <h5>Completadas</h5>
                     <h3 th:text="${reporte['completadas']}"></h3>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card bg-danger text-white p-3">
+
+            <div class="col-md col-sm-6">
+                <div class="card bg-danger text-white p-3 shadow-sm rounded-4 h-100">
                     <h5>Canceladas</h5>
                     <h3 th:text="${reporte['canceladas']}"></h3>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card bg-warning text-dark p-3">
+
+            <div class="col-md col-sm-6">
+                <div class="card bg-warning text-dark p-3 shadow-sm rounded-4 h-100">
                     <h5>Pendientes</h5>
                     <h3 th:text="${reporte['pendientes']}"></h3>
                 </div>
             </div>
-            <div class="mt-4 text-center">
-                <a th:href="@{/profesores/reportes/pdf}"
-                   class="btn btn-danger btn-lg shadow-sm">
-                    <i class="bi bi-file-earmark-pdf"></i>
-                    Descargar Mis Asesorías PDF
-                </a>
+
+            <div class="col-md col-sm-6">
+                <div class="card bg-info text-white p-3 shadow-sm rounded-4 h-100">
+                    <h5>Confirmadas</h5>
+                    <h3 th:text="${reporte['confirmadas']}"></h3>
+                </div>
             </div>
+        </div>
+
+        <div class="mt-5 text-center">
+            <a th:href="@{/profesores/reportes/pdf}"
+               class="btn btn-danger btn-lg shadow-sm rounded-3 px-4">
+                Descargar Mis Asesorías PDF
+            </a>
         </div>
     </main>
 

@@ -4,58 +4,90 @@
 
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
 
-<body>
+  <body>
+    <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+    <main class="container py-5">
+      <div class="bg-body-tertiary shadow-lg rounded-4 p-4 p-md-5">
 
-<header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">
+            Reporte semanal de asesorías
+          </h2>
 
-  <main class="container text-center shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-    <div class="container mt-5">
-
-      <h2 class="mb-4">Reporte semanal</h2>
-
-      <div class="row text-center">
-
-        <div class="col-md-3">
-          <div class="card bg-primary text-white p-3">
-            <h5>Total</h5>
-            <h3 th:text="${reporte['total']}"></h3>
-          </div>
+          <p class="text-muted">
+            Resumen general de asesorías registradas en la semana
+          </p>
         </div>
 
-        <div class="col-md-3">
-          <div class="card bg-success text-white p-3">
-            <h5>Completadas</h5>
-            <h3 th:text="${reporte['completadas']}"></h3>
+        <div class="row g-4 text-center">
+
+          <!-- TOTAL -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-primary text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['total']}"></h2>
+              </div>
+            </div>
           </div>
+
+          <!-- COMPLETADAS -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-success text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Completadas</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['completadas']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- CANCELADAS -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-danger text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Canceladas</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['canceladas']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- PENDIENTES -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-warning text-dark border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Pendientes</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['pendientes']}"></h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONFIRMADAS -->
+          <div class="col-lg col-md-4 col-sm-6">
+            <div class="card bg-info text-white border-0 shadow-sm rounded-4 h-100">
+              <div class="card-body">
+                <h5 class="card-title">Confirmadas</h5>
+                <h2 class="fw-bold"
+                    th:text="${reporte['confirmadas']}"></h2>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="col-md-3">
-          <div class="card bg-danger text-white p-3">
-            <h5>Canceladas</h5>
-            <h3 th:text="${reporte['canceladas']}"></h3>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="card bg-warning text-dark p-3">
-            <h5>Pendientes</h5>
-            <h3 th:text="${reporte['pendientes']}"></h3>
-          </div>
-        </div>
-
-        <div class="mt-4 text-center">
+        <!-- BOTÓN PDF -->
+        <div class="mt-5 text-center">
           <a th:href="@{/admin/reportes/pdf}"
-             class="btn btn-danger btn-lg shadow-sm">
-            <i class="bi bi-file-earmark-pdf"></i>
+             class="btn btn-danger btn-lg px-4 py-2 shadow-sm rounded-3">
             Descargar Reporte PDF
           </a>
         </div>
 
       </div>
-    </div>
-  </main>
-
-<footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
-
-</body>
+    </main>
+    <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
+  </body>
 </html>

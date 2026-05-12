@@ -97,40 +97,40 @@ INSERT INTO asesoria
 (alumno_id, profesor_id, materia_id, fecha, hora, estado, notas)
 VALUES
 
-    (6, 1, 1, '2026-05-04', '10:00:00', 'confirmada',
+    (6, 1, 1, '2026-05-12', '10:00:00', 'confirmada',
      'Revisión de proyecto Spring Boot'),
 
-    (7, 2, 2, '2026-05-05', '09:00:00', 'pendiente',
+    (7, 2, 2, '2026-05-12', '09:00:00', 'pendiente',
      'Dudas sobre normalización y JOINs'),
 
-    (8, 4, 3, '2026-05-06', '11:30:00', 'completada',
+    (8, 4, 3, '2026-05-13', '11:30:00', 'completada',
      'Repaso para examen parcial'),
 
-    (9, 3, 4, '2026-05-06', '16:00:00', 'confirmada',
+    (9, 3, 4, '2026-05-13', '16:00:00', 'confirmada',
      'Introducción a redes neuronales'),
 
-    (10, 1, 5, '2026-05-07', '12:00:00', 'cancelada',
+    (10, 1, 5, '2026-05-14', '12:00:00', 'cancelada',
      'Reprogramar sesión'),
 
-    (11, 4, 6, '2026-05-07', '10:00:00', 'pendiente',
+    (11, 4, 6, '2026-05-14', '10:00:00', 'pendiente',
      'Resolver ejercicios de algoritmos'),
 
-    (6, 2, 2, '2026-05-08', '15:00:00', 'completada',
+    (6, 2, 2, '2026-05-15', '15:00:00', 'completada',
      'Consultas avanzadas SQL'),
 
-    (7, 3, 4, '2026-05-08', '17:00:00', 'confirmada',
+    (7, 3, 4, '2026-05-15', '17:00:00', 'confirmada',
      'Machine Learning supervisado'),
 
-    (8, 1, 1, '2026-05-09', '09:00:00', 'pendiente',
+    (8, 1, 1, '2026-05-15', '09:00:00', 'pendiente',
      'Errores con JPA y Hibernate'),
 
-    (9, 4, 6, '2026-05-09', '11:00:00', 'confirmada',
+    (9, 4, 6, '2026-05-15', '11:00:00', 'confirmada',
      'Complejidad temporal de algoritmos'),
 
-    (10, 3, 4, '2026-05-10', '10:30:00', 'cancelada',
+    (10, 3, 4, '2026-05-15', '10:30:00', 'cancelada',
      'Dudas sobre clasificación'),
 
-    (11, 1, 5, '2026-05-10', '13:00:00', 'completada',
+    (11, 1, 5, '2026-05-15', '13:00:00', 'completada',
      'Configuración de Spring Security');
 
 -- =========================
