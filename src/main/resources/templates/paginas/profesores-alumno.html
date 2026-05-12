@@ -4,34 +4,85 @@
 
 <head th:replace="~{paginas/plantillas/plantilla :: head}"></head>
 
-<body>
+<body class="bg-light">
 
 <header th:replace="~{paginas/plantillas/plantilla :: header}"></header>
 
-    <main class="container mt-5">
-        <h2 class="text-center mb-4">Profesores disponibles</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4" th:each="p : ${profesores}">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body">
+<main class="container py-5">
 
-                        <h5 class="card-title" th:text="${p.usuario.nombre}"></h5>
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">Profesores disponibles</h1>
 
-                        <p class="card-text">
-                            <strong>Email:</strong>
-                            <span th:text="${p.usuario.email}"></span>
-                        </p>
-                        <!-- Si tienes más info -->
-                        <p class="card-text">
-                            <strong>Especialidad:</strong>
-                            <span th:text="${p.especialidad}"></span>
-                        </p>
+        <p class="text-muted">
+            Consulta la información de los profesores y agenda tu asesoría.
+        </p>
+    </div>
 
+    <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4"
+             th:each="p : ${profesores}">
+
+            <div class="card shadow border-0 rounded-4 h-100">
+
+                <div class="card-body p-4">
+
+                    <!-- Nombre -->
+                    <div class="text-center mb-3">
+
+                        <div class="bg-primary text-white rounded-circle
+                                    d-flex align-items-center justify-content-center
+                                    mx-auto mb-3"
+                             style="width: 80px; height: 80px; font-size: 28px;">
+
+                            <span th:text="${#strings.substring(p.usuario.nombre,0,1)}"></span>
+                        </div>
+
+                        <h4 class="fw-bold"
+                            th:text="${p.usuario.nombre}">
+                        </h4>
+
+                        <span class="badge bg-success px-3 py-2">
+                            Profesor
+                        </span>
                     </div>
+
+                    <hr>
+
+                    <!-- Información -->
+                    <p class="card-text mb-2">
+                        <strong>Email:</strong><br>
+                        <span th:text="${p.usuario.email}"></span>
+                    </p>
+
+                    <p class="card-text mb-2">
+                        <strong>Especialidad:</strong><br>
+                        <span class="badge bg-primary"
+                              th:text="${p.especialidad}">
+                        </span>
+                    </p>
+
+                    <p class="card-text mb-3">
+                        <strong>Experiencia:</strong><br>
+                        <span th:text="${p.experiencia}"></span>
+                    </p>
+
+                    <!-- Botón -->
+                    <div class="d-grid mt-4">
+
+                        <a th:href="@{/alumnos/asesorias/nueva}"
+                           class="btn btn-outline-primary rounded-pill">
+
+                            Agendar asesoría
+
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
 <footer th:replace="~{paginas/plantillas/plantilla :: footer}"></footer>
 
