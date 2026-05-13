@@ -6,10 +6,7 @@ import mx.unam.aau.entities.Asesoria;
 import mx.unam.aau.entities.Usuario;
 import mx.unam.aau.enums.EstadoAsesorias;
 import mx.unam.aau.enums.Rol;
-import mx.unam.aau.service.AlumnoService;
-import mx.unam.aau.service.AsesoriaService;
-import mx.unam.aau.service.ProfesorService;
-import mx.unam.aau.service.UsuarioService;
+import mx.unam.aau.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -24,15 +21,14 @@ public class AlumnoController {
 
     @Autowired
     private UsuarioService usuarioService;
-
     @Autowired
     private AsesoriaService asesoriaService;
-
     @Autowired
     private AlumnoService alumnoService;
-
     @Autowired
     private ProfesorService profesorService;
+    @Autowired
+    private MateriaService materiaService;
 
     // Ver la asesoria
     @GetMapping("/asesorias")
@@ -48,6 +44,8 @@ public class AlumnoController {
     @GetMapping("asesorias/nueva")
     public String nuevaAsesoria(Model model){
         model.addAttribute("asesoria", new Asesoria());
+        model.addAttribute("profesores", profesorService.listar());
+        model.addAttribute("materias", materiaService.listar());
         return "paginas/asesoria-form";
     }
 
